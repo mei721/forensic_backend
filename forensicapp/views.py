@@ -7,6 +7,11 @@ from .models import *
 from .serializers import *
 from .pagination import CustomPaginationWithResult
 from django.shortcuts import get_object_or_404
+from django.db.models import Q
+from rest_framework import filters
+from .filters import IncidentFilter,InspectionFilter
+from django_filters.rest_framework import DjangoFilterBackend
+
 
 
 class BaseAPIView(APIView):
@@ -27,6 +32,7 @@ class BaseAPIView(APIView):
             result_page = paginator.paginate_queryset(instances, request)
             serializer = self.serializer_class(result_page, many=True)
             return paginator.get_paginated_response(serializer.data)
+        
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
@@ -58,7 +64,16 @@ class BaseAPIView(APIView):
 class IncindentView(BaseAPIView):
     model = Incident
     serializer_class = IncidentSerializer
-    
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = IncidentFilter
+    def get(self, request):
+        # Get the filtered queryset
+        queryset = self.model.objects.all().order_by('-id')
+        filtered_queryset = IncidentFilter(request.GET, queryset=queryset).qs
+        serializer = self.serializer_class(filtered_queryset, many=True)
+        return Response({"data": serializer.data}, status=status.HTTP_200_OK)
+
+
 
 
 class EvidenceView(BaseAPIView):
@@ -73,6 +88,15 @@ class ComplaintView(BaseAPIView):
 class InspectionFormView(BaseAPIView):
     model  = InspectionForm
     serializer_class = InspectionFormSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = InspectionFilter
+    def get(self, request):
+        # Get the filtered queryset
+        queryset = self.model.objects.all().order_by('-id')
+        filtered_queryset = InspectionFilter(request.GET, queryset=queryset).qs
+        serializer = self.serializer_class(filtered_queryset, many=True)
+        return Response({"data": serializer.data}, status=status.HTTP_200_OK)
+
 
 
 class FirePlaceDescribtionView(BaseAPIView):

@@ -19,6 +19,7 @@ urlpatterns = [
     path('map/<int:pk>/', MapDescribtionView.as_view()),
     path('incident/evidence/<int:evidence_id>/', IncidentByEvidenceAPIView.as_view(), name='incident_by_evidence_api'),
     path('evidencebyincident/<int:incident_id>/', EvidenceByIncidentAPIView.as_view(), name='incident_details_api'),
+    
 
 
 ]

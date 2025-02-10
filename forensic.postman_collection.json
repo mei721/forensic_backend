@@ -109,17 +109,36 @@
 											"key": "procedure",
 											"value": "",
 											"type": "text"
+										},
+										{
+											"key": "method",
+											"value": "",
+											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{URL}}api/incidents/",
+									"raw": "{{URL}}api/incidents/?incident_location&incident_type&investigative_body",
 									"host": [
 										"{{URL}}api"
 									],
 									"path": [
 										"incidents",
 										""
+									],
+									"query": [
+										{
+											"key": "incident_location",
+											"value": null
+										},
+										{
+											"key": "incident_type",
+											"value": null
+										},
+										{
+											"key": "investigative_body",
+											"value": null
+										}
 									]
 								}
 							},
@@ -163,112 +182,6 @@
 								}
 							},
 							"response": []
-						},
-						{
-							"name": "registeruser",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"var template = `\r",
-											"<style type=\"text/css\">\r",
-											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
-											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
-											"    .tftable tr {background-color:#ffffff;}\r",
-											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
-											"    .tftable tr:hover {background-color:#e0ffff;}\r",
-											"</style>\r",
-											"\r",
-											"<table class=\"tftable\" border=\"1\">\r",
-											"    <tr>\r",
-											"        <th>Email</th>\r",
-											"        <th>Username</th>\r",
-											"        <th>Password</th>\r",
-											"        <th>Password2</th>\r",
-											"    </tr>\r",
-											"    <tr>\r",
-											"        <td>{{response.email}}</td>\r",
-											"        <td>{{response.username}}</td>\r",
-											"        <td>{{response.password}}</td>\r",
-											"        <td>{{response.password2}}</td>\r",
-											"    </tr>\r",
-											"</table>\r",
-											"`;\r",
-											"\r",
-											"function constructVisualizerPayload() {\r",
-											"    return {response: pm.response.json()}\r",
-											"}\r",
-											"\r",
-											"pm.visualizer.set(template, constructVisualizerPayload());"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "email",
-											"value": "fatimaahmed2@gmail.com",
-											"description": "unique",
-											"type": "text"
-										},
-										{
-											"key": "username",
-											"value": "fatimaahmed2",
-											"description": "unique",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "12345678Ee",
-											"description": "numbers , must be lower,uppercase",
-											"type": "text"
-										},
-										{
-											"key": "password2",
-											"value": "12345678Ee",
-											"type": "text"
-										},
-										{
-											"key": "phone_number",
-											"value": "1234567911",
-											"description": "11 ",
-											"type": "text"
-										},
-										{
-											"key": "first_name",
-											"value": "hiiuu",
-											"type": "text"
-										},
-										{
-											"key": "last_name",
-											"value": "hiuiooo",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{URL}}account/register/",
-									"host": [
-										"{{URL}}account"
-									],
-									"path": [
-										"register",
-										""
-									]
-								}
-							},
-							"response": []
 						}
 					]
 				},
@@ -281,65 +194,13 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "inspection_date",
-											"value": "",
-											"description": "تاريخ كشف",
-											"type": "text"
-										},
-										{
-											"key": "request_authority",
-											"value": "",
-											"description": "جهة الطلب",
-											"type": "text"
-										},
-										{
-											"key": "incident_details",
-											"value": "",
-											"description": "وصف",
-											"type": "text"
-										},
-										{
-											"key": "evidence",
-											"value": "",
-											"description": "foreign key",
-											"type": "text"
-										},
-										{
-											"key": "count",
-											"value": "",
-											"description": "عدد",
-											"type": "text"
-										},
-										{
-											"key": "crime_lab",
-											"value": "",
-											"description": "all labs take boolean ",
-											"type": "text"
-										},
-										{
-											"key": "weapon_lab",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "cyber_crime_lab",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "dna_lab",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "chemistry_lab",
-											"value": "",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\r\n  \"incident_obj\": 9,  //the  ID of the incident\r\n  \"evidence\":3,      // Optionally, link to an evidence ID if you have one\r\n  \"count\": 3,\r\n  \"crime_lab\": true,\r\n  \"weapon_lab\": false,\r\n  \"chemistry_lab\": true,\r\n  \"dna_lab\": false,\r\n  \"cyber_crime_lab\": false\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{URL}}api/inspection-form/",
@@ -349,6 +210,28 @@
 									"path": [
 										"inspection-form",
 										""
+									],
+									"query": [
+										{
+											"key": "request_authority",
+											"value": "شرطة أربيل",
+											"disabled": true
+										},
+										{
+											"key": "incident",
+											"value": "تسلل حدودي",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -530,6 +413,112 @@
 							"path": [
 								"account",
 								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registeruser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Email</th>\r",
+									"        <th>Username</th>\r",
+									"        <th>Password</th>\r",
+									"        <th>Password2</th>\r",
+									"    </tr>\r",
+									"    <tr>\r",
+									"        <td>{{response.email}}</td>\r",
+									"        <td>{{response.username}}</td>\r",
+									"        <td>{{response.password}}</td>\r",
+									"        <td>{{response.password2}}</td>\r",
+									"    </tr>\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return {response: pm.response.json()}\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "fatimaahmed2@gmail.com",
+									"description": "unique",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "fatimaahmed2",
+									"description": "unique",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678Ee",
+									"description": "numbers , must be lower,uppercase",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "12345678Ee",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "1234567911",
+									"description": "11 ",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "hiiuu",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "hiuiooo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}account/register/",
+							"host": [
+								"{{URL}}account"
+							],
+							"path": [
+								"register",
+								""
 							]
 						}
 					},

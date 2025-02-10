@@ -9,9 +9,13 @@ class Incident(models.Model):
     inspection_date =  models.DateField(default=timezone.now)  # تاريخ إجراء الكشف
     inspection_time = models.TimeField(default=timezone.now)  # وقت إجراء الكشف
     incident_location = models.CharField(max_length=500 , default="")  # عنوان محل الحادث
+    incident_type= models.CharField(max_length=255 , default="") # نوع الحادث
     incident_date = models.DateField(default=timezone.now )  # تاريخ الحادث
     description = models.TextField(null=True , blank=True)  # وصف الحادث
+    method = models.TextField(null=True , blank=True) # الطريقة
     procedure = models.TextField(null=True , blank=True) # الاجراءات المتخذة
+
+
     def __str__(self):
         return f"{self.investigative_body} - {self.incident_location}"
     
@@ -44,17 +48,20 @@ class Complaint(models.Model):
 
 class InspectionForm(models.Model):
     # تاريخ الكشف
-    inspection_date = models.DateTimeField(default=timezone.now)
+    inspection_date = models.DateField(default=timezone.now)
 
     # جهة الطلب
     request_authority = models.CharField(max_length=255 , default="")
 
     # وصف الحادث
-    incident_details = models.TextField(null=True , blank=True)
+    incident = models.TextField(null=True , blank=True)
+
     # نوع الأثر - علاقة مع جدول Evidence
-    evidence = models.ForeignKey(Evidence, on_delete=models.PROTECT, related_name='details' , null=True , blank=True) 
+    evidence = models.ForeignKey(Evidence, on_delete=models.PROTECT, related_name='details', null=True, blank=True)
+
     # العدد
     count = models.IntegerField(default=1)
+
     # المختبرات
     crime_lab = models.BooleanField(default=False, verbose_name="مختبر الجريمة")
     weapon_lab = models.BooleanField(default=False, verbose_name="مختبر الأسلحة")
@@ -62,10 +69,20 @@ class InspectionForm(models.Model):
     dna_lab = models.BooleanField(default=False, verbose_name="مختبر DNA")
     cyber_crime_lab = models.BooleanField(default=False, verbose_name="مختبر الجرائم الإلكترونية")
 
+    # ForeignKey to Incident
+    incident_obj = models.ForeignKey(Incident, on_delete=models.CASCADE, related_name="inspection_forms", null=True)
 
+    def save(self, *args, **kwargs):
+        # If we have a related Incident, set the fields accordingly
+        if self.incident_obj:
+            self.inspection_date = self.incident_obj.inspection_date
+            self.request_authority = self.incident_obj.investigative_body
+            self.incident = self.incident_obj.incident_type
+
+        super(InspectionForm, self).save(*args, **kwargs)
 
     def __str__(self):
-        return f"Details for {self.evidence} - Count: {self.count}"
+        return f"Inspection Form for {self.incident_obj}"
 # استمارة كشف الحرائق
 class FirePlaceDescribtion(models.Model):
     inspection_time = models.TimeField(default=timezone.now)
