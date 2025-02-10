@@ -1,0 +1,592 @@
+{
+	"info": {
+		"_postman_id": "d5656e3c-fe71-4440-9a5a-e8eb03d1fd95",
+		"name": "forensic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40450615"
+	},
+	"item": [
+		{
+			"name": "criminal detection report",
+			"item": [
+				{
+					"name": "محضر كشف ورفع الاثار الجرمية",
+					"item": [
+						{
+							"name": "evidence",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "number",
+											"value": "1",
+											"description": "رقم الاثر ",
+											"type": "text"
+										},
+										{
+											"key": "Typeofevidence",
+											"value": "سكين",
+											"description": "نوع",
+											"type": "text"
+										},
+										{
+											"key": "place",
+											"value": "بغداد",
+											"description": "مكان",
+											"type": "text"
+										},
+										{
+											"key": "waytosave",
+											"value": "جلاتين",
+											"description": "طريقة لرفع",
+											"type": "text"
+										},
+										{
+											"key": "incident",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}api/evidence/",
+									"host": [
+										"{{URL}}api"
+									],
+									"path": [
+										"evidence",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "incidents2",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "investigative_body",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "inspection_date",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "inspection_time",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "incident_location",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "incident_date",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "procedure",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}api/incidents/",
+									"host": [
+										"{{URL}}api"
+									],
+									"path": [
+										"incidents",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "incidentbyevidenceId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}api/incident/evidence/<id>/",
+									"host": [
+										"{{URL}}api"
+									],
+									"path": [
+										"incident",
+										"evidence",
+										"<id>",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "evidencebyincidentId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}api/evidencebyincident/3/",
+									"host": [
+										"{{URL}}api"
+									],
+									"path": [
+										"evidencebyincident",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "registeruser",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `\r",
+											"<style type=\"text/css\">\r",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+											"    .tftable tr {background-color:#ffffff;}\r",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+											"    .tftable tr:hover {background-color:#e0ffff;}\r",
+											"</style>\r",
+											"\r",
+											"<table class=\"tftable\" border=\"1\">\r",
+											"    <tr>\r",
+											"        <th>Email</th>\r",
+											"        <th>Username</th>\r",
+											"        <th>Password</th>\r",
+											"        <th>Password2</th>\r",
+											"    </tr>\r",
+											"    <tr>\r",
+											"        <td>{{response.email}}</td>\r",
+											"        <td>{{response.username}}</td>\r",
+											"        <td>{{response.password}}</td>\r",
+											"        <td>{{response.password2}}</td>\r",
+											"    </tr>\r",
+											"</table>\r",
+											"`;\r",
+											"\r",
+											"function constructVisualizerPayload() {\r",
+											"    return {response: pm.response.json()}\r",
+											"}\r",
+											"\r",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "fatimaahmed2@gmail.com",
+											"description": "unique",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "fatimaahmed2",
+											"description": "unique",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678Ee",
+											"description": "numbers , must be lower,uppercase",
+											"type": "text"
+										},
+										{
+											"key": "password2",
+											"value": "12345678Ee",
+											"type": "text"
+										},
+										{
+											"key": "phone_number",
+											"value": "1234567911",
+											"description": "11 ",
+											"type": "text"
+										},
+										{
+											"key": "first_name",
+											"value": "hiiuu",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "hiuiooo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}account/register/",
+									"host": [
+										"{{URL}}account"
+									],
+									"path": [
+										"register",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "استلام العينات",
+					"item": [
+						{
+							"name": "inspection-form",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "inspection_date",
+											"value": "",
+											"description": "تاريخ كشف",
+											"type": "text"
+										},
+										{
+											"key": "request_authority",
+											"value": "",
+											"description": "جهة الطلب",
+											"type": "text"
+										},
+										{
+											"key": "incident_details",
+											"value": "",
+											"description": "وصف",
+											"type": "text"
+										},
+										{
+											"key": "evidence",
+											"value": "",
+											"description": "foreign key",
+											"type": "text"
+										},
+										{
+											"key": "count",
+											"value": "",
+											"description": "عدد",
+											"type": "text"
+										},
+										{
+											"key": "crime_lab",
+											"value": "",
+											"description": "all labs take boolean ",
+											"type": "text"
+										},
+										{
+											"key": "weapon_lab",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "cyber_crime_lab",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "dna_lab",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "chemistry_lab",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}api/inspection-form/",
+									"host": [
+										"{{URL}}api"
+									],
+									"path": [
+										"inspection-form",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "محضر كشف الحرائق",
+					"item": [
+						{
+							"name": "fireplace",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "inspection_time ",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "inspection_date",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "incident_date",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "request_authority",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "inspection_place",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "fire_place",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "damage",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "fire_reason",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "procedures",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}api/fireplace/",
+									"host": [
+										"{{URL}}api"
+									],
+									"path": [
+										"fireplace",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "complaint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "action",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "section_id",
+									"value": "",
+									"description": "ForeignKey",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}api/complaint/",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"complaint",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "fatimaahmed2",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678Ee",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "fatimaahmed2@gmail.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}account/login/",
+							"host": [
+								"{{URL}}account"
+							],
+							"path": [
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allusers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/account/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"account",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "map",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "جريمة قتل",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "red",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "قتل المهندس الحسن",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "33.3128057",
+							"type": "text"
+						},
+						{
+							"key": "latitude",
+							"value": "44.3614875",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}api/maps/",
+					"host": [
+						"{{URL}}api"
+					],
+					"path": [
+						"maps",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
