@@ -14,8 +14,11 @@
 					"item": [
 						{
 							"name": "evidence",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
 								"body": {
 									"mode": "formdata",
@@ -65,7 +68,26 @@
 							"response": []
 						},
 						{
-							"name": "incidents2",
+							"name": "evidencebyincidentId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}api/evidencebyincident/id/",
+									"host": [
+										"{{URL}}api"
+									],
+									"path": [
+										"evidencebyincident",
+										"id",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "incidents",
 							"request": {
 								"auth": {
 									"type": "noauth"
@@ -118,7 +140,7 @@
 									]
 								},
 								"url": {
-									"raw": "{{URL}}api/incidents/?incident_location&incident_type&investigative_body",
+									"raw": "{{URL}}api/incidents/",
 									"host": [
 										"{{URL}}api"
 									],
@@ -129,55 +151,40 @@
 									"query": [
 										{
 											"key": "incident_location",
-											"value": null
+											"value": "السليمان",
+											"disabled": true
 										},
 										{
 											"key": "incident_type",
-											"value": null
+											"value": "",
+											"disabled": true
 										},
 										{
 											"key": "investigative_body",
-											"value": null
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "ordering",
+											"value": "-id",
+											"description": "inspection_date and id ",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "incident_date_range_before",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "incident_date_range_after",
+											"value": null,
+											"disabled": true
 										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "incidentbyevidenceId",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{URL}}api/incident/evidence/<id>/",
-									"host": [
-										"{{URL}}api"
-									],
-									"path": [
-										"incident",
-										"evidence",
-										"<id>",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "evidencebyincidentId",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{URL}}api/evidencebyincident/3/",
-									"host": [
-										"{{URL}}api"
-									],
-									"path": [
-										"evidencebyincident",
-										"3",
-										""
 									]
 								}
 							},
@@ -189,13 +196,13 @@
 					"name": "استلام العينات",
 					"item": [
 						{
-							"name": "inspection-form",
+							"name": "inspection-lab",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"incident_obj\": 9,  //the  ID of the incident\r\n  \"evidence\":3,      // Optionally, link to an evidence ID if you have one\r\n  \"count\": 3,\r\n  \"crime_lab\": true,\r\n  \"weapon_lab\": false,\r\n  \"chemistry_lab\": true,\r\n  \"dna_lab\": false,\r\n  \"cyber_crime_lab\": false\r\n}\r\n",
+									"raw": "{\r\n    \"inspection_details\": 3,\r\n    \"evidence\": 4,\r\n    \"count\": 3,\r\n    \"crime_lab\": false,\r\n    \"weapon_lab\": false,\r\n    \"chemistry_lab\": false,\r\n    \"dna_lab\": true,\r\n    \"cyber_crime_lab\": true\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -203,33 +210,98 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}api/inspection-form/",
+									"raw": "{{URL}}api/inspection-form-labs/",
 									"host": [
 										"{{URL}}api"
 									],
 									"path": [
-										"inspection-form",
+										"inspection-form-labs",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "labs by incident id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}api/inspection-labs-by-incident/1/",
+									"host": [
+										"{{URL}}api"
+									],
+									"path": [
+										"inspection-labs-by-incident",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "inspection-form-info",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"incident_obj\": 6 //the  ID of the incident\r\n\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}api/inspection-form-details/",
+									"host": [
+										"{{URL}}api"
+									],
+									"path": [
+										"inspection-form-details",
 										""
 									],
 									"query": [
 										{
+											"key": "inspection_date",
+											"value": "",
+											"disabled": true
+										},
+										{
 											"key": "request_authority",
-											"value": "شرطة أربيل",
+											"value": "",
 											"disabled": true
 										},
 										{
 											"key": "incident",
-											"value": "تسلل حدودي",
+											"value": null,
 											"disabled": true
 										},
 										{
-											"key": "",
+											"key": "ordering",
 											"value": "",
+											"description": "id , inspection_date ",
 											"disabled": true
 										},
 										{
-											"key": "",
-											"value": "",
+											"key": "limit",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "inspection_date_range_after",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "inspection_date_range_before",
+											"value": null,
 											"disabled": true
 										}
 									]
@@ -244,8 +316,11 @@
 					"item": [
 						{
 							"name": "fireplace",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
 								"body": {
 									"mode": "formdata",
@@ -305,6 +380,59 @@
 									"path": [
 										"fireplace",
 										""
+									],
+									"query": [
+										{
+											"key": "inspection_place",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "request_authority",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "incident_date_range_after",
+											"value": "2025-02-10",
+											"disabled": true
+										},
+										{
+											"key": "incident_date_range_before",
+											"value": "2025-02-12",
+											"disabled": true
+										},
+										{
+											"key": "inspection_date_range_after",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "inspection_date_range_before",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "ordering",
+											"value": "",
+											"description": "id , inspection_date , incident_date",
+											"disabled": true
+										},
+										{
+											"key": "incident_date ",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "inspection_date",
+											"value": null,
+											"disabled": true
+										}
 									]
 								}
 							},

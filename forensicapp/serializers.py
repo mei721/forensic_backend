@@ -17,11 +17,15 @@ class ComplaintSerializer(serializers.ModelSerializer):
         model = Complaint
         fields = '__all__'
 
-class InspectionFormSerializer(serializers.ModelSerializer):
+class InspectionFormDetailsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = InspectionForm
-        fields = '__all__'  # يشمل كل الحقول الموجودة بالنموذج
+        model = InspectionFormDetails
+        fields = '__all__'
 
+class InspectionFormLabsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = InspectionFormLabs
+        fields = '__all__'
 
 class FirePlaceDescribtionSerializer(serializers.ModelSerializer):
     class Meta:
