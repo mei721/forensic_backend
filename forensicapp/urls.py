@@ -21,7 +21,7 @@ urlpatterns = [
     path('map/<int:pk>/', MapDescribtionView.as_view()),
     # path('incident/evidence/<int:evidence_id>/', IncidentByEvidenceAPIView.as_view(), name='incident_by_evidence_api'),
     path('evidencebyincident/<int:incident_id>/', EvidenceByIncidentAPIView.as_view(), name='incident_details_api'),
-        path('inspection-labs-by-incident/<int:inspection_details>/', InspectionLabsByIncidentIdView.as_view(), name='inspection-labs-by-incident'),
+        path('inspection-labs-by-incident/<int:incident_id>/', InspectionLabsByIncidentIdView.as_view(), name='inspection-labs-by-incident'),
 
 
 ]

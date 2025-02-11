@@ -154,35 +154,7 @@ class InspectionFormDetailsView(BaseAPIView):
 class InspectionFormLabsView(BaseAPIView):
     model  = InspectionFormLabs
     serializer_class = InspectionFormLabsSerializer
-    filter_backends = [DjangoFilterBackend]
-    ordering_fields = ['id' , 'inspection_date' ]
-    ordering = ['-id']
-    def get(self, request, pk=None):
-        """
-        GET request to retrieve all InspectionForms or a single form by pk.
-        """
-        if pk:
-            # Retrieve a single inspection form by primary key (pk)
-            inspection_form = get_object_or_404(self.model, pk=pk)
-            serializer = self.serializer_class(inspection_form)
-            return Response({"data": serializer.data}, status=status.HTTP_200_OK)
-
-        # Retrieve all with filtering and ordering
-        queryset = self.model.objects.all()
-        # Apply filters if any are present in the request
-
-        filtered_queryset = self.filterset_class(request.GET, queryset=queryset).qs 
-        # Apply ordering 
-        ordering = request.GET.get('ordering', '-id') 
-        filtered_queryset = filtered_queryset.order_by(ordering)
-        paginator = CustomPaginationWithResult()
-        result_page = paginator.paginate_queryset(filtered_queryset, request)
-
-        serializer = self.serializer_class(result_page, many=True)
-
-        # Return paginated response
-        return paginator.get_paginated_response(serializer.data)
-
+   
 
 
 class FirePlaceDescribtionView(BaseAPIView):
@@ -263,17 +235,22 @@ class EvidenceByIncidentAPIView(APIView):
 
 
 class InspectionLabsByIncidentIdView(APIView):
-    def get(self, request, inspection_details):
-        # Fetch all Evidence related to the provided incident_id
-        evidence_list = InspectionFormLabs.objects.filter(inspection_details=inspection_details)
-        
-        # If no evidence is found, return a 404 error
-        if not evidence_list:
-            return Response({"detail": "No evidence found for this incident."}, status=status.HTTP_404_NOT_FOUND)
-        
-        # Serialize the Evidence data
-        serializer = InspectionFormLabsSerializer(evidence_list, many=True)
-        
-        # Return the serialized data in the response
-        return Response({"data": serializer.data}, status=status.HTTP_200_OK)
+    def get(self, request, incident_id):
+        # Fetch all InspectionFormDetails related to the provided incident_id
+        inspection_details = InspectionFormDetails.objects.filter(incident_obj__id=incident_id)
 
+        if not inspection_details.exists():
+            return Response({"detail": "No inspection details found for this incident."}, status=status.HTTP_404_NOT_FOUND)
+
+        # Fetch all InspectionFormLabs related to the found inspection details
+        evidence_labs = InspectionFormLabs.objects.filter(inspection_details__in=inspection_details)
+
+        if not evidence_labs.exists():
+            return Response({"detail": "No evidence labs found for this incident."}, status=status.HTTP_404_NOT_FOUND)
+
+        # Serialize the data
+        serializer = InspectionFormLabsSerializer(evidence_labs, many=True)
+
+        # Customize the response data to display only the relevant fields
+
+        return Response({"data": serializer.data}, status=status.HTTP_200_OK)
