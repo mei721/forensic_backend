@@ -151,8 +151,10 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',  
     ],
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"], 
     'DEFAULT_PAGINATION_CLASS':'forensicapp.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
+
 }
 
 SIMPLE_JWT = {

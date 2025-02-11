@@ -66,14 +66,21 @@ class IncindentView(BaseAPIView):
     serializer_class = IncidentSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = IncidentFilter
-    def get(self, request):
-        # Get the filtered queryset
+    def get(self, request, pk=None):
+        """
+        GET request to retrieve all incidents or a single incident by pk.
+        """
+        if pk:  
+            # Retrieve a single incident by primary key (pk)
+            incident = get_object_or_404(self.model, pk=pk)
+            serializer = self.serializer_class(incident)
+            return Response({"data": serializer.data}, status=status.HTTP_200_OK)
+        
+        # Retrieve all incidents with optional filtering
         queryset = self.model.objects.all().order_by('-id')
-        filtered_queryset = IncidentFilter(request.GET, queryset=queryset).qs
+        filtered_queryset = self.filterset_class(request.GET, queryset=queryset).qs
         serializer = self.serializer_class(filtered_queryset, many=True)
         return Response({"data": serializer.data}, status=status.HTTP_200_OK)
-
-
 
 
 class EvidenceView(BaseAPIView):
@@ -90,10 +97,20 @@ class InspectionFormView(BaseAPIView):
     serializer_class = InspectionFormSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = InspectionFilter
-    def get(self, request):
-        # Get the filtered queryset
-        queryset = self.model.objects.all().order_by('-id')
-        filtered_queryset = InspectionFilter(request.GET, queryset=queryset).qs
+    
+    def get(self, request, pk=None):
+        """
+        GET request to retrieve all InspectionForms or a single form by pk.
+        """
+        if pk:
+            # Retrieve a single inspection form by primary key (pk)
+            inspection_form = get_object_or_404(self.model, pk=pk)
+            serializer = self.serializer_class(inspection_form)
+            return Response({"data": serializer.data}, status=status.HTTP_200_OK)
+
+        # Retrieve all with filtering and ordering
+        queryset = self.model.objects.all()
+        filtered_queryset = self.filterset_class(request.GET, queryset=queryset).qs  # Apply filters
         serializer = self.serializer_class(filtered_queryset, many=True)
         return Response({"data": serializer.data}, status=status.HTTP_200_OK)
 
@@ -109,28 +126,28 @@ class MapDescribtionView(BaseAPIView):
     serializer_class = MapDescribtionSerializer
 
 
-class IncidentByEvidenceAPIView(APIView):
-    def get(self, request, evidence_id):
-        # Get the evidence object or return 404
-        evidence = get_object_or_404(Evidence, id=evidence_id)
+# class IncidentByEvidenceAPIView(APIView):
+#     def get(self, request, evidence_id):
+#         # Get the evidence object or return 404
+#         evidence = get_object_or_404(Evidence, id=evidence_id)
 
-        # Check if there is an incident linked to this evidence
-        if not evidence.incident:
-            return Response({"error": "No incident linked to this evidence"}, status=status.HTTP_404_NOT_FOUND)
+#         # Check if there is an incident linked to this evidence
+#         if not evidence.incident:
+#             return Response({"error": "No incident linked to this evidence"}, status=status.HTTP_404_NOT_FOUND)
 
-        # Get incident details
-        incident = evidence.incident
-        data = {
-            "investigative_body": incident.investigative_body,
-            "inspection_date": incident.inspection_date.strftime("%Y-%m-%d"),
-            "inspection_time": incident.inspection_time.strftime("%H:%M:%S"),
-            "incident_location": incident.incident_location,
-            "incident_date": incident.incident_date.strftime("%Y-%m-%d"),
-            "description": incident.description,
-            "procedure": incident.procedure,
-        }
+#         # Get incident details
+#         incident = evidence.incident
+#         data = {
+#             "investigative_body": incident.investigative_body,
+#             "inspection_date": incident.inspection_date.strftime("%Y-%m-%d"),
+#             "inspection_time": incident.inspection_time.strftime("%H:%M:%S"),
+#             "incident_location": incident.incident_location,
+#             "incident_date": incident.incident_date.strftime("%Y-%m-%d"),
+#             "description": incident.description,
+#             "procedure": incident.procedure,
+#         }
 
-        return Response({"data" : data}, status=status.HTTP_200_OK)
+#         return Response({"data" : data}, status=status.HTTP_200_OK)
 class EvidenceByIncidentAPIView(APIView):
     def get(self, request, incident_id):
         # Fetch all Evidence related to the provided incident_id

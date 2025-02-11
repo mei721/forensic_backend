@@ -17,7 +17,7 @@ urlpatterns = [
     path('fireplace/<int:pk>/', FirePlaceDescribtionView.as_view()),
     path('maps/' , MapDescribtionView.as_view()),
     path('map/<int:pk>/', MapDescribtionView.as_view()),
-    path('incident/evidence/<int:evidence_id>/', IncidentByEvidenceAPIView.as_view(), name='incident_by_evidence_api'),
+    # path('incident/evidence/<int:evidence_id>/', IncidentByEvidenceAPIView.as_view(), name='incident_by_evidence_api'),
     path('evidencebyincident/<int:incident_id>/', EvidenceByIncidentAPIView.as_view(), name='incident_details_api'),
     
 
