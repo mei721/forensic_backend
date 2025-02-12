@@ -24,7 +24,7 @@ class InspectionFilter(django_filters.FilterSet):
 
 
     class Meta:
-        model = InspectionFormDetails
+        model = InspectionForm
         fields = ['request_authority' , 'inspection_date' , 'incident' , 'inspection_date_range']
 
 class FireFormFilter(django_filters.FilterSet):

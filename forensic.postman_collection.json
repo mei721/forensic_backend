@@ -88,11 +88,14 @@
 						},
 						{
 							"name": "incidents",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"auth": {
 									"type": "noauth"
 								},
-								"method": "POST",
+								"method": "GET",
 								"header": [],
 								"body": {
 									"mode": "formdata",
@@ -202,7 +205,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"inspection_details\": 3,\r\n    \"evidence\": 4,\r\n    \"count\": 3,\r\n    \"crime_lab\": false,\r\n    \"weapon_lab\": false,\r\n    \"chemistry_lab\": false,\r\n    \"dna_lab\": true,\r\n    \"cyber_crime_lab\": true\r\n}\r\n",
+									"raw": "[\r\n    {\r\n        \"evidence\": 3,\r\n        \"count\": 2,\r\n        \"crime_lab\": true,\r\n        \"weapon_lab\": false,\r\n        \"chemistry_lab\": true,\r\n        \"dna_lab\": false,\r\n        \"cyber_crime_lab\": true,\r\n        \"incident_obj\": 9\r\n    },\r\n    {\r\n       \r\n        \"evidence\": 4,\r\n        \"count\": 3,\r\n        \"crime_lab\": false,\r\n        \"weapon_lab\": true,\r\n        \"chemistry_lab\": false,\r\n        \"dna_lab\": true,\r\n        \"cyber_crime_lab\": false,\r\n        \"incident_obj\": 8\r\n    }\r\n]\r\n\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -210,12 +213,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}api/inspection-form-labs/",
+									"raw": "{{URL}}api/inspection-form/",
 									"host": [
 										"{{URL}}api"
 									],
 									"path": [
-										"inspection-form-labs",
+										"inspection-form",
 										""
 									]
 								}
@@ -228,82 +231,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{URL}}api/inspection-labs-by-incident/1/",
+									"raw": "{{URL}}api/inspection-labs-by-incident/7/",
 									"host": [
 										"{{URL}}api"
 									],
 									"path": [
 										"inspection-labs-by-incident",
-										"1",
+										"7",
 										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "inspection-form-info",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"incident_obj\": 6 //the  ID of the incident\r\n\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{URL}}api/inspection-form-details/",
-									"host": [
-										"{{URL}}api"
-									],
-									"path": [
-										"inspection-form-details",
-										""
-									],
-									"query": [
-										{
-											"key": "inspection_date",
-											"value": "",
-											"disabled": true
-										},
-										{
-											"key": "request_authority",
-											"value": "",
-											"disabled": true
-										},
-										{
-											"key": "incident",
-											"value": null,
-											"disabled": true
-										},
-										{
-											"key": "ordering",
-											"value": "",
-											"description": "id , inspection_date ",
-											"disabled": true
-										},
-										{
-											"key": "limit",
-											"value": "10",
-											"disabled": true
-										},
-										{
-											"key": "inspection_date_range_after",
-											"value": null,
-											"disabled": true
-										},
-										{
-											"key": "inspection_date_range_before",
-											"value": null,
-											"disabled": true
-										}
 									]
 								}
 							},

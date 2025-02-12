@@ -46,10 +46,17 @@ class Complaint(models.Model):
 
 # استمارة استلام و تسليم العينات
 
-class InspectionFormDetails(models.Model):
+class InspectionForm(models.Model):
     inspection_date = models.DateField(default=timezone.now)
     request_authority = models.CharField(max_length=255, default="")
-    incident = models.TextField(null=True, blank=True)
+    incident = models.TextField(null=True, blank=True) 
+    evidence = models.ForeignKey(Evidence, on_delete=models.PROTECT, related_name='details', null=True, blank=True)
+    count = models.IntegerField(default=1)
+    crime_lab = models.BooleanField(default=False, verbose_name="مختبر الجريمة")
+    weapon_lab = models.BooleanField(default=False, verbose_name="مختبر الأسلحة")
+    chemistry_lab = models.BooleanField(default=False, verbose_name="مختبر الكيمياء")
+    dna_lab = models.BooleanField(default=False, verbose_name="مختبر DNA")
+    cyber_crime_lab = models.BooleanField(default=False, verbose_name="مختبر الجرائم الإلكترونية")
 
     # ForeignKey to Incident (one-to-one relationship with Incident model)
     incident_obj = models.ForeignKey(Incident, on_delete=models.CASCADE, related_name="inspection_details", null=True)
@@ -61,27 +68,11 @@ class InspectionFormDetails(models.Model):
             self.request_authority = self.incident_obj.investigative_body
             self.incident = self.incident_obj.incident_type
 
-        super(InspectionFormDetails, self).save(*args, **kwargs)
+        super(InspectionForm, self).save(*args, **kwargs)
 
     def __str__(self):
         return f"Inspection Form Details for {self.incident_obj}"
 
-class InspectionFormLabs(models.Model):
-    # ForeignKey to title
-    inspection_details = models.ForeignKey(InspectionFormDetails, on_delete=models.CASCADE, related_name="labs")
-
-    #fields 
-    evidence = models.ForeignKey(Evidence, on_delete=models.PROTECT, related_name='details', null=True, blank=True)
-    count = models.IntegerField(default=1)
-    crime_lab = models.BooleanField(default=False, verbose_name="مختبر الجريمة")
-    weapon_lab = models.BooleanField(default=False, verbose_name="مختبر الأسلحة")
-    chemistry_lab = models.BooleanField(default=False, verbose_name="مختبر الكيمياء")
-    dna_lab = models.BooleanField(default=False, verbose_name="مختبر DNA")
-    cyber_crime_lab = models.BooleanField(default=False, verbose_name="مختبر الجرائم الإلكترونية")
-
-    def __str__(self):
-        return f"Labs information for {self.inspection_details.incident_obj}"
-    
 
 # استمارة كشف الحرائق
 class FirePlaceDescribtion(models.Model):
