@@ -21,38 +21,13 @@
 								"method": "GET",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "number",
-											"value": "1",
-											"description": "رقم الاثر ",
-											"type": "text"
-										},
-										{
-											"key": "Typeofevidence",
-											"value": "سكين",
-											"description": "نوع",
-											"type": "text"
-										},
-										{
-											"key": "place",
-											"value": "بغداد",
-											"description": "مكان",
-											"type": "text"
-										},
-										{
-											"key": "waytosave",
-											"value": "جلاتين",
-											"description": "طريقة لرفع",
-											"type": "text"
-										},
-										{
-											"key": "incident",
-											"value": "3",
-											"type": "text"
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n    \"number\": 3,\r\n    \"Typeofevidence\": \"مفاتيح مزورة\",\r\n    \"place\": \"محل في سوق كربلاء\",\r\n    \"waytosave\": \"تم حفظ المفاتيح في كيس بلاستيكي محكم\",\r\n    \"incident\": 11\r\n  },\r\n  {\r\n    \"number\": 4,\r\n    \"Typeofevidence\": \"كاميرا مراقبة\",\r\n    \"place\": \"مبنى تجاري في النجف\",\r\n    \"waytosave\": \"تم فصل الكاميرا وحفظها في صندوق آمن\",\r\n    \"incident\": 13\r\n  },\r\n  {\r\n    \"number\": 5,\r\n    \"Typeofevidence\": \"طلقة نارية\",\r\n    \"place\": \"مكان الاشتباك في البصرة\",\r\n    \"waytosave\": \"تم حفظ الطلقة داخل حقيبة خاصة بالأدلة\",\r\n    \"incident\": 15\r\n  }\r\n]\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{URL}}api/evidence/",
@@ -88,59 +63,20 @@
 						},
 						{
 							"name": "incidents",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"auth": {
 									"type": "noauth"
 								},
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "investigative_body",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "inspection_date",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "inspection_time",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "incident_location",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "incident_date",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "description",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "procedure",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "method",
-											"value": "",
-											"type": "text"
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n    \"investigative_body\": \"شرطة كربلاء\",\r\n    \"inspection_date\": \"2025-02-21\",\r\n    \"inspection_time\": \"15:00\",\r\n    \"incident_location\": \"كربلاء\",\r\n    \"incident_type\": \"سرقة سيارات\",\r\n    \"incident_date\": \"2025-02-20\",\r\n    \"description\": \"تم سرقة سيارة بالقرب من سوق كربلاء\",\r\n    \"method\": \"سرقة باستخدام مفاتيح مزورة\",\r\n    \"procedure\": \"تحقيق مبدئي، فحص كاميرات المراقبة\"\r\n  },\r\n  {\r\n    \"investigative_body\": \"شرطة النجف\",\r\n    \"inspection_date\": \"2025-02-22\",\r\n    \"inspection_time\": \"14:00\",\r\n    \"incident_location\": \"النجف\",\r\n    \"incident_type\": \"حريق في مبنى تجاري\",\r\n    \"incident_date\": \"2025-02-21\",\r\n    \"description\": \"حريق شب في أحد المتاجر الكبرى في النجف\",\r\n    \"method\": \"الاحتراق بسبب عطل كهربائي\",\r\n    \"procedure\": \"إطفاء الحريق وتفتيش المكان للبحث عن أسباب أخرى\"\r\n  },\r\n  {\r\n    \"investigative_body\": \"شرطة البصرة\",\r\n    \"inspection_date\": \"2025-02-23\",\r\n    \"inspection_time\": \"14:00\",\r\n    \"incident_location\": \"البصرة\",\r\n    \"incident_type\": \"قتال مسلح\",\r\n    \"incident_date\": \"2025-02-22\",\r\n    \"description\": \"حالة اشتباك مسلح بين عصابات في البصرة\",\r\n    \"method\": \"إطلاق نار من قبل مجهولين\",\r\n    \"procedure\": \"تطويق المكان والبحث عن الأدلة\"\r\n  }\r\n]\r\n\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{URL}}api/incidents/",
@@ -205,7 +141,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"evidence\": 3,\r\n        \"count\": 2,\r\n        \"crime_lab\": true,\r\n        \"weapon_lab\": false,\r\n        \"chemistry_lab\": true,\r\n        \"dna_lab\": false,\r\n        \"cyber_crime_lab\": true,\r\n        \"incident_obj\": 9\r\n    },\r\n    {\r\n       \r\n        \"evidence\": 4,\r\n        \"count\": 3,\r\n        \"crime_lab\": false,\r\n        \"weapon_lab\": true,\r\n        \"chemistry_lab\": false,\r\n        \"dna_lab\": true,\r\n        \"cyber_crime_lab\": false,\r\n        \"incident_obj\": 8\r\n    }\r\n]\r\n\r\n",
+									"raw": "[\r\n  {\r\n    \"evidence\": 11,\r\n    \"count\": 1,\r\n    \"crime_lab\": true,\r\n    \"weapon_lab\": false,\r\n    \"chemistry_lab\": false,\r\n    \"dna_lab\": false,\r\n    \"cyber_crime_lab\": false,\r\n    \"incident_obj\": 11\r\n  },\r\n  {\r\n    \"evidence\": 10,\r\n    \"count\": 2,\r\n    \"crime_lab\": false,\r\n    \"weapon_lab\": true,\r\n    \"chemistry_lab\": true,\r\n    \"dna_lab\": false,\r\n    \"cyber_crime_lab\": false,\r\n    \"incident_obj\": 13\r\n  },\r\n  {\r\n    \"evidence\": 9,\r\n    \"count\": 3,\r\n    \"crime_lab\": true,\r\n    \"weapon_lab\": true,\r\n    \"chemistry_lab\": false,\r\n    \"dna_lab\": true,\r\n    \"cyber_crime_lab\": false,\r\n    \"incident_obj\": 11\r\n  }\r\n]\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -227,9 +163,21 @@
 						},
 						{
 							"name": "labs by incident id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "{{URL}}api/inspection-labs-by-incident/7/",
 									"host": [
@@ -378,7 +326,7 @@
 				{
 					"name": "complaint",
 					"request": {
-						"method": "POST",
+						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "formdata",
@@ -434,12 +382,12 @@
 							"formdata": [
 								{
 									"key": "username",
-									"value": "fatimaahmed2",
+									"value": "Hassan23",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "12345678Ee",
+									"value": "12345678Ur",
 									"type": "text"
 								},
 								{
@@ -535,25 +483,25 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "fatimaahmed2@gmail.com",
+									"value": "alhassan@gmail.com",
 									"description": "unique",
 									"type": "text"
 								},
 								{
 									"key": "username",
-									"value": "fatimaahmed2",
+									"value": "Hassan23",
 									"description": "unique",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "12345678Ee",
+									"value": "12345678Ur",
 									"description": "numbers , must be lower,uppercase",
 									"type": "text"
 								},
 								{
 									"key": "password2",
-									"value": "12345678Ee",
+									"value": "12345678Ur",
 									"type": "text"
 								},
 								{
@@ -564,12 +512,12 @@
 								},
 								{
 									"key": "first_name",
-									"value": "hiiuu",
+									"value": "hassan",
 									"type": "text"
 								},
 								{
 									"key": "last_name",
-									"value": "hiuiooo",
+									"value": "hassan",
 									"type": "text"
 								}
 							]
@@ -581,6 +529,39 @@
 							],
 							"path": [
 								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMTE4NTg5LCJpYXQiOjE3NDAwMzIxODksImp0aSI6IjMwODNlYjZkMmJkNTQwOGNhMmU4YzUzMmE2NjNkMTQ2IiwidXNlcl9pZCI6MTV9.RG0pSUeZRkb-EoKwt2y2CyyVyFqm0ajZQJ8_Am2wa_g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MDYzNjk4OSwiaWF0IjoxNzQwMDMyMTg5LCJqdGkiOiIwYThlOGIyOGJlOGY0OGQzOWU0MDQ5NjQ2ZjQxMjcxMyIsInVzZXJfaWQiOjE1fQ.qo1hoTljRyc0utEoNQdL1u7-SdyOig8jfyGCHNw0Y2E\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}account/logout/",
+							"host": [
+								"{{URL}}account"
+							],
+							"path": [
+								"logout",
 								""
 							]
 						}
@@ -635,6 +616,48 @@
 					"path": [
 						"maps",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Hassan23\",\r\n    \"password\": \"12345678Ur\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}api/token/",
+					"host": [
+						"{{URL}}api"
+					],
+					"path": [
+						"token",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "bassim@ur",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "12345678Ur",
+							"disabled": true
+						}
 					]
 				}
 			},

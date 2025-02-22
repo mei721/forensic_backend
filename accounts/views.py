@@ -75,22 +75,18 @@ class MyObtainTokenPairView(TokenObtainPairView):
         return serializer.user
 
 class LogoutView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = (IsAuthenticated,)
 
     def post(self, request):
-        refresh_token = request.data.get("refresh")
-        if not refresh_token:
-            print("Refresh token is required")
-            return Response({"data": {"error": "Refresh token is required"}}, status=400)
+        
         try:
+            refresh_token = request.data["refresh"]
             token = RefreshToken(refresh_token)
             token.blacklist()
-            print("Logout successful")
-            return Response({"data": {"message": "Logout successful"}}, status=205)
-        except Exception as e:
-            return Response({"data": {"error": str(e)}}, status=400)
-        
 
+            return Response(status=status.HTTP_205_RESET_CONTENT)
+        except Exception as e:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 class UserListView(generics.ListAPIView):
@@ -111,3 +107,4 @@ class UserListView(generics.ListAPIView):
             
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
+    

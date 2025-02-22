@@ -5,26 +5,26 @@ from django.utils import timezone
 # محضر كشف واظهار الاثار الجرمية في مسرح الجريمة 
 
 class Incident(models.Model):
-    investigative_body = models.CharField(max_length=255 , default="")  # الجهة التحقيقية
-    inspection_date =  models.DateField(default=timezone.now)  # تاريخ إجراء الكشف
-    inspection_time = models.TimeField(default=timezone.now)  # وقت إجراء الكشف
-    incident_location = models.CharField(max_length=500 , default="")  # عنوان محل الحادث
-    incident_type= models.CharField(max_length=255 , default="") # نوع الحادث
-    incident_date = models.DateField(default=timezone.now )  # تاريخ الحادث
-    description = models.TextField(null=True , blank=True)  # وصف الحادث
-    method = models.TextField(null=True , blank=True) # الطريقة
-    procedure = models.TextField(null=True , blank=True) # الاجراءات المتخذة
+    investigative_body = models.CharField(max_length=255 , default="" , verbose_name="الجهة التحقيقية")  # الجهة التحقيقية
+    inspection_date =  models.DateField(default=timezone.now , verbose_name="التاريخ")  # تاريخ إجراء الكشف
+    inspection_time = models.TextField(default='', null=True , verbose_name="الوقت")  # وقت إجراء الكشف
+    incident_location = models.CharField(max_length=500 , default="" , verbose_name="مكان الحادث")  # عنوان محل الحادث
+    incident_type= models.CharField(max_length=255 , default="" , verbose_name="نوع الحادث") # نوع الحادث
+    incident_date = models.DateField(default=timezone.now  , verbose_name="تاريخ الحادث")  # تاريخ الحادث
+    description = models.TextField(null=True , blank=True , verbose_name="وصف الحادث")  # وصف الحادث
+    method = models.TextField(null=True , blank=True , verbose_name="الطريقة") # الطريقة
+    procedure = models.TextField(null=True , blank=True , verbose_name="الاجراءات المتخذة") # الاجراءات المتخذة
 
 
     def __str__(self):
         return f"{self.investigative_body} - {self.incident_location}"
     
 class Evidence(models.Model):
-    number = models.IntegerField() # رقم الاثر 
-    Typeofevidence = models.CharField(max_length=255 , default="") # نوع الاثر
-    place = models.TextField(null=True , blank=True) # مكان الرفع
-    waytosave = models.TextField(null=True , blank=True) # طريقة الرفع
-    incident = models.ForeignKey(Incident, on_delete=models.CASCADE , null=True)
+    number = models.IntegerField( verbose_name="رقم الاثر") # رقم الاثر 
+    Typeofevidence = models.CharField(max_length=255 , default="" , verbose_name="نوع الاثر") # نوع الاثر
+    place = models.TextField(null=True , blank=True , verbose_name="مكان الرفع" ) # مكان الرفع
+    waytosave = models.TextField(null=True , blank=True, verbose_name="طريقة الرفع") # طريقة الرفع
+    incident = models.ForeignKey(Incident, on_delete=models.CASCADE , null=True , verbose_name="الحادث")
     
 
     def __str__(self):
@@ -47,10 +47,10 @@ class Complaint(models.Model):
 # استمارة استلام و تسليم العينات
 
 class InspectionForm(models.Model):
-    inspection_date = models.DateField(default=timezone.now)
-    request_authority = models.CharField(max_length=255, default="")
-    incident = models.TextField(null=True, blank=True) 
-    evidence = models.ForeignKey(Evidence, on_delete=models.PROTECT, related_name='details', null=True, blank=True)
+    inspection_date = models.DateField(default=timezone.now , verbose_name="تاريخ الكشف")
+    request_authority = models.CharField(max_length=255, default="" , verbose_name="الجهة التحقيقية")
+    incident = models.TextField(null=True, blank=True , verbose_name="الحادث") 
+    evidence = models.ForeignKey(Evidence, on_delete=models.CASCADE, related_name='details', null=True, blank=True)
     count = models.IntegerField(default=1)
     crime_lab = models.BooleanField(default=False, verbose_name="مختبر الجريمة")
     weapon_lab = models.BooleanField(default=False, verbose_name="مختبر الأسلحة")
@@ -59,7 +59,7 @@ class InspectionForm(models.Model):
     cyber_crime_lab = models.BooleanField(default=False, verbose_name="مختبر الجرائم الإلكترونية")
 
     # ForeignKey to Incident (one-to-one relationship with Incident model)
-    incident_obj = models.ForeignKey(Incident, on_delete=models.CASCADE, related_name="inspection_details", null=True)
+    incident_obj = models.ForeignKey(Incident, on_delete=models.PROTECT, related_name="inspection_details", null=True)
 
     def save(self, *args, **kwargs):
         # If we have a related Incident, set the fields accordingly
@@ -76,7 +76,7 @@ class InspectionForm(models.Model):
 
 # استمارة كشف الحرائق
 class FirePlaceDescribtion(models.Model):
-    inspection_time = models.TimeField(default=timezone.now)
+    inspection_time = models.TextField(default='',null=True, verbose_name="الوقت")
     inspection_date = models.DateField(default=timezone.now)
     incident_date = models.DateField(default=timezone.now)
     request_authority = models.CharField(max_length=255 , default="")
@@ -97,4 +97,3 @@ class MapDescribtion(models.Model):
 
     def __str__(self):
         return self.title
-    
