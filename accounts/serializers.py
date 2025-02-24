@@ -4,40 +4,43 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from .models import CustomUser
 from rest_framework_simplejwt.tokens import RefreshToken
 
+
 class RegisterSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
-    password2 = serializers.CharField(write_only=True, required=True)
+    role = serializers.ChoiceField(choices=CustomUser.ROLE_CHOICES, required=False)
 
     class Meta:
         model = CustomUser
-        fields = ['email', 'username', 'first_name', 'last_name', 'password', 'password2', 'phone_number']
-
-    def validate(self, attrs):
-        if attrs['password'] != attrs['password2']:
-            raise serializers.ValidationError({"password": "Passwords must match"})
-        return attrs
-
-    def create(self, validated_data):
-        validated_data.pop('password2')  # Remove password2 field
-        user = CustomUser.objects.create(
-            email=validated_data['email'],
-            username=validated_data['username'],
-            first_name=validated_data.get('first_name', ''),
-            last_name=validated_data.get('last_name', ''),
-            phone_number=validated_data.get('phone_number', ''),
-        )
-        user.set_password(validated_data['password'])
-        user.save()
-
-        # Generate tokens
-        refresh = RefreshToken.for_user(user)
-        tokens = {
-            'refresh': str(refresh),
-            'access': str(refresh.access_token),
+        fields = ['email', 'username', 'first_name', 'last_name', 'phone_number', 'password', 'role']
+        extra_kwargs = {
+            'password': {'write_only': True},
         }
 
-        return user, tokens
+    def validate(self, data):
+        request = self.context.get('request')
+        role = data.get('role', 'user')
+        # if role != 'user' and not (request and request.user.is_authenticated and request.user.role == 'admin'):
+        #     raise serializers.ValidationError({"role": "Only admins can set this role."})
+        return data
 
+    def create(self, validated_data):
+        role = validated_data.pop('role', 'user')
+        user = CustomUser.objects.create_user(
+            email=validated_data['email'],
+            username=validated_data['username'],
+            first_name=validated_data['first_name'],
+            last_name=validated_data['last_name'],
+            phone_number=validated_data.get('phone_number'),
+            password=validated_data['password'],
+            role=role
+        )
+        # Generate token for the new user
+        refresh = RefreshToken.for_user(user)
+        token_data = {
+            'refresh': str(refresh),
+            'access': str(refresh.access_token)
+        }
+        # Return a tuple (user, token)
+        return user, token_data
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
@@ -65,14 +68,11 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = [
-            'id', 
-            'email', 
-            'username', 
-            'first_name', 
-            'last_name', 
-            'phone_number',
-            'is_active',
-            'is_staff'
-        ]
-        read_only_fields = ['is_active', 'is_staff']
+        fields = ['id', 'email', 'username', 'first_name', 'last_name', 'phone_number', 'role']
+
+    def __init__(self, *args, **kwargs):
+        super(UserSerializer, self).__init__(*args, **kwargs)
+        context = kwargs.get('context', {})
+        request = context.get('request')
+        if request and request.user.role != 'admin':
+            self.fields['role'].read_only = True

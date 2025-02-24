@@ -7,6 +7,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from .models import *
 from .serializers import *
 from forensicapp.pagination import  CustomPaginationWithResult
+from .permissions import IsAdmin
 
 
 
@@ -31,6 +32,7 @@ class RegisterView(generics.CreateAPIView):
                         "first_name": user.first_name,
                         "last_name": user.last_name,
                         "phone_number": user.phone_number,
+                        "role": user.role,
                         "refresh_token": tokens["refresh"],
                         "access_token": tokens["access"],
         
@@ -40,6 +42,7 @@ class RegisterView(generics.CreateAPIView):
             status=status.HTTP_201_CREATED,
             
         )
+    
 
 
 class MyObtainTokenPairView(TokenObtainPairView):
@@ -91,20 +94,20 @@ class LogoutView(APIView):
 
 class UserListView(generics.ListAPIView):
     serializer_class = UserSerializer
-    permission_classes = [AllowAny]  
-    pagination_class = CustomPaginationWithResult  
-    
+    permission_classes = [IsAuthenticated, IsAdmin]
+    pagination_class = CustomPaginationWithResult
+
     def get_queryset(self):
-        return CustomUser.objects.all().order_by('-id')  
+        return CustomUser.objects.all().order_by('-id')
 
     def list(self, request, *args, **kwargs):
-        queryset = self.get_queryset() 
+        queryset = self.get_queryset()
         page = self.paginate_queryset(queryset)
-        
         if page is not None:
             serializer = self.get_serializer(page, many=True)
             return self.get_paginated_response(serializer.data)
-            
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
     
+
+
