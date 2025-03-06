@@ -10,7 +10,6 @@ from forensicapp.pagination import  CustomPaginationWithResult
 from .permissions import IsAdmin
 
 
-
 class RegisterView(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
     permission_classes = [AllowAny]
@@ -25,7 +24,6 @@ class RegisterView(generics.CreateAPIView):
         return Response(
             {
                 "data": {
-
                         "id": user.id,
                         "email": user.email,
                         "username": user.username,
@@ -36,7 +34,6 @@ class RegisterView(generics.CreateAPIView):
                         "refresh_token": tokens["refresh"],
                         "access_token": tokens["access"],
         
-                
                 }
             },
             status=status.HTTP_201_CREATED,
@@ -94,7 +91,7 @@ class LogoutView(APIView):
 
 class UserListView(generics.ListAPIView):
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated, IsAdmin]
+    permission_classes = [AllowAny]
     pagination_class = CustomPaginationWithResult
 
     def get_queryset(self):

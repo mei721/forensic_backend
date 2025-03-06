@@ -7,11 +7,12 @@ from .models import *
 from .serializers import *
 from .pagination import CustomPaginationWithResult
 from django.shortcuts import get_object_or_404
-from django.db.models import Q
+from django.db.models import Q , Count
 from rest_framework import filters
 from .filters import IncidentFilter,InspectionFilter, FireFormFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter
+
 
 
 
@@ -260,3 +261,21 @@ class InspectionLabsByIncidentIdView(APIView):
         ]
 
         return Response({"data": customized_data}, status=status.HTTP_200_OK)
+
+
+
+
+class IncidentStatisticsView(APIView):
+    def get(self, request):
+        # Apply filters manually
+        filterset = IncidentFilter(request.GET, queryset=Incident.objects.all())
+
+        if not filterset.is_valid():
+            return Response({"error": "Invalid filters"}, status=400)
+
+        # Apply filtering, then group by 'incident_type' and count
+        filtered_incidents = filterset.qs
+        stats = filtered_incidents.values('incident_type').annotate(count=Count('id'))
+
+        serializer = IncidentStatisticsSerializer(stats, many=True)
+        return Response(serializer.data)

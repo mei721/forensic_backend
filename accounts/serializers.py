@@ -74,5 +74,5 @@ class UserSerializer(serializers.ModelSerializer):
         super(UserSerializer, self).__init__(*args, **kwargs)
         context = kwargs.get('context', {})
         request = context.get('request')
-        if request and request.user.role != 'admin':
-            self.fields['role'].read_only = True
+        # if request and request.user.role != 'admin':
+        #     self.fields['role'].read_only = True

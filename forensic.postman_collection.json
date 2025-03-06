@@ -63,15 +63,81 @@
 						},
 						{
 							"name": "incidents",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `\r",
+											"<style type=\"text/css\">\r",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+											"    .tftable tr {background-color:#ffffff;}\r",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+											"    .tftable tr:hover {background-color:#e0ffff;}\r",
+											"</style>\r",
+											"\r",
+											"<table class=\"tftable\" border=\"1\">\r",
+											"    <tr>\r",
+											"        <th>ID</th>\r",
+											"        <th>Investigative Body</th>\r",
+											"        <th>Inspection Date</th>\r",
+											"        <th>Inspection Time</th>\r",
+											"        <th>Incident Location</th>\r",
+											"        <th>Incident Type</th>\r",
+											"        <th>Incident Date</th>\r",
+											"        <th>Description</th>\r",
+											"        <th>Method</th>\r",
+											"        <th>Procedure</th>\r",
+											"    </tr>\r",
+											"    \r",
+											"    {{#each response.data}}\r",
+											"        <tr id=row_{{@key}}>\r",
+											"            <td>{{id}}</td>\r",
+											"            <td>{{investigative_body}}</td>\r",
+											"            <td>{{inspection_date}}</td>\r",
+											"            <td>{{inspection_time}}</td>\r",
+											"            <td>{{incident_location}}</td>\r",
+											"            <td>{{incident_type}}</td>\r",
+											"            <td>{{incident_date}}</td>\r",
+											"            <td>{{description}}</td>\r",
+											"            <td>{{method}}</td>\r",
+											"            <td>{{procedure}}</td>\r",
+											"        </tr>\r",
+											"    {{/each}}\r",
+											"</table>\r",
+											"`;\r",
+											"\r",
+											"function constructVisualizerPayload() {\r",
+											"    return { response: pm.response.json() }\r",
+											"}\r",
+											"\r",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"auth": {
-									"type": "noauth"
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzI0MzkyLCJpYXQiOjE3NDEyMzc5OTIsImp0aSI6Ijg1MzQ3NjNiMDEwYTQ3YWZiMDM1ZWJjMjZjMDNiMjIzIiwidXNlcl9pZCI6MTUsInVzZXJuYW1lIjoiSGFzc2FuMjMiLCJmaXJzdF9uYW1lIjoiaGFzc2FuIiwibGFzdF9uYW1lIjoiaGFzc2FuIiwicGhvbmVfbnVtYmVyIjoiMTIzNDU2NzkxMSJ9.XG9kZKKsG0JtBOKxP4ajR6Celt_6P-JSxtxHGj_ePuY",
+											"type": "string"
+										}
+									]
 								},
-								"method": "POST",
+								"method": "GET",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "[\r\n  {\r\n    \"investigative_body\": \"شرطة كربلاء\",\r\n    \"inspection_date\": \"2025-02-21\",\r\n    \"inspection_time\": \"15:00\",\r\n    \"incident_location\": \"كربلاء\",\r\n    \"incident_type\": \"سرقة سيارات\",\r\n    \"incident_date\": \"2025-02-20\",\r\n    \"description\": \"تم سرقة سيارة بالقرب من سوق كربلاء\",\r\n    \"method\": \"سرقة باستخدام مفاتيح مزورة\",\r\n    \"procedure\": \"تحقيق مبدئي، فحص كاميرات المراقبة\"\r\n  },\r\n  {\r\n    \"investigative_body\": \"شرطة النجف\",\r\n    \"inspection_date\": \"2025-02-22\",\r\n    \"inspection_time\": \"14:00\",\r\n    \"incident_location\": \"النجف\",\r\n    \"incident_type\": \"حريق في مبنى تجاري\",\r\n    \"incident_date\": \"2025-02-21\",\r\n    \"description\": \"حريق شب في أحد المتاجر الكبرى في النجف\",\r\n    \"method\": \"الاحتراق بسبب عطل كهربائي\",\r\n    \"procedure\": \"إطفاء الحريق وتفتيش المكان للبحث عن أسباب أخرى\"\r\n  },\r\n  {\r\n    \"investigative_body\": \"شرطة البصرة\",\r\n    \"inspection_date\": \"2025-02-23\",\r\n    \"inspection_time\": \"14:00\",\r\n    \"incident_location\": \"البصرة\",\r\n    \"incident_type\": \"قتال مسلح\",\r\n    \"incident_date\": \"2025-02-22\",\r\n    \"description\": \"حالة اشتباك مسلح بين عصابات في البصرة\",\r\n    \"method\": \"إطلاق نار من قبل مجهولين\",\r\n    \"procedure\": \"تطويق المكان والبحث عن الأدلة\"\r\n  }\r\n]\r\n\r\n\r\n",
+									"raw": "\r\n\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -324,6 +390,56 @@
 					]
 				},
 				{
+					"name": "statistics",
+					"item": [
+						{
+							"name": "incident_Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzI1NTg2LCJpYXQiOjE3NDEyMzkxODYsImp0aSI6ImEzYzlhMTg2ZTQ5ZDRiNmU5YzY5MmUxNjliYTVkZWI2IiwidXNlcl9pZCI6MTUsInVzZXJuYW1lIjoiSGFzc2FuMjMiLCJmaXJzdF9uYW1lIjoiaGFzc2FuIiwibGFzdF9uYW1lIjoiaGFzc2FuIiwicGhvbmVfbnVtYmVyIjoiMTIzNDU2NzkxMSJ9.1HYXPJ9P9yfOQ_bpBtR33YTOb-UWMf7vF38KP91eXkY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}api/incident-statistics/",
+									"host": [
+										"{{URL}}api"
+									],
+									"path": [
+										"incident-statistics",
+										""
+									],
+									"query": [
+										{
+											"key": "incident_date_range_after",
+											"value": "2025-03-02\t",
+											"disabled": true
+										},
+										{
+											"key": "incident_date_range_before",
+											"value": "2025-03-05\t",
+											"disabled": true
+										},
+										{
+											"key": "incident_location",
+											"value": "البياع",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "complaint",
 					"request": {
 						"method": "DELETE",
@@ -382,7 +498,7 @@
 							"formdata": [
 								{
 									"key": "username",
-									"value": "Hassan23",
+									"value": "bassim@ur",
 									"type": "text"
 								},
 								{
@@ -413,16 +529,78 @@
 				},
 				{
 					"name": "allusers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<canvas id=\"myChart\" height=\"75\"></canvas>\r",
+									"\r",
+									"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> \r",
+									"\r",
+									"<script>\r",
+									"    var ctx = document.getElementById(\"myChart\");\r",
+									"\r",
+									"    var myChart = new Chart(ctx, {\r",
+									"        type: \"pie\",\r",
+									"        data: {\r",
+									"            labels: [],\r",
+									"            datasets: [{\r",
+									"                data: [],\r",
+									"                \r",
+									"                // Change these colours to customize the chart\r",
+									"                backgroundColor: [\"#003f5c\", \"#58508d\", \"#bc5090\", \"#ff6361\", \"#ffa600\"],\r",
+									"            }]\r",
+									"        },\r",
+									"        options: {\r",
+									"            title: {\r",
+									"                display: true,\r",
+									"                text: 'User Roles Distribution'\r",
+									"            }\r",
+									"        }\r",
+									"\r",
+									"    });\r",
+									"\r",
+									"    // Access the data passed to pm.visualizer.set() from the JavaScript\r",
+									"    // code of the Visualizer template\r",
+									"    pm.getData(function (err, value) {\r",
+									"        myChart.data.labels = value.response.data.map(user => user.username);\r",
+									"        myChart.data.datasets[0].data = value.response.data.map(user => user.id);\r",
+									"        myChart.update();\r",
+									"    });\r",
+									"\r",
+									"</script>`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    var res = pm.response.json();\r",
+									"    \r",
+									"    var visualizerData = {\r",
+									"        data: res.data\r",
+									"    };\r",
+									"\r",
+									"    return {response: visualizerData};\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/account/users",
+							"raw": "{{URL}}account/users",
 							"host": [
-								"{{URL}}"
+								"{{URL}}account"
 							],
 							"path": [
-								"account",
 								"users"
 							]
 						}
@@ -483,13 +661,13 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "alhassan@gmail.com",
+									"value": "zhrel@gmail.com",
 									"description": "unique",
 									"type": "text"
 								},
 								{
 									"key": "username",
-									"value": "Hassan23",
+									"value": "zhracc",
 									"description": "unique",
 									"type": "text"
 								},
@@ -512,12 +690,17 @@
 								},
 								{
 									"key": "first_name",
-									"value": "hassan",
+									"value": "zhraa",
 									"type": "text"
 								},
 								{
 									"key": "last_name",
-									"value": "hassan",
+									"value": "essa",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "admin",
 									"type": "text"
 								}
 							]
@@ -616,48 +799,6 @@
 					"path": [
 						"maps",
 						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "New Request",
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {}
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Hassan23\",\r\n    \"password\": \"12345678Ur\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{URL}}api/token/",
-					"host": [
-						"{{URL}}api"
-					],
-					"path": [
-						"token",
-						""
-					],
-					"query": [
-						{
-							"key": "username",
-							"value": "bassim@ur",
-							"disabled": true
-						},
-						{
-							"key": "password",
-							"value": "12345678Ur",
-							"disabled": true
-						}
 					]
 				}
 			},

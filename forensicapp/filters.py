@@ -35,6 +35,7 @@ class FireFormFilter(django_filters.FilterSet):
     inspection_date = django_filters.DateFilter()
     incident_date_range = django_filters.DateFromToRangeFilter(field_name="incident_date")
     inspection_date_range = django_filters.DateFromToRangeFilter(field_name="inspection_date")
+    
 
     class Meta:
         model = FirePlaceDescribtion
