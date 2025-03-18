@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "d5656e3c-fe71-4440-9a5a-e8eb03d1fd95",
 		"name": "forensic",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "40450615"
 	},
 	"item": [
@@ -14,50 +14,19 @@
 					"item": [
 						{
 							"name": "evidence",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "[\r\n  {\r\n    \"number\": 3,\r\n    \"Typeofevidence\": \"مفاتيح مزورة\",\r\n    \"place\": \"محل في سوق كربلاء\",\r\n    \"waytosave\": \"تم حفظ المفاتيح في كيس بلاستيكي محكم\",\r\n    \"incident\": 11\r\n  },\r\n  {\r\n    \"number\": 4,\r\n    \"Typeofevidence\": \"كاميرا مراقبة\",\r\n    \"place\": \"مبنى تجاري في النجف\",\r\n    \"waytosave\": \"تم فصل الكاميرا وحفظها في صندوق آمن\",\r\n    \"incident\": 13\r\n  },\r\n  {\r\n    \"number\": 5,\r\n    \"Typeofevidence\": \"طلقة نارية\",\r\n    \"place\": \"مكان الاشتباك في البصرة\",\r\n    \"waytosave\": \"تم حفظ الطلقة داخل حقيبة خاصة بالأدلة\",\r\n    \"incident\": 15\r\n  }\r\n]\r\n",
+									"raw": "{\r\n    \"uuid\": \"e89b-12d3-a456-426614174000\",\r\n    \"accident\": 1,\r\n    \"sample_type\": \"Gun\",\r\n    \"sample_number\": \"B1234\",\r\n    \"place_of_lifting\": \"Crime Scene\",\r\n    \"method_lifting\": \"picture\",\r\n    \"status\": \"local\",\r\n    \"user\": 1\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": {
-									"raw": "{{URL}}api/evidence/",
-									"host": [
-										"{{URL}}api"
-									],
-									"path": [
-										"evidence",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "evidencebyincidentId",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{URL}}api/evidencebyincident/id/",
-									"host": [
-										"{{URL}}api"
-									],
-									"path": [
-										"evidencebyincident",
-										"id",
-										""
-									]
-								}
+								"url": "{{URL}}api/evidence/"
 							},
 							"response": []
 						},
@@ -125,19 +94,15 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzI0MzkyLCJpYXQiOjE3NDEyMzc5OTIsImp0aSI6Ijg1MzQ3NjNiMDEwYTQ3YWZiMDM1ZWJjMjZjMDNiMjIzIiwidXNlcl9pZCI6MTUsInVzZXJuYW1lIjoiSGFzc2FuMjMiLCJmaXJzdF9uYW1lIjoiaGFzc2FuIiwibGFzdF9uYW1lIjoiaGFzc2FuIiwicGhvbmVfbnVtYmVyIjoiMTIzNDU2NzkxMSJ9.XG9kZKKsG0JtBOKxP4ajR6Celt_6P-JSxtxHGj_ePuY",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzI0MzkyLCJpYXQiOjE3NDEyMzc5OTIsImp0aSI6Ijg1MzQ3NjNiMDEwYTQ3YWZiMDM1ZWJjMjZjMDNiMjIzIiwidXNlcl9pZCI6MTUsInVzZXJuYW1lIjoiSGFzc2FuMjMiLCJmaXJzdF9uYW1lIjoiaGFzc2FuIiwibGFzdF9uYW1lIjoiaGFzc2FuIiwicGhvbmVfbnVtYmVyIjoiMTIzNDU2NzkxMSJ9.XG9kZKKsG0JtBOKxP4ajR6Celt_6P-JSxtxHGj_ePuY"
+									}
 								},
 								"method": "GET",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "\r\n\r\n",
+									"raw": "{\r\n    \"uuid\": \"1234-5678-91011\",\r\n    \"date_discovery\": \"2025-03-17\",\r\n    \"accident_date\": \"2025-03-15\",\r\n    \"investigating_body\": \"Police\",\r\n    \"accident_description\": \"Fire accident in warehouse.\",\r\n    \"inspection_time\": \"2025-03-17 14:00\",\r\n    \"accident_location\": \"Warehouse 12, Sector B\",\r\n    \"action_taken\": \"Fire extinguished.\",\r\n    \"method\": \"Firefighting\",\r\n    \"status\": \"local\",\r\n    \"latitude\": \"30.0444\",\r\n    \"longitude\": \"31.2357\",\r\n    \"color\": \"Red\",\r\n    \"typeAccident\": \"Fire\",\r\n    \"resulting_damages\": \"Property damage worth $10000\",\r\n    \"causes_of_fire\": \"Electrical malfunction\",\r\n    \"category_accident\": \"fireAccident\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -145,7 +110,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}api/incidents/",
+									"raw": "{{URL}}api/incidents/?page=3",
 									"host": [
 										"{{URL}}api"
 									],
@@ -182,16 +147,29 @@
 										},
 										{
 											"key": "incident_date_range_before",
-											"value": null,
+											"value": "",
 											"disabled": true
 										},
 										{
 											"key": "incident_date_range_after",
-											"value": null,
+											"value": "",
 											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "3"
 										}
 									]
 								}
+							},
+							"response": []
+						},
+						{
+							"name": "evidence list by incident id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{URL}}api/evidencebyincident/1/"
 							},
 							"response": []
 						}
@@ -207,23 +185,14 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "[\r\n  {\r\n    \"evidence\": 11,\r\n    \"count\": 1,\r\n    \"crime_lab\": true,\r\n    \"weapon_lab\": false,\r\n    \"chemistry_lab\": false,\r\n    \"dna_lab\": false,\r\n    \"cyber_crime_lab\": false,\r\n    \"incident_obj\": 11\r\n  },\r\n  {\r\n    \"evidence\": 10,\r\n    \"count\": 2,\r\n    \"crime_lab\": false,\r\n    \"weapon_lab\": true,\r\n    \"chemistry_lab\": true,\r\n    \"dna_lab\": false,\r\n    \"cyber_crime_lab\": false,\r\n    \"incident_obj\": 13\r\n  },\r\n  {\r\n    \"evidence\": 9,\r\n    \"count\": 3,\r\n    \"crime_lab\": true,\r\n    \"weapon_lab\": true,\r\n    \"chemistry_lab\": false,\r\n    \"dna_lab\": true,\r\n    \"cyber_crime_lab\": false,\r\n    \"incident_obj\": 11\r\n  }\r\n]\r\n",
+									"raw": "\r\n{\r\n    \"uuid\": \"1234-4b67-9876-abcdef123456\",\r\n    \"form\": 1,\r\n    \"is_chemistry_lab\": false,\r\n    \"is_weapons_lab\": false,\r\n    \"is_forensic_lab\": false,\r\n    \"is_criminal_print\": false,\r\n    \"is_dna_lab\": false,\r\n    \"is_criminal_electronic\": false,\r\n    \"status\": \"local\",\r\n    \"user\": 1\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": {
-									"raw": "{{URL}}api/inspection-form/",
-									"host": [
-										"{{URL}}api"
-									],
-									"path": [
-										"inspection-form",
-										""
-									]
-								}
+								"url": "{{URL}}api/inspection-form/"
 							},
 							"response": []
 						},
@@ -244,146 +213,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{URL}}api/inspection-labs-by-incident/7/",
-									"host": [
-										"{{URL}}api"
-									],
-									"path": [
-										"inspection-labs-by-incident",
-										"7",
-										""
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "محضر كشف الحرائق",
-					"item": [
-						{
-							"name": "fireplace",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "inspection_time ",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "inspection_date",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "incident_date",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "request_authority",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "inspection_place",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "fire_place",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "damage",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "fire_reason",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "procedures",
-											"value": "",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{URL}}api/fireplace/",
-									"host": [
-										"{{URL}}api"
-									],
-									"path": [
-										"fireplace",
-										""
-									],
-									"query": [
-										{
-											"key": "inspection_place",
-											"value": "",
-											"disabled": true
-										},
-										{
-											"key": "request_authority",
-											"value": "",
-											"disabled": true
-										},
-										{
-											"key": "incident_date_range_after",
-											"value": "2025-02-10",
-											"disabled": true
-										},
-										{
-											"key": "incident_date_range_before",
-											"value": "2025-02-12",
-											"disabled": true
-										},
-										{
-											"key": "inspection_date_range_after",
-											"value": null,
-											"disabled": true
-										},
-										{
-											"key": "inspection_date_range_before",
-											"value": null,
-											"disabled": true
-										},
-										{
-											"key": "limit",
-											"value": null,
-											"disabled": true
-										},
-										{
-											"key": "ordering",
-											"value": "",
-											"description": "id , inspection_date , incident_date",
-											"disabled": true
-										},
-										{
-											"key": "incident_date ",
-											"value": null,
-											"disabled": true
-										},
-										{
-											"key": "inspection_date",
-											"value": null,
-											"disabled": true
-										}
-									]
-								}
+								"url": "{{URL}}api/inspection-labs-by-incident/1/"
 							},
 							"response": []
 						}
@@ -397,13 +227,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzI1NTg2LCJpYXQiOjE3NDEyMzkxODYsImp0aSI6ImEzYzlhMTg2ZTQ5ZDRiNmU5YzY5MmUxNjliYTVkZWI2IiwidXNlcl9pZCI6MTUsInVzZXJuYW1lIjoiSGFzc2FuMjMiLCJmaXJzdF9uYW1lIjoiaGFzc2FuIiwibGFzdF9uYW1lIjoiaGFzc2FuIiwicGhvbmVfbnVtYmVyIjoiMTIzNDU2NzkxMSJ9.1HYXPJ9P9yfOQ_bpBtR33YTOb-UWMf7vF38KP91eXkY",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzI1NTg2LCJpYXQiOjE3NDEyMzkxODYsImp0aSI6ImEzYzlhMTg2ZTQ5ZDRiNmU5YzY5MmUxNjliYTVkZWI2IiwidXNlcl9pZCI6MTUsInVzZXJuYW1lIjoiSGFzc2FuMjMiLCJmaXJzdF9uYW1lIjoiaGFzc2FuIiwibGFzdF9uYW1lIjoiaGFzc2FuIiwicGhvbmVfbnVtYmVyIjoiMTIzNDU2NzkxMSJ9.1HYXPJ9P9yfOQ_bpBtR33YTOb-UWMf7vF38KP91eXkY"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -442,44 +268,18 @@
 				{
 					"name": "complaint",
 					"request": {
-						"method": "DELETE",
+						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "action",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "section_id",
-									"value": "",
-									"description": "ForeignKey",
-									"type": "text"
-								},
-								{
-									"key": "state",
-									"value": "",
-									"type": "text"
+							"mode": "raw",
+							"raw": "{\r\n  \"uuid\": \"123e4567-e89b-12d3-a456-426614174000\",\r\n  \"section\": 1,  //  incident ID 1\r\n  \"name\": \"Complaint 1\",\r\n  \"action\": \"This is the action for the complaint.\",\r\n  \"status\": \"local\",\r\n  \"user\": 1,\r\n  \"is_hidden\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
-						"url": {
-							"raw": "{{URL}}api/complaint/",
-							"host": [
-								"{{URL}}api"
-							],
-							"path": [
-								"complaint",
-								""
-							]
-						}
+						"url": "{{URL}}api/complaint/"
 					},
 					"response": []
 				}
@@ -514,16 +314,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "{{URL}}account/login/",
-							"host": [
-								"{{URL}}account"
-							],
-							"path": [
-								"login",
-								""
-							]
-						}
+						"url": "{{URL}}account/login/"
 					},
 					"response": []
 				},
@@ -602,6 +393,13 @@
 							],
 							"path": [
 								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -661,25 +459,25 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "zhrel@gmail.com",
+									"value": "bassim@gmail",
 									"description": "unique",
 									"type": "text"
 								},
 								{
 									"key": "username",
-									"value": "zhracc",
+									"value": "bassi",
 									"description": "unique",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "12345678Ur",
+									"value": "12345678",
 									"description": "numbers , must be lower,uppercase",
 									"type": "text"
 								},
 								{
 									"key": "password2",
-									"value": "12345678Ur",
+									"value": "12345678",
 									"type": "text"
 								},
 								{
@@ -705,16 +503,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "{{URL}}account/register/",
-							"host": [
-								"{{URL}}account"
-							],
-							"path": [
-								"register",
-								""
-							]
-						}
+						"url": "{{URL}}account/register/"
 					},
 					"response": []
 				},
@@ -738,71 +527,11 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{URL}}account/logout/",
-							"host": [
-								"{{URL}}account"
-							],
-							"path": [
-								"logout",
-								""
-							]
-						}
+						"url": "{{URL}}account/logout/"
 					},
 					"response": []
 				}
 			]
-		},
-		{
-			"name": "map",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "title",
-							"value": "جريمة قتل",
-							"type": "text"
-						},
-						{
-							"key": "color",
-							"value": "red",
-							"type": "text"
-						},
-						{
-							"key": "description",
-							"value": "قتل المهندس الحسن",
-							"type": "text"
-						},
-						{
-							"key": "longitude",
-							"value": "33.3128057",
-							"type": "text"
-						},
-						{
-							"key": "latitude",
-							"value": "44.3614875",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "{{URL}}api/maps/",
-					"host": [
-						"{{URL}}api"
-					],
-					"path": [
-						"maps",
-						""
-					]
-				}
-			},
-			"response": []
 		}
 	]
 }

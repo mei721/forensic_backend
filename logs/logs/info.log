@@ -59,3 +59,4 @@ ERROR 2025-03-18 08:54:06,540 views 208 20396 Invalid data provided: {'investiga
 INFO 2025-03-18 08:54:23,925 views 208 14508 Retrieved list of Incident
 INFO 2025-03-18 08:54:32,670 views 208 14508 Retrieved list of Incident
 INFO 2025-03-18 08:57:51,026 views 13672 7636 Created new Evidence instance(s)
+INFO 2025-03-18 09:02:54,728 views 19488 2060 Created new Complaint instance(s)
