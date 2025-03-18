@@ -8,37 +8,33 @@ from .models import *
 from .serializers import *
 from forensicapp.pagination import  CustomPaginationWithResult
 from .permissions import IsAdmin
+import logging
+
+
+logger = logging.getLogger('accounts')  # logger defined in settings
 
 
 class RegisterView(generics.CreateAPIView):
-    queryset = CustomUser.objects.all()
-    permission_classes = [AllowAny]
-    serializer_class = RegisterSerializer
-
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user, tokens = serializer.save()
-        print("User created successfully")
+        if not serializer.is_valid():
+            logger.error(f"User registration failed: {serializer.errors}")
+            return Response({"error": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
 
-        return Response(
-            {
-                "data": {
-                        "id": user.id,
-                        "email": user.email,
-                        "username": user.username,
-                        "first_name": user.first_name,
-                        "last_name": user.last_name,
-                        "phone_number": user.phone_number,
-                        "role": user.role,
-                        "refresh_token": tokens["refresh"],
-                        "access_token": tokens["access"],
-        
-                }
-            },
-            status=status.HTTP_201_CREATED,
-            
-        )
+        user, tokens = serializer.save()
+
+        logger.info(f"New user registered: {user.email} ({user.username})")
+
+        return Response({
+            "data": {
+                "id": user.id,
+                "email": user.email,
+                "username": user.username,
+                "refresh_token": tokens["refresh"],
+                "access_token": tokens["access"],
+            }
+        }, status=status.HTTP_201_CREATED)
+
     
 
 
@@ -50,8 +46,9 @@ class MyObtainTokenPairView(TokenObtainPairView):
             response = super().post(request, *args, **kwargs)
             user = self.get_user_from_request(request)  # Custom method to retrieve user
             tokens = response.data  # Contains refresh and access tokens
-            print("Tokens generated successfully")
             print(request.data)
+            logger.info(f"User logged in: ({user.username})")
+
             response.data = {
                 "data": {
                         "id": user.id,
@@ -67,12 +64,15 @@ class MyObtainTokenPairView(TokenObtainPairView):
             return response
         
         except Exception as e:
+            logger.error(f"User login failed: {str(e)}")
             return Response({"data": {"error": str(e)}}, status=status.HTTP_400_BAD_REQUEST)
+        
     def get_user_from_request(self, request):
         """Retrieve the user from the validated data in the serializer."""
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         return serializer.user
+    
 
 class LogoutView(APIView):
     permission_classes = (IsAuthenticated,)
@@ -83,28 +83,26 @@ class LogoutView(APIView):
             refresh_token = request.data["refresh"]
             token = RefreshToken(refresh_token)
             token.blacklist()
+            logger.info(f"User logged out: ({request.user.username})")
 
             return Response(status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
+            logger.error(f"User logout failed: {str(e)}")
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 class UserListView(generics.ListAPIView):
     serializer_class = UserSerializer
-    permission_classes = [AllowAny]
+    # permission_classes = [IsAuthenticated]
     pagination_class = CustomPaginationWithResult
 
     def get_queryset(self):
         return CustomUser.objects.all().order_by('-id')
 
     def list(self, request, *args, **kwargs):
-        queryset = self.get_queryset()
-        page = self.paginate_queryset(queryset)
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
-        serializer = self.get_serializer(queryset, many=True)
-        return Response(serializer.data)
-    
-
-
+        try:
+            logger.info(f"User {request.user.email} viewed the list of users")
+            return super().list(request, *args, **kwargs)
+        except Exception as e:
+            logger.error(f"Error while fetching user list: {str(e)}")
+            return Response({"error": "Could not retrieve users."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

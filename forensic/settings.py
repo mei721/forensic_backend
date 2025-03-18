@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta # import this library top of the settings.py file
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,8 +46,6 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'django_filters'
-
-
 ]
 
 
@@ -89,9 +88,9 @@ WSGI_APPLICATION = 'forensic.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'forensic',  # replace with your database name
-        'USER': 'postgres',  # replace with your database username
-        'PASSWORD': '12345678',  # replace with your database password
+        'NAME': 'forensic_db',  
+        'USER': 'postgres', 
+        'PASSWORD': '12345678',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -147,20 +146,22 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
-        'rest_framework_simplejwt.authentication.JWTAuthentication', 
+        # 'rest_framework_simplejwt.authentication.JWTAuthentication', 
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',  
         "rest_framework.permissions.IsAuthenticated",
     ],
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"], 
+
+    
     'DEFAULT_PAGINATION_CLASS':'forensicapp.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
 
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(hours=72),  # 24 hours
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=6),  # 24 hours
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),   # 7 days
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
@@ -168,3 +169,63 @@ SIMPLE_JWT = {
 }
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,  # Let Django log its own stuff too
+    'handlers': {
+        'info_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/logs/info.log',  # File for INFO logs
+            'formatter': 'verbose',
+        },
+        'error_file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/logs/error.log',  # File for ERROR logs
+            'formatter': 'verbose',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+    },
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'loggers': {
+        # General Django logging
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+        'rest_framework': {
+            'handlers': ['console', 'info_file', 'error_file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'accounts': {
+            'handlers': ['console', 'info_file', 'error_file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'forensicapp': {
+            'handlers': ['console', 'info_file', 'error_file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+
+    },
+}
+
+

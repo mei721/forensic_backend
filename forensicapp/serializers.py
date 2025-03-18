@@ -29,16 +29,3 @@ class InspectionFormSerializer(serializers.ModelSerializer):
         model = InspectionForm
         fields = '__all__'
 
-
-class FirePlaceDescribtionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = FirePlaceDescribtion
-        fields = '__all__'
-
-
-class MapDescribtionSerializer(serializers.ModelSerializer):
-    
-
-    class Meta:
-        model = MapDescribtion
-        fields = '__all__'

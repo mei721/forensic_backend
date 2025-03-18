@@ -1,0 +1,28 @@
+ERROR 2025-03-17 13:19:29,191 views 16616 2552 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:19:29,296 views 16616 19348 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:19:59,130 views 16616 14132 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:19:59,342 views 16616 11480 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:20:29,113 views 16616 1848 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:20:29,234 views 16616 8648 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:20:59,144 views 16616 14796 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:20:59,261 views 16616 15984 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:21:29,163 views 16616 19676 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:21:29,276 views 16616 10720 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:21:59,347 views 16616 5196 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:21:59,474 views 16616 19256 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:22:29,123 views 16616 11544 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:22:29,225 views 16616 10028 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:22:59,166 views 16616 8300 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:22:59,268 views 16616 7444 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:23:29,147 views 16616 18736 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:23:29,263 views 16616 11480 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:24:07,863 views 16616 8112 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-17 13:24:08,057 views 16616 3620 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-18 08:44:58,708 views 3648 19460 Invalid data provided: {'uuid': [ErrorDetail(string='inspection form with this uuid already exists.', code='unique')]}
+ERROR 2025-03-18 08:45:05,036 views 3648 19460 Invalid data provided: {'uuid': [ErrorDetail(string='inspection form with this uuid already exists.', code='unique')]}
+ERROR 2025-03-18 08:47:57,623 views 3648 6464 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-18 08:47:57,912 views 3648 12336 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-18 08:51:16,040 views 5556 8004 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-18 08:51:16,164 views 5556 13916 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-18 08:54:06,395 views 208 6832 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-18 08:54:06,540 views 208 20396 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
