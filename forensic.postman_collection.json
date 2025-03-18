@@ -14,12 +14,15 @@
 					"item": [
 						{
 							"name": "evidence",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"uuid\": \"e89b-12d3-a456-426614174000\",\r\n    \"accident\": 1,\r\n    \"sample_type\": \"Gun\",\r\n    \"sample_number\": \"B1234\",\r\n    \"place_of_lifting\": \"Crime Scene\",\r\n    \"method_lifting\": \"picture\",\r\n    \"status\": \"local\",\r\n    \"user\": 1\r\n}\r\n",
+									"raw": "{\r\n    \"uuid\": \"e89b-12d3-a456-426614174000\",\r\n    \"accident_Id\": 1,\r\n    \"sampleType\": \"Gun\",\r\n    \"sampleNumber\": \"B1234\",\r\n    \"placeoflifting\": \"Crime Scene\",\r\n    \"methodlifting\": \"picture\",\r\n    \"status\": \"local\",\r\n    \"userId\": 1\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -110,7 +113,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}api/incidents/?category_accident&color",
+									"raw": "{{URL}}api/incidents/",
 									"host": [
 										"{{URL}}api"
 									],
@@ -154,15 +157,6 @@
 											"key": "incident_date_range_after",
 											"value": "",
 											"disabled": true
-										},
-										{
-											"key": "category_accident",
-											"value": null,
-											"description": "fireAccident , accident"
-										},
-										{
-											"key": "color",
-											"value": null
 										}
 									]
 								}
@@ -185,12 +179,15 @@
 					"item": [
 						{
 							"name": "inspection-lab",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "\r\n{\r\n    \"uuid\": \"1234-4b67-9876-abcdef123456\",\r\n    \"form\": 1,\r\n    \"is_chemistry_lab\": false,\r\n    \"is_weapons_lab\": false,\r\n    \"is_forensic_lab\": false,\r\n    \"is_criminal_print\": false,\r\n    \"is_dna_lab\": false,\r\n    \"is_criminal_electronic\": false,\r\n    \"status\": \"local\",\r\n    \"user\": 1\r\n}\r\n",
+									"raw": "\r\n{\r\n    \"uuid\": \"1234-4b67-9876-abcdef123456\",\r\n    \"form_id\": 1,\r\n    \"isChemistryLab\": false,\r\n    \"isWeaponsLab\": false,\r\n    \"isForensicLab\": false,\r\n    \"isCriminalPrint\": false,\r\n    \"isDNALab\": false,\r\n    \"isCriminalElectronic\": false,\r\n    \"status\": \"local\",\r\n    \"userId\": 1\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -464,7 +461,7 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "bassim@gmail",
+									"value": "bassim@",
 									"description": "unique",
 									"type": "text"
 								},

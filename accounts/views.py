@@ -15,6 +15,9 @@ logger = logging.getLogger('accounts')  # logger defined in settings
 
 
 class RegisterView(generics.CreateAPIView):
+    permission_classes = [AllowAny]
+    serializer_class =  RegisterSerializer
+
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         if not serializer.is_valid():
