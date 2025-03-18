@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from accounts.models import CustomUser
 # Create your models here.
+
 # محضر كشف واظهار الاثار الجرمية في مسرح الجريمة 
 
 class Incident(models.Model):
@@ -33,6 +34,7 @@ class Incident(models.Model):
     def __str__(self):
         return f"Accident {self.uuid} - {self.status}"
 
+# الاثار الجرمية
     
 class Evidence(models.Model):
         uuid = models.CharField(max_length=255, unique=True, blank=True, null=True)
@@ -48,9 +50,8 @@ class Evidence(models.Model):
         def __str__(self):
             return f"AccidentSample {self.id} - {self.sample_type} ({self.status})"
 
-
+# لجنة الشكاوي
 class Complaint(models.Model):
-    #  المشتكي
     uuid = models.CharField(max_length=255, unique=True, blank=True, null=True)
     section = models.ForeignKey('Incident', on_delete=models.CASCADE, related_name='sections' , null=True, blank=True)
     name = models.CharField(max_length=255)
@@ -63,7 +64,7 @@ class Complaint(models.Model):
 
 
     def __str__(self):
-        return f"AccidentSection {self.id} - {self.name} ({self.status})"
+        return f"Accident Section {self.id} - {self.name} ({self.status})"
 
 
 

@@ -26,3 +26,7 @@ ERROR 2025-03-18 08:51:16,040 views 5556 8004 Invalid data provided: {'accident_
 ERROR 2025-03-18 08:51:16,164 views 5556 13916 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
 ERROR 2025-03-18 08:54:06,395 views 208 6832 Invalid data provided: {'accident_description': [ErrorDetail(string='This field may not be blank.', code='blank')]}
 ERROR 2025-03-18 08:54:06,540 views 208 20396 Invalid data provided: {'investigating_body': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+ERROR 2025-03-18 09:47:41,770 views 10640 10320 Invalid data provided: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR 2025-03-18 09:48:06,391 views 10640 5760 Invalid data provided: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR 2025-03-18 09:50:49,697 views 10640 2724 Invalid data provided: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR 2025-03-18 09:50:49,797 views 10640 4860 Invalid data provided: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}

@@ -110,7 +110,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{URL}}api/incidents/?page=3",
+									"raw": "{{URL}}api/incidents/?category_accident&color",
 									"host": [
 										"{{URL}}api"
 									],
@@ -120,17 +120,17 @@
 									],
 									"query": [
 										{
-											"key": "incident_location",
+											"key": "date_discovery",
 											"value": "السليمان",
 											"disabled": true
 										},
 										{
-											"key": "incident_type",
+											"key": "action_taken",
 											"value": "",
 											"disabled": true
 										},
 										{
-											"key": "investigative_body",
+											"key": "incident_date",
 											"value": "",
 											"disabled": true
 										},
@@ -156,8 +156,13 @@
 											"disabled": true
 										},
 										{
-											"key": "page",
-											"value": "3"
+											"key": "category_accident",
+											"value": null,
+											"description": "fireAccident , accident"
+										},
+										{
+											"key": "color",
+											"value": null
 										}
 									]
 								}

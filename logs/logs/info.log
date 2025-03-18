@@ -60,3 +60,18 @@ INFO 2025-03-18 08:54:23,925 views 208 14508 Retrieved list of Incident
 INFO 2025-03-18 08:54:32,670 views 208 14508 Retrieved list of Incident
 INFO 2025-03-18 08:57:51,026 views 13672 7636 Created new Evidence instance(s)
 INFO 2025-03-18 09:02:54,728 views 19488 2060 Created new Complaint instance(s)
+INFO 2025-03-18 09:38:40,191 views 10640 19868 User logged in: (bassim@ur)
+INFO 2025-03-18 09:39:28,791 views 10640 2072 Created new Incident instance(s)
+INFO 2025-03-18 09:40:12,485 views 10640 11704 Created new Incident instance(s)
+INFO 2025-03-18 09:44:25,126 views 10640 4604 Created new Incident instance(s)
+INFO 2025-03-18 09:44:25,267 views 10640 2644 Created new Incident instance(s)
+INFO 2025-03-18 09:44:25,400 views 10640 18012 Created new Incident instance(s)
+INFO 2025-03-18 09:44:25,537 views 10640 16920 Created new Incident instance(s)
+INFO 2025-03-18 09:45:11,066 views 10640 4224 Retrieved list of Incident
+INFO 2025-03-18 09:46:59,795 views 10640 17524 Created new Incident instance(s)
+ERROR 2025-03-18 09:47:41,770 views 10640 10320 Invalid data provided: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR 2025-03-18 09:48:06,391 views 10640 5760 Invalid data provided: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+INFO 2025-03-18 09:50:33,411 views 10640 14708 Created new Incident instance(s)
+ERROR 2025-03-18 09:50:49,697 views 10640 2724 Invalid data provided: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR 2025-03-18 09:50:49,797 views 10640 4860 Invalid data provided: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+INFO 2025-03-18 09:50:50,819 views 10640 12216 Retrieved list of Incident

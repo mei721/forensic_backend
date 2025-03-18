@@ -1,17 +1,42 @@
 import django_filters
 from .models import *
 class IncidentFilter(django_filters.FilterSet):
-    #  filters 
-    incident_location=django_filters.CharFilter(lookup_expr='icontains')
-    incident_type=django_filters.CharFilter(lookup_expr='icontains')
-    investigative_body=django_filters.CharFilter(lookup_expr='icontains')
+    # Filters based on text content
+    date_discovery = django_filters.CharFilter(lookup_expr='icontains')
+    action_taken = django_filters.CharFilter(lookup_expr='icontains')
+    
+    # Filters based on specific date fields
     incident_date = django_filters.DateFilter()
-    incident_date_range = django_filters.DateFromToRangeFilter(field_name="incident_date")
+    incident_date_range = django_filters.DateFromToRangeFilter(field_name="accident_date")
+    
+    # Filters based on category choices
+    category_accident = django_filters.ChoiceFilter(choices=[('fireAccident', 'Fire Accident'), ('accident', 'Accident')])
+    
+    # Filters based on status and location
+   
+    accident_location = django_filters.CharFilter(lookup_expr='icontains')
+    
+    # Filters based on geographical coordinates
+    latitude = django_filters.CharFilter(lookup_expr='icontains')
+    longitude = django_filters.CharFilter(lookup_expr='icontains')
+    
+    # Filters for the user  (assuming you have a 'CustomUser' model)
+    user = django_filters.ModelChoiceFilter(queryset=CustomUser.objects.all(), null_label="Any User")
+    
+    # Additional filters for specific fields
+    inspecting_body = django_filters.CharFilter(lookup_expr='icontains')
+    investigating_body = django_filters.CharFilter(lookup_expr='icontains')
+    typeAccident = django_filters.CharFilter(lookup_expr='icontains')
+    color = django_filters.CharFilter(lookup_expr='icontains')
 
     class Meta:
         model = Incident
-        fields = ['incident_location', 'incident_type', 'investigative_body' ,'incident_date' , 'incident_date_range']
-
+        fields = [
+            'date_discovery', 'action_taken',  
+             'incident_date', 'incident_date_range', 
+            'category_accident','latitude', 'longitude', 
+            'user', 'typeAccident', 'color', 'investigating_body'
+        ]
 
 
 class InspectionFilter(django_filters.FilterSet):
@@ -27,12 +52,3 @@ class InspectionFilter(django_filters.FilterSet):
         model = InspectionForm
         fields = ['request_authority' , 'inspection_date' , 'incident' , 'inspection_date_range']
 
-class FireFormFilter(django_filters.FilterSet):
-    #  filters
-    inspection_place=django_filters.CharFilter(lookup_expr='icontains')
-    request_authority=django_filters.CharFilter(lookup_expr='icontains')
-    incident_date = django_filters.DateFilter()
-    inspection_date = django_filters.DateFilter()
-    incident_date_range = django_filters.DateFromToRangeFilter(field_name="incident_date")
-    inspection_date_range = django_filters.DateFromToRangeFilter(field_name="inspection_date")
-    
