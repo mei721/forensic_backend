@@ -2,12 +2,11 @@ from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 from rest_framework_simplejwt.views import TokenObtainPairView
 from .models import *
 from .serializers import *
 from forensicapp.pagination import  CustomPaginationWithResult
-from .permissions import IsAdmin
 import logging
 
 
@@ -81,22 +80,31 @@ class LogoutView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def post(self, request):
-        
         try:
-            refresh_token = request.data["refresh"]
-            token = RefreshToken(refresh_token)
-            token.blacklist()
-            logger.info(f"User logged out: ({request.user.username})")
+            refresh_token = request.data.get("refresh")
 
-            return Response(status=status.HTTP_205_RESET_CONTENT)
+            if not refresh_token:
+                logger.error("Logout failed: Refresh token missing")
+                return Response({"error": "Refresh token is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+            try:
+                token = RefreshToken(refresh_token)
+                token.blacklist()
+                logger.info(f"User logged out successfully: {request.user.username}")
+                return Response({"message": "Logout successful"}, status=status.HTTP_205_RESET_CONTENT)
+
+            except TokenError:  # Handles invalid or already used tokens
+                logger.error("Logout failed: Invalid or expired refresh token")
+                return Response({"error": "Invalid or expired refresh token"}, status=status.HTTP_400_BAD_REQUEST)
+
         except Exception as e:
-            logger.error(f"User logout failed: {str(e)}")
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+            logger.error(f"Unexpected error during logout: {str(e)}")
+            return Response({"error": f"An unexpected error occurred:{str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class UserListView(generics.ListAPIView):
     serializer_class = UserSerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]  # Allow anyone to access the user list
     pagination_class = CustomPaginationWithResult
 
     def get_queryset(self):
@@ -104,8 +112,8 @@ class UserListView(generics.ListAPIView):
 
     def list(self, request, *args, **kwargs):
         try:
-            logger.info(f"User {request.user.email} viewed the list of users")
+            logger.info(f"User list accessed")
             return super().list(request, *args, **kwargs)
         except Exception as e:
             logger.error(f"Error while fetching user list: {str(e)}")
-            return Response({"error": "Could not retrieve users."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response({"error": "Could not retrieve users."}, status=500)

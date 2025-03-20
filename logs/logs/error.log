@@ -30,3 +30,40 @@ ERROR 2025-03-18 09:47:41,770 views 10640 10320 Invalid data provided: {'uuid': 
 ERROR 2025-03-18 09:48:06,391 views 10640 5760 Invalid data provided: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
 ERROR 2025-03-18 09:50:49,697 views 10640 2724 Invalid data provided: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
 ERROR 2025-03-18 09:50:49,797 views 10640 4860 Invalid data provided: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR 2025-03-19 13:09:18,346 views 12536 2216 Error retrieving evidence for incident_id 1: Cannot resolve keyword 'accident_id' into field. Choices are: Placeoflifting, accident_Id, accident_Id_id, created_at, id, metodeIifting, sampleNumber, sampleType, status, updated_at, userId, userId_id, uuid
+ERROR 2025-03-19 13:11:17,222 views 10684 1196 Error retrieving evidence for incident_id 1: Cannot resolve keyword 'accident_id' into field. Choices are: Placeoflifting, accident_Id, accident_Id_id, created_at, id, metodeIifting, sampleNumber, sampleType, status, updated_at, userId, userId_id, uuid
+ERROR 2025-03-19 13:27:50,494 views 18212 13868 Invalid data provided for Incident: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR 2025-03-19 13:28:08,031 views 18212 13868 Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')]}
+ERROR 2025-03-19 13:32:20,521 views 13472 10852 Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')]}
+ERROR 2025-03-19 13:37:24,651 views 20240 16988 Invalid data provided for InspectionForm: {'uuid': [ErrorDetail(string='inspection form with this uuid already exists.', code='unique')]}
+ERROR Invalid data provided for Incident: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR Invalid data provided for Incident: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')], 'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR Invalid data provided for InspectionForm: {'uuid': [ErrorDetail(string='inspection form with this uuid already exists.', code='unique')]}
+ERROR Invalid data provided for Incident: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR Failed to retrieve list of Evidence. No records found.
+ERROR Failed to retrieve list of Evidence. No records found.
+ERROR Failed to retrieve list of Evidence. No records found.
+ERROR Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')], 'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR Failed to retrieve list of Evidence. No records found.
+ERROR Failed to retrieve list of Evidence. No records found.
+ERROR Failed to retrieve list of Evidence. No records found.
+ERROR Error while fetching user list: 'AnonymousUser' object has no attribute 'email'
+ERROR User registration failed: {'email': [ErrorDetail(string='Enter a valid email address.', code='invalid')]}
+ERROR Error while fetching user list: 'AnonymousUser' object has no attribute 'email'
+ERROR Invalid data provided for Complaint: {'uuid': [ErrorDetail(string='complaint with this uuid already exists.', code='unique')]}
+ERROR Incident with ID 32 not found.
+ERROR Invalid data provided for Complaint: {'uuid': [ErrorDetail(string='complaint with this uuid already exists.', code='unique')]}
+ERROR Logout failed: Invalid or expired refresh token
+ERROR Logout failed: Invalid or expired refresh token
+ERROR Logout failed: Invalid or expired refresh token
+ERROR Logout failed: Invalid or expired refresh token
+ERROR Invalid data provided for Incident: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR Invalid data provided for Incident: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+2025-03-20 09:31:18,025 (ERROR)- forensicapp- Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+2025-03-20 09:35:16,285 - ERROR- forensicapp- Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-20 09:36:27,672 1596 18452 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-20 09:36:52,861 12704 18124 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-20 09:37:22,700 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}

@@ -146,3 +146,134 @@ INFO 2025-03-18 12:13:11,234 views 19472 17928 Created new InspectionForm instan
 INFO 2025-03-18 12:13:11,325 views 19472 1820 Created new InspectionForm instance(s)
 INFO 2025-03-18 12:13:16,416 views 19472 8436 Retrieved list of Evidence
 INFO 2025-03-18 12:13:27,389 views 19472 8436 Retrieved list of InspectionForm
+INFO 2025-03-18 13:38:26,789 views 3308 16752 User logged in: (bassim@ur)
+INFO 2025-03-18 13:44:46,376 views 3308 8144 Created new Incident instance(s)
+INFO 2025-03-18 13:44:47,053 views 3308 17948 Created new Evidence instance(s)
+INFO 2025-03-18 13:44:47,110 views 3308 15952 Created new Evidence instance(s)
+INFO 2025-03-18 13:44:47,172 views 3308 12280 Created new Evidence instance(s)
+INFO 2025-03-18 13:44:47,231 views 3308 9948 Created new Evidence instance(s)
+INFO 2025-03-18 13:44:47,306 views 3308 15824 Created new Evidence instance(s)
+INFO 2025-03-18 13:44:47,361 views 3308 2852 Created new Evidence instance(s)
+INFO 2025-03-18 13:44:48,002 views 3308 6596 Created new InspectionForm instance(s)
+INFO 2025-03-18 13:44:48,081 views 3308 4212 Created new InspectionForm instance(s)
+INFO 2025-03-18 13:44:48,151 views 3308 4100 Created new InspectionForm instance(s)
+INFO 2025-03-18 13:44:48,446 views 3308 9692 Created new InspectionForm instance(s)
+INFO 2025-03-18 13:44:48,511 views 3308 6216 Created new InspectionForm instance(s)
+INFO 2025-03-18 13:44:48,578 views 3308 7372 Created new InspectionForm instance(s)
+INFO 2025-03-18 13:44:56,202 views 3308 19252 Retrieved list of Incident
+INFO 2025-03-18 13:45:29,155 views 3308 19252 Retrieved list of Evidence
+INFO 2025-03-18 13:45:52,733 views 3308 19252 Retrieved list of InspectionForm
+INFO 2025-03-18 13:57:47,627 views 11384 2784 Created new Incident instance(s)
+INFO 2025-03-18 13:57:47,968 views 11384 19724 Created new Incident instance(s)
+ERROR 2025-03-19 13:09:18,346 views 12536 2216 Error retrieving evidence for incident_id 1: Cannot resolve keyword 'accident_id' into field. Choices are: Placeoflifting, accident_Id, accident_Id_id, created_at, id, metodeIifting, sampleNumber, sampleType, status, updated_at, userId, userId_id, uuid
+ERROR 2025-03-19 13:11:17,222 views 10684 1196 Error retrieving evidence for incident_id 1: Cannot resolve keyword 'accident_id' into field. Choices are: Placeoflifting, accident_Id, accident_Id_id, created_at, id, metodeIifting, sampleNumber, sampleType, status, updated_at, userId, userId_id, uuid
+INFO 2025-03-19 13:14:42,822 views 20024 10708 Retrieved list of Evidence
+INFO 2025-03-19 13:27:48,168 views 18212 13868 Retrieved 8 Incident instances.
+ERROR 2025-03-19 13:27:50,494 views 18212 13868 Invalid data provided for Incident: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR 2025-03-19 13:28:08,031 views 18212 13868 Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')]}
+INFO 2025-03-19 13:28:24,937 views 18212 13868 Successfully created Evidence instance(s)
+ERROR 2025-03-19 13:32:20,521 views 13472 10852 Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')]}
+INFO 2025-03-19 13:32:25,438 views 13472 10852 Successfully created Evidence instance(s)
+INFO 2025-03-19 13:36:57,594 views 20240 16988 Successfully created Incident instance(s)
+INFO 2025-03-19 13:37:05,581 views 20240 16988 Retrieved 8 Incident instances.
+INFO 2025-03-19 13:37:18,102 views 20240 16988 Retrieved list of InspectionForm
+ERROR 2025-03-19 13:37:24,651 views 20240 16988 Invalid data provided for InspectionForm: {'uuid': [ErrorDetail(string='inspection form with this uuid already exists.', code='unique')]}
+INFO 2025-03-19 13:40:33,285 views 6304 17300 Retrieved 8 Incident instances.
+INFO 2025-03-19 13:40:47,078 views 6304 17300 Retrieved 8 Incident instances.
+INFO Retrieved 8 Incident instances.
+ERROR Invalid data provided for Incident: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR Invalid data provided for Incident: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')], 'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR Invalid data provided for InspectionForm: {'uuid': [ErrorDetail(string='inspection form with this uuid already exists.', code='unique')]}
+WARNING No inspection forms found for incident_id: 5
+WARNING No evidence found for incident_id: 7
+INFO Retrieved list of Evidence
+ERROR Invalid data provided for Incident: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+INFO Retrieved 8 Incident instances.
+INFO Retrieved list of Evidence
+INFO Retrieved Evidence with id 1
+INFO Retrieved list of Evidence
+ERROR Failed to retrieve list of Evidence. No records found.
+INFO Retrieved list of Evidence
+ERROR Failed to retrieve list of Evidence. No records found.
+INFO Retrieved list of Evidence
+ERROR Failed to retrieve list of Evidence. No records found.
+ERROR Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')], 'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+INFO Retrieved list of Evidence
+ERROR Failed to retrieve list of Evidence. No records found.
+INFO Retrieved list of Evidence
+ERROR Failed to retrieve list of Evidence. No records found.
+INFO Retrieved Evidence with id 1
+INFO Retrieved list of Evidence
+ERROR Failed to retrieve list of Evidence. No records found.
+INFO Retrieved list of Evidence
+INFO Retrieved 8 Incident instances.
+INFO Successfully updated Incident with ID 32.
+INFO Deleted Incident with ID 32.
+INFO Retrieved 8 Incident instances.
+ERROR Error while fetching user list: 'AnonymousUser' object has no attribute 'email'
+ERROR User registration failed: {'email': [ErrorDetail(string='Enter a valid email address.', code='invalid')]}
+INFO New user registered: zhraa@gmail.com (zhraa)
+ERROR Error while fetching user list: 'AnonymousUser' object has no attribute 'email'
+INFO User logged in: (zhraa)
+INFO User zhraa@gmail.com viewed the list of users
+INFO User zhraa@gmail.com viewed the list of users
+INFO User logged in: (zhraa)
+INFO User zhraa@gmail.com viewed the list of users
+INFO User zhraa@gmail.com viewed the list of users
+ERROR Invalid data provided for Complaint: {'uuid': [ErrorDetail(string='complaint with this uuid already exists.', code='unique')]}
+INFO Successfully created Complaint instance(s)
+INFO Retrieved list of Complaint
+INFO Retrieved list of Evidence
+INFO Retrieved 8 Incident instances.
+INFO Retrieved Incident with ID 1.
+INFO Retrieved Incident with ID 1.
+INFO Retrieved list of Evidence
+INFO Retrieved Evidence with id 1
+WARNING No evidence found for incident_id: 7
+INFO Retrieved list of InspectionForm
+WARNING No inspection forms found for incident_id: 5
+INFO User list accessed
+INFO User list accessed
+INFO Retrieved Evidence with id 1
+INFO Retrieved Evidence with id 1
+INFO Successfully updated Evidence with ID 1.
+INFO Successfully updated Incident with ID 1.
+INFO Retrieved Incident with ID 1.
+INFO Retrieved 8 Incident instances.
+ERROR Incident with ID 32 not found.
+INFO Deleted Incident with ID 31.
+INFO Retrieved list of Evidence
+INFO Successfully updated Evidence with ID 30.
+INFO Deleted Evidence with ID 30.
+WARNING No evidence found for incident_id: 2
+INFO Successfully created InspectionForm instance(s)
+INFO Retrieved list of InspectionForm
+INFO Successfully updated InspectionForm with ID 42.
+INFO Deleted InspectionForm with ID 42.
+INFO Retrieved list of Complaint
+INFO Retrieved Complaint with id 1
+ERROR Invalid data provided for Complaint: {'uuid': [ErrorDetail(string='complaint with this uuid already exists.', code='unique')]}
+INFO Successfully created Complaint instance(s)
+INFO Successfully created Complaint instance(s)
+INFO Successfully updated Complaint with ID 4.
+INFO Deleted Complaint with ID 4.
+INFO User logged in: (zhraa)
+INFO User logged out: (zhraa)
+ERROR Logout failed: Invalid or expired refresh token
+INFO User logged in: (zhraa)
+INFO User logged out successfully: zhraa
+ERROR Logout failed: Invalid or expired refresh token
+INFO User logged in: (zhraa)
+ERROR Logout failed: Invalid or expired refresh token
+INFO User logged out successfully: zhraa
+ERROR Logout failed: Invalid or expired refresh token
+ERROR Invalid data provided for Incident: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR Invalid data provided for Incident: {'uuid': [ErrorDetail(string='incident with this uuid already exists.', code='unique')]}
+ERROR Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+2025-03-20 09:31:18,025 (ERROR)- forensicapp- Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+2025-03-20 09:35:16,285 - ERROR- forensicapp- Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-20 09:36:52,861 12704 18124 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-20 09:37:22,700 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}

@@ -14,15 +14,12 @@
 					"item": [
 						{
 							"name": "evidence",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"uuid\": \"e89b-12d3-a456-426614174000\",\r\n    \"accident_Id\": 1,\r\n    \"sampleType\": \"Gun\",\r\n    \"sampleNumber\": \"B1234\",\r\n    \"placeoflifting\": \"Crime Scene\",\r\n    \"methodlifting\": \"picture\",\r\n    \"status\": \"local\",\r\n    \"userId\": 1\r\n}\r\n",
+									"raw": "{\r\n    \"uuid\": \"e89b\",\r\n    \"sampleType\": \"Gun\",\r\n    \"sampleNumber\": \"B1234\",\r\n    \"placeoflifting\": \"Crime Scene\",\r\n    \"methodlifting\": \"picture\",\r\n    \"status\": \"local\",\r\n    \"userId\": 1\r\n    \r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -91,9 +88,6 @@
 									}
 								}
 							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -101,11 +95,11 @@
 										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzI0MzkyLCJpYXQiOjE3NDEyMzc5OTIsImp0aSI6Ijg1MzQ3NjNiMDEwYTQ3YWZiMDM1ZWJjMjZjMDNiMjIzIiwidXNlcl9pZCI6MTUsInVzZXJuYW1lIjoiSGFzc2FuMjMiLCJmaXJzdF9uYW1lIjoiaGFzc2FuIiwibGFzdF9uYW1lIjoiaGFzc2FuIiwicGhvbmVfbnVtYmVyIjoiMTIzNDU2NzkxMSJ9.XG9kZKKsG0JtBOKxP4ajR6Celt_6P-JSxtxHGj_ePuY"
 									}
 								},
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"uuid\": \"1234-5678-91011\",\r\n    \"date_discovery\": \"2025-03-17\",\r\n    \"accident_date\": \"2025-03-15\",\r\n    \"investigating_body\": \"Police\",\r\n    \"accident_description\": \"Fire accident in warehouse.\",\r\n    \"inspection_time\": \"2025-03-17 14:00\",\r\n    \"accident_location\": \"Warehouse 12, Sector B\",\r\n    \"action_taken\": \"Fire extinguished.\",\r\n    \"method\": \"Firefighting\",\r\n    \"status\": \"local\",\r\n    \"latitude\": \"30.0444\",\r\n    \"longitude\": \"31.2357\",\r\n    \"color\": \"Red\",\r\n    \"typeAccident\": \"Fire\",\r\n    \"resulting_damages\": \"Property damage worth $10000\",\r\n    \"causes_of_fire\": \"Electrical malfunction\",\r\n    \"category_accident\": \"fireAccident\"\r\n}\r\n",
+									"raw": " {\r\n            \"uuid\": \"1234-5678\",\r\n            \"date_discovery\": \"\",\r\n            \"accident_date\": \"2025-03-15\",\r\n            \"investigating_body\": \"someone\",\r\n            \"accident_description\": \"Fire accident in warehouse.\",\r\n            \"inspection_time\": \"2025-03-17 14:00\",\r\n            \"accident_location\": \"Warehouse 12, Sector B\",\r\n            \"action_taken\": \"Fire extinguished.\",\r\n            \"method\": \"Firefighting\",\r\n            \"status\": \"local\",\r\n            \"latitude\": \"30.0444\",\r\n            \"longitude\": \"31.2357\",\r\n            \"color\": \"Red\",\r\n            \"typeAccident\": \"Fire\",\r\n            \"resulting_damages\": \"Property damage worth $10000\",\r\n            \"causes_of_fire\": \"Electrical malfunction\",\r\n            \"category_accident\": \"fireAccident\",\r\n            \"created_at\": \"2025-03-19T10:36:57.590024Z\",\r\n            \"updated_at\": \"2025-03-19T10:36:57.590024Z\",\r\n            \"user\": 1\r\n        }\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -179,15 +173,12 @@
 					"item": [
 						{
 							"name": "inspection-lab",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "\r\n{\r\n    \"uuid\": \"1234-4b67-9876-abcdef123456\",\r\n    \"form_id\": 1,\r\n    \"isChemistryLab\": false,\r\n    \"isWeaponsLab\": false,\r\n    \"isForensicLab\": false,\r\n    \"isCriminalPrint\": false,\r\n    \"isDNALab\": false,\r\n    \"isCriminalElectronic\": false,\r\n    \"status\": \"local\",\r\n    \"userId\": 1\r\n}\r\n",
+									"raw": "\r\n{\r\n    \"uuid\": \"1234-4b67-9876-abcf123456\",\r\n    \"form_id\": 1,\r\n    \"isChemistryLab\": true,\r\n    \"isWeaponsLab\": true,\r\n    \"isForensicLab\": true,\r\n    \"isCriminalPrint\": true,\r\n    \"isDNALab\": false,\r\n    \"isCriminalElectronic\": false,\r\n    \"status\": \"local\",\r\n    \"userId\": 1\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -228,10 +219,7 @@
 							"name": "incident_Type",
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzI1NTg2LCJpYXQiOjE3NDEyMzkxODYsImp0aSI6ImEzYzlhMTg2ZTQ5ZDRiNmU5YzY5MmUxNjliYTVkZWI2IiwidXNlcl9pZCI6MTUsInVzZXJuYW1lIjoiSGFzc2FuMjMiLCJmaXJzdF9uYW1lIjoiaGFzc2FuIiwibGFzdF9uYW1lIjoiaGFzc2FuIiwicGhvbmVfbnVtYmVyIjoiMTIzNDU2NzkxMSJ9.1HYXPJ9P9yfOQ_bpBtR33YTOb-UWMf7vF38KP91eXkY"
-									}
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [],
@@ -274,7 +262,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"uuid\": \"123e4567-e89b-12d3-a456-426614174000\",\r\n  \"section\": 1,  //  incident ID 1\r\n  \"name\": \"Complaint 1\",\r\n  \"action\": \"This is the action for the complaint.\",\r\n  \"status\": \"local\",\r\n  \"user\": 1,\r\n  \"is_hidden\": false\r\n}\r\n",
+							"raw": "{\r\n  \"uuid\": \"123e4567-e89b-\",\r\n  \"section\": 1,  //  incident ID 1\r\n  \"name\": \"Complaint 1\",\r\n  \"action\": \"This is the action for the complaint.\",\r\n  \"status\": \"local\",\r\n  \"user\": 1,\r\n  \"is_hidden\": false\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -300,7 +288,7 @@
 							"formdata": [
 								{
 									"key": "username",
-									"value": "bassim@ur",
+									"value": "zhraa",
 									"type": "text"
 								},
 								{
@@ -387,14 +375,21 @@
 							"type": "noauth"
 						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "{{URL}}account/users",
+							"raw": "{{URL}}account/users/",
 							"host": [
 								"{{URL}}account"
 							],
 							"path": [
-								"users"
+								"users",
+								""
 							],
 							"query": [
 								{
@@ -461,25 +456,25 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "bassim@",
+									"value": "zhraa@gmail.com",
 									"description": "unique",
 									"type": "text"
 								},
 								{
 									"key": "username",
-									"value": "bassi",
+									"value": "zhraa",
 									"description": "unique",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "12345678",
+									"value": "12345678Ur",
 									"description": "numbers , must be lower,uppercase",
 									"type": "text"
 								},
 								{
 									"key": "password2",
-									"value": "12345678",
+									"value": "12345678Ur",
 									"type": "text"
 								},
 								{
@@ -512,6 +507,13 @@
 				{
 					"name": "logout",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "12345678Ur",
+								"username": "zhraa"
+							}
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -522,7 +524,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MDYzNjk4OSwiaWF0IjoxNzQwMDMyMTg5LCJqdGkiOiIwYThlOGIyOGJlOGY0OGQzOWU0MDQ5NjQ2ZjQxMjcxMyIsInVzZXJfaWQiOjE1fQ.qo1hoTljRyc0utEoNQdL1u7-SdyOig8jfyGCHNw0Y2E\"}",
+							"raw": "{  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MzA1NjAwMiwiaWF0IjoxNzQyNDUxMjAyLCJqdGkiOiIzY2E1YTM5NjQzMTk0M2MyYTc5NWJiOWY1MmNlMzQwNCIsInVzZXJfaWQiOjIsInVzZXJuYW1lIjoiemhyYWEiLCJmaXJzdF9uYW1lIjoiemhyYWEiLCJsYXN0X25hbWUiOiJlc3NhIiwicGhvbmVfbnVtYmVyIjoiMTIzNDU2NzkxMSJ9.fLk33CFSmOcwH2mrcHm4jn_FIm-bP1u5CzytaJZIEIs\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -530,6 +532,20 @@
 							}
 						},
 						"url": "{{URL}}account/logout/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Log",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{URL}}api/logs/"
 					},
 					"response": []
 				}

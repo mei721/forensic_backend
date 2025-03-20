@@ -21,8 +21,6 @@ class BaseAPIView(APIView):
     model = None
     serializer_class = None
     permission_classes = [AllowAny]
-
-
     def get(self, request, pk=None):
         if pk:
             try:
@@ -33,92 +31,177 @@ class BaseAPIView(APIView):
                 return Response({"data": serializer.data})
             except self.model.DoesNotExist:
                 logger.error(f"{self.model.__name__} with id {pk} not found")
-                return Response({'error': 'Not found'}, status=status.HTTP_404_NOT_FOUND)
+                return Response(
+                    {
+                        "error": f"{self.model.__name__} with ID {pk} was not found.",
+                        "status_code": status.HTTP_404_NOT_FOUND
+                    },     status=status.HTTP_404_NOT_FOUND
+                )
         try:
             paginator = CustomPaginationWithResult()
             instances = self.model.objects.all().order_by('-id')
             result_page = paginator.paginate_queryset(instances, request)
             serializer = self.serializer_class(result_page, many=True)
             logger.info(f"Retrieved list of {self.model.__name__}")
-            return paginator.get_paginated_response({"data": serializer.data})
+            return paginator.get_paginated_response(serializer.data)
 
 
         except:
-                logger.error(f"Failed to retrieve list of {self.model.__name__}")
-                return Response({'error': 'Not found'}, status=status.HTTP_404_NOT_FOUND)
+            logger.error(f"Failed to retrieve list of {self.model.__name__}. No records found.")
+            return Response(
+                {
+                    "error": f"No {self.model.__name__} records found.",
+                    "status_code": status.HTTP_404_NOT_FOUND
+                }, 
+                status=status.HTTP_404_NOT_FOUND
+            )
+
 
 
     def post(self, request):
-    # Check if the request data is a list of items
-        if isinstance(request.data, list):
-            # If it's a list
-            try:
-                serializer = self.serializer_class(data=request.data, many=True)
-            except Exception as e:
-                logger.error(f"Failed to retrieve list of {self.model.__name__}: {e}")
-                return Response({'error': 'Invalid data'}, status=status.HTTP_400_BAD_REQUEST)
-        else:
-            try:
-                serializer = self.serializer_class(data=request.data)
-            except Exception as e:
-                logger.error(f"Failed to retrieve single {self.model.__name__}: {e}")
-                return Response({'error': 'Invalid data'}, status=status.HTTP_400_BAD_REQUEST)
+    # Check if the request data is a list
+        is_bulk_create = isinstance(request.data, list)
+
+        try:
+            serializer = self.serializer_class(data=request.data, many=is_bulk_create)
+        except Exception as e:
+            logger.error(f"Error initializing serializer for {self.model.__name__}: {e}")
+            return Response(
+                {
+                    "error": f"Failed to process {self.model.__name__} data.",
+                    "details": str(e),
+                    "status_code": status.HTTP_400_BAD_REQUEST
+                }, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
         if serializer.is_valid():
             try:
                 serializer.save()
-                logger.info(f"Created new {self.model.__name__} instance(s)")
-
-                return Response({"data": serializer.data}, status=status.HTTP_201_CREATED)
+                logger.info(f"Successfully created {self.model.__name__} instance(s)")
+                return Response({"data": serializer.data})
             except Exception as e:
-                logger.error(f"Failed to create new {self.model.__name__} instance(s): {e}")
-                return Response({'error': 'Failed to create new instance(s)'}, status=status.HTTP_400_BAD_REQUEST)
+                logger.error(f"Failed to create {self.model.__name__} instance(s): {e}")
+                return Response(
+                    {
+                        "error": f"Failed to create {self.model.__name__} instance(s).",
+                        "details": str(e),
+                        "status_code": status.HTTP_400_BAD_REQUEST
+                    }, 
+                    status=status.HTTP_400_BAD_REQUEST
+                )
 
-        # If serializer is not valid, log and return the errors
-        logger.error(f"Invalid data provided: {serializer.errors}")
-        return Response({'error': 'Invalid data'}, status=status.HTTP_400_BAD_REQUEST)
+        # If serializer is not valid, return validation errors
+        logger.error(f"Invalid data provided for {self.model.__name__}: {serializer.errors}")
+        return Response(
+            {
+                "error": "Invalid data.",
+                "validation_errors": serializer.errors,
+                "status_code": status.HTTP_400_BAD_REQUEST
+            }, 
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
 
     def put(self, request, pk):
         try:
             instance = self.model.objects.get(pk=pk)
         except self.model.DoesNotExist:
-            logger.error(f"{self.model.__name__} with id {pk} not found")
-            return Response({'error': 'Not found'}, status=status.HTTP_404_NOT_FOUND)
-        
+            logger.error(f"{self.model.__name__} with ID {pk} not found.")
+            return Response(
+                {
+                    "error": f"{self.model.__name__} with ID {pk} not found.",
+                    "status_code": status.HTTP_404_NOT_FOUND
+                },
+                status=status.HTTP_404_NOT_FOUND
+            )
 
         try:
-            serializer = self.serializer_class(instance, data=request.data)
+            serializer = self.serializer_class(instance, data=request.data, partial=True)  # Allow partial updates
             if serializer.is_valid():
                 serializer.save()
-                logger.info(f"Updated {self.model.__name__} with id {pk}")
+                logger.info(f"Successfully updated {self.model.__name__} with ID {pk}.")
                 return Response({"data": serializer.data})
-        except:
-            logger.error(f"Failed to update {self.model.__name__} with id {pk}")
-            return Response({'error': 'Failed to update instance'}, status=status.HTTP_400_BAD_REQUEST)
-    
+            else:
+                logger.error(f"Validation failed for updating {self.model.__name__} with ID {pk}: {serializer.errors}")
+                return Response(
+                    {
+                        "error": "Invalid data provided.",
+                        "validation_errors": serializer.errors,
+                        "status_code": status.HTTP_400_BAD_REQUEST
+                    },
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+        except Exception as e:
+            logger.error(f"Failed to update {self.model.__name__} with ID {pk}: {str(e)}")
+            return Response(
+                {
+                    "error": f"Failed to update {self.model.__name__}.",
+                    "details": str(e),
+                    "status_code": status.HTTP_400_BAD_REQUEST
+                },
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
 
     def delete(self, request, pk=None):
-        if pk:
-            # Delete a single instance
-            try:
-                instance = self.model.objects.get(pk=pk)
-                instance.delete()
-                logger.info(f"Deleted {self.model.__name__} with id {pk}")
-                return Response({'message': 'Deleted successfully'}, status=status.HTTP_204_NO_CONTENT)
-            except self.model.DoesNotExist:
-                logger.error(f"{self.model.__name__} with id {pk} not found")
-                return Response({'error': 'Not found'}, status=status.HTTP_404_NOT_FOUND)
-        else:
-            # Delete all instances if no pk is provided
-            try:
-                self.model.objects.all().delete()
-                logger.info(f"Deleted all {self.model.__name__} instances")
-                return Response({'message': 'Deleted all successfully'}, status=status.HTTP_204_NO_CONTENT)
-            
-            except:
-                logger.error(f"{self.model.__name__} instances not found")
-                return Response({'error': 'Not found'}, status=status.HTTP_404_NOT_FOUND)
+        try:
+            if pk:
+                # Delete a single instance
+                try:
+                    instance = self.model.objects.get(pk=pk)
+                    instance.delete()
+                    logger.info(f"Deleted {self.model.__name__} with ID {pk}.")
+                    return Response(
+                        {
+                            "message": f"{self.model.__name__} with ID {pk} deleted successfully.",
+                            "status_code": status.HTTP_204_NO_CONTENT
+                        },
+                        status=status.HTTP_204_NO_CONTENT
+                    )
+                except self.model.DoesNotExist:
+                    logger.error(f"{self.model.__name__} with ID {pk} not found.")
+                    return Response(
+                        {
+                            "error": f"{self.model.__name__} with ID {pk} not found.",
+                            "status_code": status.HTTP_404_NOT_FOUND
+                        },
+                        status=status.HTTP_404_NOT_FOUND
+                    )
+
+            # Delete all instances if no pk is provided (Bulk delete)
+            queryset = self.model.objects.all()
+            if not queryset.exists():
+                logger.error(f"No {self.model.__name__} instances found to delete.")
+                return Response(
+                    {
+                        "error": f"No {self.model.__name__} instances found to delete.",
+                        "status_code": status.HTTP_404_NOT_FOUND
+                    },
+                    status=status.HTTP_404_NOT_FOUND
+                )
+
+            deleted_count, _ = queryset.delete()
+            logger.info(f"Deleted {deleted_count} {self.model.__name__} instances.")
+            return Response(
+                {
+                    "message": f"Deleted {deleted_count} {self.model.__name__} instances successfully.",
+                    "status_code": status.HTTP_204_NO_CONTENT
+                },
+                status=status.HTTP_204_NO_CONTENT
+            )
+
+        except Exception as e:
+            logger.error(f"Failed to delete {self.model.__name__}: {str(e)}")
+            return Response(
+                {
+                    "error": f"An error occurred while deleting {self.model.__name__}.",
+                    "details": str(e),
+                    "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+                },
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
 
 class IncindentView(BaseAPIView):
     model = Incident
@@ -130,40 +213,55 @@ class IncindentView(BaseAPIView):
     ordering = ['-id']  # Default ordering
 
     def get(self, request, pk=None):
-        if pk:
-            try:
-            # Retrieve a single incident by primary key (pk)
+        try:
+            if pk:
+                # Retrieve a single instance by primary key (pk)
                 incident = get_object_or_404(self.model, pk=pk)
                 serializer = self.serializer_class(incident)
-                logger.info(f"Retrieved {self.model.__name__} with id {pk}")
-                return Response({"data": serializer.data}, status=status.HTTP_200_OK)
-            except:
-                logger.error(f"Failed to retrieve {self.model.__name__} with id {pk}")
-                return Response({'error': 'Not found'}, status=status.HTTP_404_NOT_FOUND)
-        
+                logger.info(f"Retrieved {self.model.__name__} with ID {pk}.")
+                return Response({"data" : serializer.data})
 
-        try:
-        # Retrieve all incidents with optional filtering
+            # Retrieve all instances with optional filtering
             queryset = self.model.objects.all()
 
-            # Apply filters if any are present in the request
-            filtered_queryset = self.filterset_class(request.GET, queryset=queryset).qs
+            # Apply filters if filterset_class is defined
+            if hasattr(self, 'filterset_class') and self.filterset_class:
+                queryset = self.filterset_class(request.GET, queryset=queryset).qs
 
             # Apply ordering if specified in the request
-            ordering = request.GET.get('ordering', '-id')  # Default ordering is descending by id
-            filtered_queryset = filtered_queryset.order_by(ordering)
+            ordering = request.GET.get('ordering', '-id')
+            valid_ordering_fields = [field.name for field in self.model._meta.fields]
+
+            # Ensure ordering field is valid
+            if ordering.lstrip('-') in valid_ordering_fields:
+                queryset = queryset.order_by(ordering)
+            else:
+                logger.error(f"Invalid ordering field: {ordering}. Using default ordering.")
+                queryset = queryset.order_by('-id')
 
             # Paginate the filtered and ordered queryset
             paginator = CustomPaginationWithResult()
-            result_page = paginator.paginate_queryset(filtered_queryset, request)
+            result_page = paginator.paginate_queryset(queryset, request)
             serializer = self.serializer_class(result_page, many=True)
 
-        # Return paginated response
-            logger.info(f"Retrieved list of {self.model.__name__}")
+            # Return paginated response
+            logger.info(f"Retrieved {len(serializer.data)} {self.model.__name__} instances.")
             return paginator.get_paginated_response(serializer.data)
-        except:
-            logger.error(f"Failed to retrieve list of {self.model.__name__}")
-            return Response({'error': 'Not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        except self.model.DoesNotExist:
+            logger.error(f"{self.model.__name__} with ID {pk} not found.")
+            return Response(
+                {"error": f"{self.model.__name__} with ID {pk} not found.", "status_code": status.HTTP_404_NOT_FOUND},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        except Exception as e:
+            logger.error(f"Failed to retrieve {self.model.__name__}: {str(e)}")
+            return Response(
+                {"error": "An error occurred while retrieving data.", "details": str(e), "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
 
 class EvidenceView(BaseAPIView):
     model = Evidence
@@ -181,127 +279,133 @@ class InspectionFormView(BaseAPIView):
     filterset_class = InspectionFilter
     ordering_fields = ['id' , 'inspection_date' ]
     ordering = ['-id']
-    def get(self, request, pk=None):
-        """
-        GET request to retrieve all InspectionForms or a single form by pk.
-        """
-        if pk:
-            try:
-            # Retrieve a single inspection form by primary key (pk)
-                inspection_form = self.model.objects.get(self.model, pk=pk)
-                serializer = self.serializer_class(inspection_form)
-                logger.info(f"Retrieved {self.model.__name__} with id {pk}")
-                return Response({"data": serializer.data}, status=status.HTTP_200_OK)
-            except:
-                logger.error(f"Failed to retrieve {self.model.__name__} with id {pk}")
-                return Response({'error': 'Not found'}, status=status.HTTP_404_NOT_FOUND)
+def get(self, request, pk=None):
+    """
+    GET request to retrieve all InspectionForms or a single form by pk.
+    """
+    if pk:
         try:
-        # Retrieve all with filtering and ordering
-            queryset = self.model.objects.all()
-            # Apply filters if any are present in the request
+            # Retrieve a single inspection form by primary key (pk)
+            inspection_form = self.model.objects.get(pk=pk)
+            serializer = self.serializer_class(inspection_form)
+            logger.info(f"Successfully retrieved {self.model.__name__} with id {pk}")
 
-            filtered_queryset = self.filterset_class(request.GET, queryset=queryset).qs 
-            # Apply ordering 
-            ordering = request.GET.get('ordering', '-id') 
-            filtered_queryset = filtered_queryset.order_by(ordering)
-            paginator = CustomPaginationWithResult()
-            result_page = paginator.paginate_queryset(filtered_queryset, request)
+            return Response(
+                {"data": serializer.data},
+                status=status.HTTP_200_OK
+            )
+        except self.model.DoesNotExist:
+            logger.error(f"{self.model.__name__} with ID {pk} not found.")
+            return Response(
+                {"error": f"{self.model.__name__} with ID {pk} not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        except Exception as e:
+            logger.error(f"Error retrieving {self.model.__name__} with ID {pk}: {str(e)}")
+            return Response(
+                {"error": "An unexpected error occurred.", "details": str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
-            serializer = self.serializer_class(result_page, many=True)
-            logger.info(f"Retrieved list of {self.model.__name__}")
+    try:
+        # Retrieve all records with optional filtering and ordering
+        queryset = self.model.objects.all()
+
+        # Apply filters if filterset_class is defined
+        if hasattr(self, 'filterset_class') and self.filterset_class:
+            queryset = self.filterset_class(request.GET, queryset=queryset).qs 
+
+        # Apply ordering safely
+        ordering = request.GET.get('ordering', '-id') 
+        if ordering.lstrip('-') in [field.name for field in self.model._meta.fields]:
+            queryset = queryset.order_by(ordering)
+        else:
+            logger.error(f"Invalid ordering field: {ordering}. Defaulting to '-id'")
+            queryset = queryset.order_by('-id')
+
+        # Paginate the filtered and ordered queryset
+        paginator = CustomPaginationWithResult()
+        result_page = paginator.paginate_queryset(queryset, request)
+        serializer = self.serializer_class(result_page, many=True)
+
+        logger.info(f"Retrieved list of {self.model.__name__} ({queryset.count()} records)")
 
         # Return paginated response
+        return paginator.get_paginated_response(serializer.data)
 
-            return paginator.get_paginated_response(serializer.data)
-        except:
-            logger.error(f"Failed to retrieve list of {self.model.__name__}")
-            return Response({'error': 'Not found'}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        logger.error(f"Error retrieving list of {self.model.__name__}: {str(e)}")
+        return Response(
+            {"error": "An unexpected error occurred while retrieving the records.", "details": str(e)},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
 
 
 
 class InspectionLabsByIncidentIdView(APIView):
     permission_classes = [AllowAny]
     
-
     def get(self, request, incident_id):
         """
-        GET request to retrieve all InspectionForm in a specific incident_id.
+        GET request to retrieve all InspectionForm records for a specific incident_id.
         """
         try:
             # Fetch all related InspectionForm records
             inspection_forms = InspectionForm.objects.filter(form_id=incident_id)
 
             if not inspection_forms.exists():
-                logger.warning(f"No inspection forms found for incident_id: {incident_id}")
+                logger.error(f"No inspection forms found for incident_id: {incident_id}")
                 return Response({"detail": "No inspection forms found for this incident."}, status=status.HTTP_404_NOT_FOUND)
 
             # Serialize the data
             serializer = InspectionFormSerializer(inspection_forms, many=True)
 
-            # Customize response data
-            customized_data = [
-                {
-                    "id": item.get("id"),
-                    "uuid": item.get("uuid"),
-                    "status": item.get("status"),
-                    "userId": item.get("userId"),
-                    "isChemistryLab": item.get("isChemistryLab"),
-                    "isWeaponsLab": item.get("isWeaponsLab"),
-                    "isForensicLab": item.get("isForensicLab"),
-                    "isCriminalPrint": item.get("isCriminalPrint"),
-                    "isDNALab": item.get("isDNALab"),
-                    "isCriminalElectronic": item.get("isCriminalElectronic"),
-                    "status": item.get("status"),
-                    "userId": item.get("userId"),
-                    "created_at": item.get("created_at"),
-                    "updated_at": item.get("updated_at")
-                }
-                for item in serializer.data
-            ]
-
-            return Response({"data": customized_data}, status=status.HTTP_200_OK)
+            return Response({"data": serializer.data}, status=status.HTTP_200_OK)
 
         except Exception as e:
             logger.error(f"Error retrieving inspection forms for incident_id {incident_id}: {str(e)}")
             return Response({"error": "An unexpected error occurred."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
 class EvidenceByIncidentIdView(APIView):
     permission_classes = [AllowAny]
+    
     def get(self, request, incident_id):
         """
         GET request to retrieve all Evidence related to a specific incident_id.
         """
         try:
             # Fetch all Evidence records related to the given incident_id
-            evidences = Evidence.objects.filter(accident_id=incident_id)
+            evidences = Evidence.objects.filter(accident_Id=incident_id)
 
             if not evidences.exists():
-                logger.warning(f"No evidence found for incident_id: {incident_id}")
+                logger.error(f"No evidence found for incident_id: {incident_id}")
                 return Response({"detail": "No evidence found for this incident."}, status=status.HTTP_404_NOT_FOUND)
 
             # Serialize the data
             serializer = EvidenceSerializer(evidences, many=True)
 
             return Response({"data": serializer.data}, status=status.HTTP_200_OK)
-
         except Exception as e:
             logger.error(f"Error retrieving evidence for incident_id {incident_id}: {str(e)}")
             return Response({"error": "An unexpected error occurred."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-
 class IncidentStatisticsView(APIView):
+    permission_classes = [AllowAny]
+
     def get(self, request):
         # Apply filters manually
         filterset = IncidentFilter(request.GET, queryset=Incident.objects.all())
 
         if not filterset.is_valid():
-
             return Response({"error": "Invalid filters"}, status=400)
 
-        # Apply filtering, then group by 'incident_type' and count
+        # Apply filtering
         filtered_incidents = filterset.qs
-        stats = filtered_incidents.values('incident_type').annotate(count=Count('id'))
 
-        serializer = IncidentStatisticsSerializer(stats, many=True)
-        return Response(serializer.data)
-    
+        # Count by 'incident_type' (if exists) and 'category_accident'
+        type_stats = filtered_incidents.values('typeAccident').annotate(count=Count('id'))
+        category_stats = filtered_incidents.values('category_accident').annotate(count=Count('id'))
+
+        return Response({
+            "incident_type_counts": type_stats,
+            "category_accident_counts": category_stats
+        })

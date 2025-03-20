@@ -38,7 +38,7 @@ class Incident(models.Model):
     
 class Evidence(models.Model):
         uuid = models.CharField(max_length=255, unique=True, blank=True, null=True)
-        accident_Id = models.ForeignKey('Incident', on_delete=models.CASCADE, related_name='evidences' , null=True, blank=True)
+        accident_Id = models.ForeignKey('Incident', on_delete=models.CASCADE, related_name='evidences', blank=False, null=False)
         sampleType = models.CharField(max_length=255, null=True, blank=True)
         sampleNumber = models.CharField(max_length=255, null=True, blank=True)
         Placeoflifting = models.CharField(max_length=255, null=True, blank=True)
@@ -84,6 +84,7 @@ class InspectionForm(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
+        
         return f"SampleDetail {self.id} - Status: {self.status}"
 
 

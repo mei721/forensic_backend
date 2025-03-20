@@ -170,19 +170,18 @@ SIMPLE_JWT = {
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,  # Let Django log its own stuff too
     'handlers': {
         'info_file': {
-            'level': 'INFO',
+            'level': 'INFO',  # This only handles INFO, WARNING, and DEBUG logs (not ERROR)
             'class': 'logging.FileHandler',
             'filename': 'logs/logs/info.log',  # File for INFO logs
             'formatter': 'verbose',
         },
         'error_file': {
-            'level': 'ERROR',
+            'level': 'ERROR',  # This only handles ERROR and CRITICAL logs
             'class': 'logging.FileHandler',
             'filename': 'logs/logs/error.log',  # File for ERROR logs
             'formatter': 'verbose',
@@ -190,12 +189,12 @@ LOGGING = {
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-            'formatter': 'simple',
+            'formatter': 'verbose',
         },
     },
     'formatters': {
         'verbose': {
-            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'format': '{levelname} {asctime} {message}',
             'style': '{',
         },
         'simple': {
@@ -224,8 +223,5 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': False,
         },
-
     },
 }
-
-
