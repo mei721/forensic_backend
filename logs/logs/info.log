@@ -277,3 +277,537 @@ ERROR Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='T
 ERROR Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
 ERROR 2025-03-20 09:36:52,861 12704 18124 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
 ERROR 2025-03-20 09:37:22,700 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-20 10:46:02,553 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+INFO 2025-03-20 10:46:26,485 Successfully created Evidence instance(s)
+ERROR 2025-03-20 10:48:31,538 Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')]}
+INFO 2025-03-20 10:48:37,234 Successfully created Evidence instance(s)
+ERROR 2025-03-20 10:50:50,559 Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')]}
+INFO 2025-03-20 10:50:54,008 Successfully created Evidence instance(s)
+ERROR 2025-03-20 10:51:03,955 Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')]}
+INFO 2025-03-23 09:09:58,772 Successfully created Incident instance(s)
+ERROR 2025-03-23 09:16:27,684 Failed to create Incident instance(s): duplicate key value violates unique constraint "forensicapp_incident_uuid_key"
+DETAIL:  Key (uuid)=(123e4567-e89b-12d3-a456-426614174000) already exists.
+
+ERROR 2025-03-23 09:16:35,997 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:16:35,998 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:17:08,353 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:17:08,354 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:19:17,880 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:19:17,881 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:19:37,250 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:19:37,250 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:20:13,555 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:20:13,556 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:21:53,135 Failed to create Incident instance(s): duplicate key value violates unique constraint "forensicapp_incident_uuid_key"
+DETAIL:  Key (uuid)=(123e4567-e89b-12d3-a456-426614174000) already exists.
+
+ERROR 2025-03-23 09:22:26,689 Invalid data provided for Incident: {'uuid': [ErrorDetail(string='Must be a valid UUID.', code='invalid')]}
+ERROR 2025-03-23 09:25:02,835 Invalid data provided for Incident: {'uuid': [ErrorDetail(string='Must be a valid UUID.', code='invalid')]}
+ERROR 2025-03-23 09:25:12,811 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:25:12,812 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:26:01,800 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:26:01,801 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:28:15,096 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:28:15,097 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:28:20,273 Invalid data provided for Incident: {'uuid': [ErrorDetail(string='Must be a valid UUID.', code='invalid')]}
+INFO 2025-03-23 09:28:51,925 Successfully created Incident instance.
+ERROR 2025-03-23 09:28:59,601 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:28:59,602 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+INFO 2025-03-23 09:29:33,544 Retrieved 8 Incident instances.
+ERROR 2025-03-23 09:29:46,041 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:31:19,886 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:31:27,981 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:32:02,116 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:32:22,736 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+INFO 2025-03-23 09:32:51,917 Retrieved 8 Incident instances.
+ERROR 2025-03-23 09:33:14,468 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:35:54,963 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:35:58,882 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:36:16,807 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+INFO 2025-03-23 09:36:50,572 Retrieved 8 Incident instances.
+ERROR 2025-03-23 09:38:10,989 Failed to delete Incident: operator does not exist: character varying = uuid
+LINE 1: ...app_incident" WHERE "forensicapp_incident"."uuid" = 'fa18487...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+ERROR 2025-03-23 09:38:42,360 Failed to retrieve Incident: operator does not exist: character varying = uuid
+LINE 1: ...app_incident" WHERE "forensicapp_incident"."uuid" = 'fa18487...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+ERROR 2025-03-23 09:43:29,495 Invalid data provided for Incident: {'uuid': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-23 09:44:10,787 Invalid data provided for Incident: {'uuid': [ErrorDetail(string='This field is required.', code='required')]}
+INFO 2025-03-23 09:44:19,933 Retrieved 8 Incident instances.
+ERROR 2025-03-23 09:44:30,314 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:51:57,521 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:53:11,592 Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='This field is required.', code='required')], 'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-23 09:53:59,262 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-23 09:54:23,577 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-23 09:56:57,987 Failed to retrieve list of Evidence. No records found.
+INFO 2025-03-23 10:05:25,176 Retrieved 8 Incident instances.
+ERROR 2025-03-23 10:06:59,167 Failed to retrieve Incident: operator does not exist: character varying = uuid
+LINE 1: ...app_incident" WHERE "forensicapp_incident"."uuid" = 'fa18487...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+ERROR 2025-03-23 10:08:03,360 Failed to retrieve Incident: operator does not exist: character varying = uuid
+LINE 1: ...app_incident" WHERE "forensicapp_incident"."uuid" = 'fa18487...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+ERROR 2025-03-23 10:08:30,762 Failed to retrieve Incident: 'UUID' object has no attribute 'replace'
+ERROR 2025-03-23 10:10:14,461 Failed to retrieve Incident: 'UUID' object has no attribute 'replace'
+ERROR 2025-03-23 10:11:06,758 Failed to retrieve Incident: 'UUID' object has no attribute 'replace'
+ERROR 2025-03-23 10:11:22,971 Failed to retrieve Incident: 'UUID' object has no attribute 'replace'
+ERROR 2025-03-23 10:12:45,237 Failed to retrieve Incident: 'UUID' object has no attribute 'replace'
+INFO 2025-03-23 10:13:37,057 Retrieved 8 Incident instances.
+ERROR 2025-03-23 10:13:50,155 Failed to retrieve Incident: 'UUID' object has no attribute 'replace'
+INFO 2025-03-23 10:25:07,832 Successfully created Evidence instance(s)
+INFO 2025-03-23 10:25:11,866 Retrieved list of Evidence
+INFO 2025-03-23 10:27:49,158 Successfully created Evidence instance(s)
+INFO 2025-03-23 10:27:49,302 Successfully created Evidence instance(s)
+INFO 2025-03-23 10:27:49,429 Successfully created Evidence instance(s)
+INFO 2025-03-23 10:27:49,546 Successfully created Evidence instance(s)
+INFO 2025-03-23 10:27:49,688 Successfully created Evidence instance(s)
+INFO 2025-03-23 10:27:49,818 Successfully created Evidence instance(s)
+INFO 2025-03-23 10:27:49,937 Successfully created Evidence instance(s)
+INFO 2025-03-23 10:27:50,065 Successfully created Evidence instance(s)
+INFO 2025-03-23 10:27:50,182 Successfully created Evidence instance(s)
+INFO 2025-03-23 10:27:50,303 Successfully created Evidence instance(s)
+INFO 2025-03-23 10:27:50,789 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 10:27:50,916 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 10:27:51,037 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 10:27:51,161 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 10:27:51,278 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 10:27:51,410 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 10:27:51,536 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 10:27:51,763 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 10:27:51,889 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 10:27:51,999 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 10:28:07,223 Retrieved 8 Incident instances.
+INFO 2025-03-23 10:30:02,447 Retrieved 8 Incident instances.
+INFO 2025-03-23 10:30:04,542 Successfully created Incident instance(s)
+INFO 2025-03-23 10:30:25,761 Retrieved 8 Incident instances.
+INFO 2025-03-23 10:30:35,871 Retrieved 8 Incident instances.
+INFO 2025-03-23 10:30:47,719 Retrieved list of Evidence
+INFO 2025-03-23 10:31:12,593 Retrieved list of InspectionForm
+INFO 2025-03-23 10:33:03,459 Retrieved 8 Incident instances.
+INFO 2025-03-23 10:33:12,751 Retrieved 8 Incident instances.
+INFO 2025-03-23 10:34:56,773 Retrieved 8 Incident instances.
+INFO 2025-03-23 10:38:53,547 Successfully created Incident instance(s)
+INFO 2025-03-23 10:39:00,595 Retrieved 8 Incident instances.
+INFO 2025-03-23 10:44:23,234 Successfully created Incident instance(s)
+ERROR 2025-03-23 10:44:23,844 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:23,980 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:24,119 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:24,261 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:24,395 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:24,536 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:24,677 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:25,288 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:25,434 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:25,580 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:25,756 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:25,897 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:26,030 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:26,162 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+INFO 2025-03-23 10:45:19,717 Retrieved list of Evidence
+INFO 2025-03-23 10:45:23,969 Retrieved list of InspectionForm
+ERROR 2025-03-23 10:45:25,924 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 10:45:33,178 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 10:46:19,296 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 10:46:41,537 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 10:46:53,673 User login failed: No active account found with the given credentials
+INFO 2025-03-23 10:47:30,333 User list accessed
+ERROR 2025-03-23 10:48:10,542 User login failed: No active account found with the given credentials
+INFO 2025-03-23 10:48:10,876 User logged in: (zhraa)
+INFO 2025-03-23 10:48:16,407 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:48:16,623 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:48:17,391 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:48:18,557 Retrieved Incident with ID 27.
+ERROR 2025-03-23 10:48:18,557 No evidence found for incident_id: 27
+INFO 2025-03-23 10:48:27,942 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:48:28,003 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:48:28,950 Retrieved 9 Incident instances.
+ERROR 2025-03-23 10:48:29,974 No inspection forms found for incident_id: 39
+ERROR 2025-03-23 10:48:29,978 No evidence found for incident_id: 39
+INFO 2025-03-23 10:48:30,089 Retrieved Incident with ID 39.
+INFO 2025-03-23 10:48:33,192 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:48:33,244 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:48:34,299 Retrieved 9 Incident instances.
+ERROR 2025-03-23 10:48:36,561 No evidence found for incident_id: 37
+ERROR 2025-03-23 10:48:36,572 No inspection forms found for incident_id: 37
+INFO 2025-03-23 10:48:36,579 Retrieved Incident with ID 37.
+INFO 2025-03-23 10:48:38,646 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:48:38,689 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:48:39,662 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:48:55,705 Retrieved list of Evidence
+INFO 2025-03-23 10:49:03,296 Retrieved 8 Incident instances.
+INFO 2025-03-23 10:49:11,115 Retrieved list of Evidence
+INFO 2025-03-23 10:49:45,794 Retrieved Incident with ID 37.
+ERROR 2025-03-23 10:49:45,795 No inspection forms found for incident_id: 37
+ERROR 2025-03-23 10:49:45,798 No evidence found for incident_id: 37
+INFO 2025-03-23 10:49:48,321 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:49:48,374 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:49:49,321 Retrieved 9 Incident instances.
+ERROR 2025-03-23 10:49:55,475 No evidence found for incident_id: 27
+INFO 2025-03-23 10:49:55,476 Retrieved Incident with ID 27.
+ERROR 2025-03-23 10:50:20,000 No evidence found for incident_id: 27
+INFO 2025-03-23 10:50:20,002 Retrieved Incident with ID 27.
+INFO 2025-03-23 10:50:20,999 Retrieved Incident with ID 27.
+ERROR 2025-03-23 10:50:20,999 No evidence found for incident_id: 27
+ERROR 2025-03-23 10:50:25,012 No evidence found for incident_id: 27
+INFO 2025-03-23 10:50:25,012 Retrieved Incident with ID 27.
+INFO 2025-03-23 10:50:32,338 Retrieved Incident with ID 27.
+ERROR 2025-03-23 10:50:32,444 No evidence found for incident_id: 27
+INFO 2025-03-23 10:50:39,899 Retrieved Incident with ID 27.
+ERROR 2025-03-23 10:50:39,899 No evidence found for incident_id: 27
+ERROR 2025-03-23 10:51:13,860 No evidence found for incident_id: 39
+INFO 2025-03-23 10:51:34,453 Retrieved list of Evidence
+INFO 2025-03-23 10:53:24,950 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:53:25,123 Retrieved 9 Incident instances.
+INFO 2025-03-23 10:53:25,948 Retrieved 9 Incident instances.
+ERROR 2025-03-23 10:57:11,058 Error retrieving evidence for incident_uuid 8085dbc3-d4ae-4d80-8a41-d2c33ae0b52c: 'UUID' object has no attribute 'replace'
+INFO 2025-03-23 11:01:10,074 New user registered: ayat@gmail.com (Ayay)
+ERROR 2025-03-23 11:03:32,569 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:32,708 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:32,838 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:32,953 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:33,075 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:33,202 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:33,429 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:33,911 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:34,032 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:34,159 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:34,295 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:34,439 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:34,585 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:34,710 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+INFO 2025-03-23 11:03:52,340 User logged in: (Ayay)
+INFO 2025-03-23 11:05:20,549 Retrieved list of Evidence
+INFO 2025-03-23 11:07:35,259 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:07:35,307 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:07:36,259 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:07:41,949 Retrieved Incident with ID 39.
+INFO 2025-03-23 11:08:21,103 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:08:21,142 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:08:22,114 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:08:27,119 Retrieved Incident with ID 39.
+INFO 2025-03-23 11:08:33,246 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:08:33,398 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:08:34,244 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:14:34,994 Retrieved list of Evidence
+INFO 2025-03-23 11:19:20,489 Retrieved list of Evidence
+INFO 2025-03-23 11:20:26,725 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:20:26,755 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:20:27,722 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:20:31,327 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:20:31,369 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:20:32,335 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:20:34,250 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:20:34,283 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:20:35,273 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:21:39,977 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:21:40,016 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:21:40,983 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:21:41,316 Retrieved Incident with ID 38.
+INFO 2025-03-23 11:21:46,134 Retrieved Incident with ID 38.
+ERROR 2025-03-23 11:22:03,173 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:03,382 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:03,482 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:03,579 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:03,670 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:03,765 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:03,856 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,304 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,411 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,518 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,627 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,735 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,829 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,947 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+INFO 2025-03-23 11:22:18,803 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:22:18,836 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:22:19,833 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:22:41,006 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:22:41,048 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:22:42,009 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:23:35,858 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:23:35,923 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:23:36,851 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:23:38,938 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:23:38,999 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:23:39,944 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:23:44,558 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:23:44,608 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:23:45,571 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:23:49,164 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:23:49,219 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:23:50,187 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:24:13,665 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:24:13,697 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:24:14,550 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:24:22,772 Retrieved 9 Incident instances.
+ERROR 2025-03-23 11:24:24,903 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:25,009 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:25,117 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+INFO 2025-03-23 11:24:25,176 Retrieved 9 Incident instances.
+ERROR 2025-03-23 11:24:25,224 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:25,331 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:25,442 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:25,555 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,084 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,196 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,286 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,394 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,507 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,598 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,695 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+INFO 2025-03-23 11:24:28,827 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:24:29,817 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:24:31,681 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:25:00,529 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:25:00,588 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:25:01,964 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:25:31,311 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:25:31,373 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:25:32,333 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:26:01,384 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:26:01,424 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:26:02,378 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:26:13,492 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:26:13,523 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:26:14,527 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:26:29,637 Retrieved Incident with ID 38.
+INFO 2025-03-23 11:26:35,089 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:26:35,236 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:26:36,108 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:26:39,066 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:26:39,097 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:26:40,075 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:28:57,963 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:28:58,021 Retrieved 9 Incident instances.
+ERROR 2025-03-23 11:28:58,967 No evidence found for accident_uuid: 5f36a29b-7002-4f3d-ae89-f9ddff59a142
+INFO 2025-03-23 11:28:58,971 Retrieved 9 Incident instances.
+INFO 2025-03-23 11:31:10,338 Deleted 43 Evidence instances.
+INFO 2025-03-23 11:31:17,811 Deleted 63 Incident instances.
+INFO 2025-03-23 11:33:25,726 Successfully created Incident instance(s)
+ERROR 2025-03-23 11:33:26,377 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:26,525 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:26,643 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:26,765 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:27,332 Invalid data provided for InspectionForm: {'form_id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:27,440 Invalid data provided for InspectionForm: {'form_id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:27,557 Invalid data provided for InspectionForm: {'form_id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:27,778 Invalid data provided for InspectionForm: {'form_id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+INFO 2025-03-23 11:33:40,118 Deleted 26 InspectionForm instances.
+ERROR 2025-03-23 11:37:44,404 No Evidence instances found to delete.
+INFO 2025-03-23 11:38:34,248 Successfully created Incident instance(s)
+INFO 2025-03-23 11:38:34,905 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:38:35,060 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:38:35,258 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:38:35,481 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:38:35,665 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:38:35,941 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:38:36,147 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:38:36,324 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:38:36,506 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:38:37,127 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:38:37,294 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:38:37,463 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:38:37,633 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:38:37,797 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:38:37,960 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:38:38,187 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:38:38,440 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:38:38,593 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:38:48,784 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:38:48,834 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:38:49,791 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:38:50,619 Retrieved list of Evidence
+INFO 2025-03-23 11:38:59,514 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:38:59,549 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:39:00,526 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:39:00,746 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:39:05,009 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:39:05,041 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:39:06,028 Retrieved 2 Incident instances.
+ERROR 2025-03-23 11:39:11,936 No evidence found for accident_uuid: 8085dbc3-d4ae-4d80-8a41-d2c33ae0b52c
+INFO 2025-03-23 11:39:28,652 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:39:28,789 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:39:29,658 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:40:27,104 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:43:08,027 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:43:10,469 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:43:10,497 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:43:11,478 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:43:57,063 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:46:04,570 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:46:12,667 Retrieved Incident with ID 84e504b2-7e2e-49cc-9f79-c616a7ef7528.
+INFO 2025-03-23 11:46:27,038 Retrieved Incident with ID 84e504b2-7e2e-49cc-9f79-c616a7ef7528.
+INFO 2025-03-23 11:46:32,686 Retrieved list of Evidence
+INFO 2025-03-23 11:46:33,757 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:46:33,819 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:46:34,786 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:46:36,694 Deleted 9 Evidence instances.
+INFO 2025-03-23 11:46:49,281 Deleted 2 Incident instances.
+INFO 2025-03-23 11:46:51,383 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:46:51,488 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:46:52,393 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:49:52,817 Retrieved list of InspectionForm
+ERROR 2025-03-23 11:50:17,325 Error retrieving inspection forms for incident_id 84e504b2-7e2e-49cc-9f79-c616a7ef7528: Cannot resolve keyword 'from_uuid' into field. Choices are: created_at, form_uuid, id, isChemistryLab, isCriminalElectronic, isCriminalPrint, isDNALab, isForensicLab, isWeaponsLab, status, updated_at, userId, userId_id, uuid
+ERROR 2025-03-23 11:50:19,233 Error retrieving inspection forms for incident_id 84e504b2-7e2e-49cc-9f79-c616a7ef7528: Cannot resolve keyword 'from_uuid' into field. Choices are: created_at, form_uuid, id, isChemistryLab, isCriminalElectronic, isCriminalPrint, isDNALab, isForensicLab, isWeaponsLab, status, updated_at, userId, userId_id, uuid
+INFO 2025-03-23 11:50:21,675 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:50:21,799 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:50:22,685 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:50:30,406 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:50:30,493 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:50:31,416 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:51:29,787 Deleted 9 InspectionForm instances.
+INFO 2025-03-23 11:51:35,623 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:51:35,736 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:51:36,639 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:51:47,335 Successfully created Incident instance(s)
+INFO 2025-03-23 11:51:47,433 Successfully created Incident instance(s)
+INFO 2025-03-23 11:51:47,878 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:51:48,001 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:51:48,107 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:51:48,200 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:51:48,296 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:51:48,408 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:51:48,509 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:51:48,937 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:51:49,052 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:51:49,260 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:51:49,377 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:51:49,484 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:51:49,595 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:51:49,699 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:51:52,809 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:51:52,846 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:51:53,823 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:51:54,434 Retrieved Incident with ID f9ade08e-2900-4700-94ac-066587836ca9.
+INFO 2025-03-23 11:52:14,058 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:52:14,084 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:52:15,062 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:52:15,443 Retrieved Incident with ID 2612b047-fe68-407a-b037-2b181578d5d4.
+INFO 2025-03-23 11:52:21,446 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:52:21,488 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:52:22,444 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:52:31,109 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:52:31,138 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:52:32,121 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:52:38,162 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:52:38,188 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:52:39,168 Retrieved 2 Incident instances.
+INFO 2025-03-23 11:53:13,171 Deleted 7 InspectionForm instances.
+INFO 2025-03-23 11:53:40,657 Deleted 7 Evidence instances.
+INFO 2025-03-23 11:53:45,557 Deleted 2 Incident instances.
+INFO 2025-03-23 11:56:51,506 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:56:51,596 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:56:52,521 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:57:15,831 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:57:15,923 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:57:16,847 Retrieved 0 Incident instances.
+INFO 2025-03-23 11:57:20,489 Successfully created Incident instance(s)
+INFO 2025-03-23 11:57:21,178 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:57:21,316 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:57:21,465 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:57:21,471 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:57:21,563 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:57:21,593 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:57:21,732 Successfully created Evidence instance(s)
+INFO 2025-03-23 11:57:22,402 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:57:22,480 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:57:22,588 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:57:22,764 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:57:22,970 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:57:23,155 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 11:57:23,226 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 11:57:28,023 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:57:28,116 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:57:29,034 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:57:31,237 Retrieved list of InspectionForm
+ERROR 2025-03-23 11:58:36,758 No evidence found for accident_uuid: 9296035d-bb3f-42b8-b578-2ee20c877289
+ERROR 2025-03-23 11:58:36,761 Failed to retrieve Incident: No Incident matches the given query.
+INFO 2025-03-23 11:58:39,797 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:58:39,903 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:58:40,708 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:58:42,488 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:58:42,591 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:58:43,492 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:58:45,405 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 11:59:04,320 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:59:04,438 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:59:05,336 Retrieved 1 Incident instances.
+INFO 2025-03-23 11:59:05,895 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:01:22,888 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:01:26,162 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:02:28,511 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:02:28,598 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:02:28,963 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:02:36,918 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:04:25,088 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:04:25,192 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:04:26,087 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:04:49,326 Retrieved list of InspectionForm
+INFO 2025-03-23 12:05:02,839 Retrieved list of InspectionForm
+INFO 2025-03-23 12:05:03,723 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:05:03,829 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:05:04,735 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:05:30,939 Retrieved list of InspectionForm
+INFO 2025-03-23 12:05:35,557 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:05:35,676 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:05:36,566 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:05:38,263 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:05:38,371 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:05:39,280 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:05:48,124 Successfully created Incident instance(s)
+INFO 2025-03-23 12:05:48,762 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:05:48,940 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:05:49,175 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:05:49,546 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:05:50,256 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:05:50,917 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:05:51,005 Retrieved list of InspectionForm
+INFO 2025-03-23 12:05:51,121 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:05:51,687 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:05:51,878 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:05:52,072 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:05:54,911 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:05:54,958 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:05:55,926 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:05:56,481 Retrieved Incident with ID a781e1ee-50c3-44fc-aefa-335d4fe796af.
+INFO 2025-03-23 12:06:01,777 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:06:01,819 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:06:02,785 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:06:03,079 Retrieved Incident with ID a781e1ee-50c3-44fc-aefa-335d4fe796af.
+INFO 2025-03-23 12:06:15,957 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:06:15,964 Retrieved Incident with ID a781e1ee-50c3-44fc-aefa-335d4fe796af.
+INFO 2025-03-23 12:06:17,042 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:06:17,058 Retrieved Incident with ID a781e1ee-50c3-44fc-aefa-335d4fe796af.
+INFO 2025-03-23 12:06:18,987 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:06:19,010 Retrieved Incident with ID a781e1ee-50c3-44fc-aefa-335d4fe796af.
+INFO 2025-03-23 12:06:19,954 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:06:19,958 Retrieved Incident with ID a781e1ee-50c3-44fc-aefa-335d4fe796af.
+INFO 2025-03-23 12:06:22,992 Retrieved Incident with ID a781e1ee-50c3-44fc-aefa-335d4fe796af.
+INFO 2025-03-23 12:06:23,987 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:06:44,989 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:06:45,021 Retrieved Incident with ID a781e1ee-50c3-44fc-aefa-335d4fe796af.
+INFO 2025-03-23 12:06:48,536 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:06:48,596 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:06:49,448 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:06:49,548 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:06:51,200 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:06:51,259 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:06:52,194 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:07:44,198 Retrieved list of InspectionForm
+INFO 2025-03-23 12:07:59,951 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:08:00,027 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:08:00,946 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:08:07,454 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:08:07,503 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:08:08,471 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:08:09,325 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:08:09,381 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:08:10,335 Retrieved 2 Incident instances.

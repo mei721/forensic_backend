@@ -7,8 +7,8 @@ class IncidentSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-
 class IncidentStatisticsSerializer(serializers.Serializer):
+
     incident_type = serializers.CharField()
     count = serializers.IntegerField()
 

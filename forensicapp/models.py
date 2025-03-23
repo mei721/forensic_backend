@@ -6,7 +6,7 @@ from accounts.models import CustomUser
 # محضر كشف واظهار الاثار الجرمية في مسرح الجريمة 
 
 class Incident(models.Model):
-    uuid = models.CharField(max_length=36, unique=True  , blank= True)  # Assuming UUID is in string format
+    uuid = models.CharField(max_length=255, unique=True, blank=True, null=True)
     date_discovery = models.TextField(default="" , null=True, blank=True)
     accident_date = models.TextField(default="" ,null=True, blank=True)
     investigating_body = models.CharField(max_length=255, default="")
@@ -38,7 +38,8 @@ class Incident(models.Model):
     
 class Evidence(models.Model):
         uuid = models.CharField(max_length=255, unique=True, blank=True, null=True)
-        accident_Id = models.ForeignKey('Incident', on_delete=models.CASCADE, related_name='evidences', blank=False, null=False)
+        # accident_Id = models.ForeignKey('Incident', on_delete=models.CASCADE, related_name='evidences', blank=False, null=False)
+        accident_uuid = models.CharField(max_length=255, null=True, blank=True)
         sampleType = models.CharField(max_length=255, null=True, blank=True)
         sampleNumber = models.CharField(max_length=255, null=True, blank=True)
         Placeoflifting = models.CharField(max_length=255, null=True, blank=True)
@@ -54,6 +55,7 @@ class Evidence(models.Model):
 class Complaint(models.Model):
     uuid = models.CharField(max_length=255, unique=True, blank=True, null=True)
     section = models.ForeignKey('Incident', on_delete=models.CASCADE, related_name='sections' , null=True, blank=True)
+    section_uuid = models.CharField(max_length=255, null=True, blank=True)  
     name = models.CharField(max_length=255)
     action = models.TextField(null=True, blank=True)
     status = models.CharField(max_length=50, default='local')
@@ -61,8 +63,6 @@ class Complaint(models.Model):
     isHidden  = models.BooleanField(default=False)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
-
-
     def __str__(self):
         return f"Accident Section {self.id} - {self.name} ({self.status})"
 
@@ -72,9 +72,10 @@ class Complaint(models.Model):
 
 class InspectionForm(models.Model):
     uuid = models.CharField(max_length=255, unique=True, blank=True, null=True)
-    form_id = models.ForeignKey('Incident', on_delete=models.CASCADE, related_name='inspection_forms' , null=True, blank=True)
-    isChemistryLab = models.BooleanField(default=False)
-    isWeaponsLab = models.BooleanField(default=False)
+    # form_id = models.ForeignKey('Incident', on_delete=models.CASCADE, related_name='inspection_forms' , null=True, blank=True)
+    form_uuid = models.CharField(max_length=255, null=True, blank=True)
+    isChemistryLab = models.BooleanField(default=True)
+    isWeaponsLab = models.BooleanField(default=True)
     isForensicLab = models.BooleanField(default=False)
     isCriminalPrint = models.BooleanField(default=False)
     isDNALab = models.BooleanField(default=False)

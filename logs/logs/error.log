@@ -67,3 +67,169 @@ ERROR Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='T
 ERROR 2025-03-20 09:36:27,672 1596 18452 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
 ERROR 2025-03-20 09:36:52,861 12704 18124 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
 ERROR 2025-03-20 09:37:22,700 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-20 10:46:02,553 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-20 10:48:31,538 Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')]}
+ERROR 2025-03-20 10:50:50,559 Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')]}
+ERROR 2025-03-20 10:51:03,955 Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='evidence with this uuid already exists.', code='unique')]}
+ERROR 2025-03-23 09:16:27,684 Failed to create Incident instance(s): duplicate key value violates unique constraint "forensicapp_incident_uuid_key"
+DETAIL:  Key (uuid)=(123e4567-e89b-12d3-a456-426614174000) already exists.
+
+ERROR 2025-03-23 09:16:35,997 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:16:35,998 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:17:08,353 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:17:08,354 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:19:17,880 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:19:17,881 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:19:37,250 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:19:37,250 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:20:13,555 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:20:13,556 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:21:53,135 Failed to create Incident instance(s): duplicate key value violates unique constraint "forensicapp_incident_uuid_key"
+DETAIL:  Key (uuid)=(123e4567-e89b-12d3-a456-426614174000) already exists.
+
+ERROR 2025-03-23 09:22:26,689 Invalid data provided for Incident: {'uuid': [ErrorDetail(string='Must be a valid UUID.', code='invalid')]}
+ERROR 2025-03-23 09:25:02,835 Invalid data provided for Incident: {'uuid': [ErrorDetail(string='Must be a valid UUID.', code='invalid')]}
+ERROR 2025-03-23 09:25:12,811 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:25:12,812 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:26:01,800 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:26:01,801 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:28:15,096 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:28:15,097 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:28:20,273 Invalid data provided for Incident: {'uuid': [ErrorDetail(string='Must be a valid UUID.', code='invalid')]}
+ERROR 2025-03-23 09:28:59,601 Invalid ordering field: -id. Using default ordering.
+ERROR 2025-03-23 09:28:59,602 Failed to retrieve Incident: Cannot resolve keyword 'id' into field. Choices are: accident_date, accident_description, accident_location, action_taken, category_accident, causes_of_fire, color, created_at, date_discovery, evidences, inspection_forms, inspection_time, investigating_body, latitude, longitude, method, resulting_damages, sections, status, typeAccident, updated_at, user, user_id, uuid
+ERROR 2025-03-23 09:29:46,041 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:31:19,886 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:31:27,981 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:32:02,116 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:32:22,736 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:33:14,468 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:35:54,963 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:35:58,882 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:36:16,807 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:38:10,989 Failed to delete Incident: operator does not exist: character varying = uuid
+LINE 1: ...app_incident" WHERE "forensicapp_incident"."uuid" = 'fa18487...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+ERROR 2025-03-23 09:38:42,360 Failed to retrieve Incident: operator does not exist: character varying = uuid
+LINE 1: ...app_incident" WHERE "forensicapp_incident"."uuid" = 'fa18487...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+ERROR 2025-03-23 09:43:29,495 Invalid data provided for Incident: {'uuid': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-23 09:44:10,787 Invalid data provided for Incident: {'uuid': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-23 09:44:30,314 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:51:57,521 Failed to delete Incident: ['“1234-5678” is not a valid UUID.']
+ERROR 2025-03-23 09:53:11,592 Invalid data provided for Evidence: {'uuid': [ErrorDetail(string='This field is required.', code='required')], 'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-23 09:53:59,262 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-23 09:54:23,577 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='This field is required.', code='required')]}
+ERROR 2025-03-23 09:56:57,987 Failed to retrieve list of Evidence. No records found.
+ERROR 2025-03-23 10:06:59,167 Failed to retrieve Incident: operator does not exist: character varying = uuid
+LINE 1: ...app_incident" WHERE "forensicapp_incident"."uuid" = 'fa18487...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+ERROR 2025-03-23 10:08:03,360 Failed to retrieve Incident: operator does not exist: character varying = uuid
+LINE 1: ...app_incident" WHERE "forensicapp_incident"."uuid" = 'fa18487...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+ERROR 2025-03-23 10:08:30,762 Failed to retrieve Incident: 'UUID' object has no attribute 'replace'
+ERROR 2025-03-23 10:10:14,461 Failed to retrieve Incident: 'UUID' object has no attribute 'replace'
+ERROR 2025-03-23 10:11:06,758 Failed to retrieve Incident: 'UUID' object has no attribute 'replace'
+ERROR 2025-03-23 10:11:22,971 Failed to retrieve Incident: 'UUID' object has no attribute 'replace'
+ERROR 2025-03-23 10:12:45,237 Failed to retrieve Incident: 'UUID' object has no attribute 'replace'
+ERROR 2025-03-23 10:13:50,155 Failed to retrieve Incident: 'UUID' object has no attribute 'replace'
+ERROR 2025-03-23 10:44:23,844 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:23,980 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:24,119 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:24,261 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:24,395 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:24,536 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:24,677 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:25,288 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:25,434 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:25,580 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:25,756 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:25,897 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:26,030 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:44:26,162 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 10:45:25,924 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 10:45:33,178 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 10:46:19,296 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 10:46:41,537 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 10:46:53,673 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 10:48:10,542 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 10:48:18,557 No evidence found for incident_id: 27
+ERROR 2025-03-23 10:48:29,974 No inspection forms found for incident_id: 39
+ERROR 2025-03-23 10:48:29,978 No evidence found for incident_id: 39
+ERROR 2025-03-23 10:48:36,561 No evidence found for incident_id: 37
+ERROR 2025-03-23 10:48:36,572 No inspection forms found for incident_id: 37
+ERROR 2025-03-23 10:49:45,795 No inspection forms found for incident_id: 37
+ERROR 2025-03-23 10:49:45,798 No evidence found for incident_id: 37
+ERROR 2025-03-23 10:49:55,475 No evidence found for incident_id: 27
+ERROR 2025-03-23 10:50:20,000 No evidence found for incident_id: 27
+ERROR 2025-03-23 10:50:20,999 No evidence found for incident_id: 27
+ERROR 2025-03-23 10:50:25,012 No evidence found for incident_id: 27
+ERROR 2025-03-23 10:50:32,444 No evidence found for incident_id: 27
+ERROR 2025-03-23 10:50:39,899 No evidence found for incident_id: 27
+ERROR 2025-03-23 10:51:13,860 No evidence found for incident_id: 39
+ERROR 2025-03-23 10:57:11,058 Error retrieving evidence for incident_uuid 8085dbc3-d4ae-4d80-8a41-d2c33ae0b52c: 'UUID' object has no attribute 'replace'
+ERROR 2025-03-23 11:03:32,569 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:32,708 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:32,838 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:32,953 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:33,075 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:33,202 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:33,429 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:33,911 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:34,032 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:34,159 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:34,295 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:34,439 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:34,585 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:03:34,710 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:03,173 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:03,382 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:03,482 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:03,579 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:03,670 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:03,765 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:03,856 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,304 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,411 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,518 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,627 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,735 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,829 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:22:04,947 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:24,903 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:25,009 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:25,117 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:25,224 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:25,331 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:25,442 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:25,555 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,084 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,196 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,286 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,394 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,507 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,598 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:24:26,695 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:28:58,967 No evidence found for accident_uuid: 5f36a29b-7002-4f3d-ae89-f9ddff59a142
+ERROR 2025-03-23 11:33:26,377 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:26,525 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:26,643 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:26,765 Invalid data provided for Evidence: {'accident_Id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:27,332 Invalid data provided for InspectionForm: {'form_id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:27,440 Invalid data provided for InspectionForm: {'form_id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:27,557 Invalid data provided for InspectionForm: {'form_id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:33:27,778 Invalid data provided for InspectionForm: {'form_id': [ErrorDetail(string='Invalid pk "13" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-03-23 11:37:44,404 No Evidence instances found to delete.
+ERROR 2025-03-23 11:39:11,936 No evidence found for accident_uuid: 8085dbc3-d4ae-4d80-8a41-d2c33ae0b52c
+ERROR 2025-03-23 11:50:17,325 Error retrieving inspection forms for incident_id 84e504b2-7e2e-49cc-9f79-c616a7ef7528: Cannot resolve keyword 'from_uuid' into field. Choices are: created_at, form_uuid, id, isChemistryLab, isCriminalElectronic, isCriminalPrint, isDNALab, isForensicLab, isWeaponsLab, status, updated_at, userId, userId_id, uuid
+ERROR 2025-03-23 11:50:19,233 Error retrieving inspection forms for incident_id 84e504b2-7e2e-49cc-9f79-c616a7ef7528: Cannot resolve keyword 'from_uuid' into field. Choices are: created_at, form_uuid, id, isChemistryLab, isCriminalElectronic, isCriminalPrint, isDNALab, isForensicLab, isWeaponsLab, status, updated_at, userId, userId_id, uuid
+ERROR 2025-03-23 11:58:36,758 No evidence found for accident_uuid: 9296035d-bb3f-42b8-b578-2ee20c877289
+ERROR 2025-03-23 11:58:36,761 Failed to retrieve Incident: No Incident matches the given query.

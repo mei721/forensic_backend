@@ -19,7 +19,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"uuid\": \"e89b\",\r\n    \"sampleType\": \"Gun\",\r\n    \"sampleNumber\": \"B1234\",\r\n    \"placeoflifting\": \"Crime Scene\",\r\n    \"methodlifting\": \"picture\",\r\n    \"status\": \"local\",\r\n    \"userId\": 1\r\n    \r\n}\r\n",
+									"raw": "{\r\n    \"uuid\": \"fa18487c-7b4b-4d6c-a2a8-6488175ba5ed\",\r\n    \"sampleType\": \"Gun\",\r\n    \"sampleNumber\": \"B1234\",\r\n    \"placeoflifting\": \"Crime Scene\",\r\n    \"methodlifting\": \"picture\",\r\n    \"status\": \"local\",\r\n    \"userId\": 1,\r\n    \"accident_uuid\" :\"123e4567-e89b-12d3-a456-426614174000\",\r\n    \"accident_Id\" :1\r\n    \r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -88,6 +88,9 @@
 									}
 								}
 							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -95,11 +98,11 @@
 										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMzI0MzkyLCJpYXQiOjE3NDEyMzc5OTIsImp0aSI6Ijg1MzQ3NjNiMDEwYTQ3YWZiMDM1ZWJjMjZjMDNiMjIzIiwidXNlcl9pZCI6MTUsInVzZXJuYW1lIjoiSGFzc2FuMjMiLCJmaXJzdF9uYW1lIjoiaGFzc2FuIiwibGFzdF9uYW1lIjoiaGFzc2FuIiwicGhvbmVfbnVtYmVyIjoiMTIzNDU2NzkxMSJ9.XG9kZKKsG0JtBOKxP4ajR6Celt_6P-JSxtxHGj_ePuY"
 									}
 								},
-								"method": "POST",
+								"method": "GET",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": " {\r\n            \"uuid\": \"1234-5678\",\r\n            \"date_discovery\": \"\",\r\n            \"accident_date\": \"2025-03-15\",\r\n            \"investigating_body\": \"someone\",\r\n            \"accident_description\": \"Fire accident in warehouse.\",\r\n            \"inspection_time\": \"2025-03-17 14:00\",\r\n            \"accident_location\": \"Warehouse 12, Sector B\",\r\n            \"action_taken\": \"Fire extinguished.\",\r\n            \"method\": \"Firefighting\",\r\n            \"status\": \"local\",\r\n            \"latitude\": \"30.0444\",\r\n            \"longitude\": \"31.2357\",\r\n            \"color\": \"Red\",\r\n            \"typeAccident\": \"Fire\",\r\n            \"resulting_damages\": \"Property damage worth $10000\",\r\n            \"causes_of_fire\": \"Electrical malfunction\",\r\n            \"category_accident\": \"fireAccident\",\r\n            \"created_at\": \"2025-03-19T10:36:57.590024Z\",\r\n            \"updated_at\": \"2025-03-19T10:36:57.590024Z\",\r\n            \"user\": 1\r\n        }\r\n",
+									"raw": "{\r\n        \"uuid\": \"123e4567-e89b-12d3-a456-426614174000\",\r\n        \"date_discovery\": \"2025-03-20\",\r\n        \"accident_date\": \"2025-03-15\",\r\n        \"investigating_body\": \"Fire Department\",\r\n        \"accident_description\": \"Fire in the warehouse caused by electrical malfunction.\",\r\n        \"inspection_time\": \"2025-03-17 14:00\",\r\n        \"accident_location\": \"Warehouse 12, Sector B\",\r\n        \"action_taken\": \"Fire using fire hoses.\",\r\n        \"method\": \"Firefighting\",\r\n        \"status\": \"local\",\r\n        \"latitude\": \"30\",\r\n        \"longitude\": \"31.2357\",\r\n        \"color\": \"Red\",\r\n        \"typeAccident\": \"Fire\",\r\n        \"resulting_damages\": \"Property damage worth $10000\",\r\n        \"causes_of_fire\": \"Electrical malfunction\",\r\n        \"category_accident\": \"fireAccident\",\r\n        \"created_at\": \"2025-03-19T10:36:57.590024Z\",\r\n        \"updated_at\": \"2025-03-19T10:36:57.590024Z\",\r\n        \"user\": 1\r\n    }\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -151,6 +154,11 @@
 											"key": "incident_date_range_after",
 											"value": "",
 											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "4",
+											"disabled": true
 										}
 									]
 								}
@@ -162,7 +170,7 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{URL}}api/evidencebyincident/1/"
+								"url": "{{URL}}api/evidencebyincident/84e504b2-7e2e-49cc-9f79-c616a7ef7528/"
 							},
 							"response": []
 						}
@@ -173,8 +181,14 @@
 					"item": [
 						{
 							"name": "inspection-lab",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
-								"method": "POST",
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
 								"header": [],
 								"body": {
 									"mode": "raw",
@@ -206,7 +220,7 @@
 										}
 									}
 								},
-								"url": "{{URL}}api/inspection-labs-by-incident/1/"
+								"url": "{{URL}}api/inspection-labs-by-incident/268ca004-1427-4064-b2f7-0e88191f5444/"
 							},
 							"response": []
 						}
@@ -456,13 +470,13 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "zhraa@gmail.com",
+									"value": "@gmail.com",
 									"description": "unique",
 									"type": "text"
 								},
 								{
 									"key": "username",
-									"value": "zhraa",
+									"value": "Ayay",
 									"description": "unique",
 									"type": "text"
 								},
@@ -485,12 +499,12 @@
 								},
 								{
 									"key": "first_name",
-									"value": "zhraa",
+									"value": "ايات",
 									"type": "text"
 								},
 								{
 									"key": "last_name",
-									"value": "essa",
+									"value": "مزهر",
 									"type": "text"
 								},
 								{

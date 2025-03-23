@@ -14,6 +14,9 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter
 from rest_framework.permissions import AllowAny
 import logging
+from uuid import UUID
+from rest_framework.exceptions import NotFound
+
 logger = logging.getLogger('forensicapp')
 
 
@@ -212,13 +215,13 @@ class IncindentView(BaseAPIView):
     ordering_fields = ['id', 'inspection_date']
     ordering = ['-id']  # Default ordering
 
-    def get(self, request, pk=None):
+    def get(self, request, uuid=None):
         try:
-            if pk:
+            if uuid:
                 # Retrieve a single instance by primary key (pk)
-                incident = get_object_or_404(self.model, pk=pk)
+                incident = get_object_or_404(self.model, uuid=uuid)
                 serializer = self.serializer_class(incident)
-                logger.info(f"Retrieved {self.model.__name__} with ID {pk}.")
+                logger.info(f"Retrieved {self.model.__name__} with ID {uuid}.")
                 return Response({"data" : serializer.data})
 
             # Retrieve all instances with optional filtering
@@ -249,9 +252,9 @@ class IncindentView(BaseAPIView):
             return paginator.get_paginated_response(serializer.data)
 
         except self.model.DoesNotExist:
-            logger.error(f"{self.model.__name__} with ID {pk} not found.")
+            logger.error(f"{self.model.__name__} with ID {uuid} not found.")
             return Response(
-                {"error": f"{self.model.__name__} with ID {pk} not found.", "status_code": status.HTTP_404_NOT_FOUND},
+                {"error": f"{self.model.__name__} with ID {uuid} not found.", "status_code": status.HTTP_404_NOT_FOUND},
                 status=status.HTTP_404_NOT_FOUND
             )
 
@@ -345,16 +348,16 @@ def get(self, request, pk=None):
 class InspectionLabsByIncidentIdView(APIView):
     permission_classes = [AllowAny]
     
-    def get(self, request, incident_id):
+    def get(self, request, form_uuid):
         """
         GET request to retrieve all InspectionForm records for a specific incident_id.
         """
         try:
             # Fetch all related InspectionForm records
-            inspection_forms = InspectionForm.objects.filter(form_id=incident_id)
+            inspection_forms = InspectionForm.objects.filter(form_uuid=form_uuid)
 
             if not inspection_forms.exists():
-                logger.error(f"No inspection forms found for incident_id: {incident_id}")
+                logger.error(f"No inspection forms found for incident_id: {form_uuid}")
                 return Response({"detail": "No inspection forms found for this incident."}, status=status.HTTP_404_NOT_FOUND)
 
             # Serialize the data
@@ -363,21 +366,21 @@ class InspectionLabsByIncidentIdView(APIView):
             return Response({"data": serializer.data}, status=status.HTTP_200_OK)
 
         except Exception as e:
-            logger.error(f"Error retrieving inspection forms for incident_id {incident_id}: {str(e)}")
+            logger.error(f"Error retrieving inspection forms for incident_id {form_uuid}: {str(e)}")
             return Response({"error": "An unexpected error occurred."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 class EvidenceByIncidentIdView(APIView):
     permission_classes = [AllowAny]
-    
-    def get(self, request, incident_id):
+
+    def get(self, request, incident_uuid):
         """
-        GET request to retrieve all Evidence related to a specific incident_id.
+        GET request to retrieve all Evidence related to a specific incident_uuid.
         """
         try:
-            # Fetch all Evidence records related to the given incident_id
-            evidences = Evidence.objects.filter(accident_Id=incident_id)
+            # Fetch all Evidence records related to the given accident_uuid
+            evidences = Evidence.objects.filter(accident_uuid=incident_uuid)
 
             if not evidences.exists():
-                logger.error(f"No evidence found for incident_id: {incident_id}")
+                logger.error(f"No evidence found for accident_uuid: {incident_uuid}")
                 return Response({"detail": "No evidence found for this incident."}, status=status.HTTP_404_NOT_FOUND)
 
             # Serialize the data
@@ -385,9 +388,8 @@ class EvidenceByIncidentIdView(APIView):
 
             return Response({"data": serializer.data}, status=status.HTTP_200_OK)
         except Exception as e:
-            logger.error(f"Error retrieving evidence for incident_id {incident_id}: {str(e)}")
+            logger.error(f"Error retrieving evidence for accident_uuid {incident_uuid}: {str(e)}")
             return Response({"error": "An unexpected error occurred."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
 class IncidentStatisticsView(APIView):
     permission_classes = [AllowAny]
 
