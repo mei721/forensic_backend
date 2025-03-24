@@ -811,3 +811,347 @@ INFO 2025-03-23 12:08:08,471 Retrieved 2 Incident instances.
 INFO 2025-03-23 12:08:09,325 Retrieved 2 Incident instances.
 INFO 2025-03-23 12:08:09,381 Retrieved 2 Incident instances.
 INFO 2025-03-23 12:08:10,335 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:11:55,788 Successfully created Incident instance(s)
+INFO 2025-03-23 12:11:56,419 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:11:56,565 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:11:56,710 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:11:56,868 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:11:57,030 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:11:57,669 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:11:57,833 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:11:58,013 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:11:58,177 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:11:58,360 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:14:41,568 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:14:44,602 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:14:44,635 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:14:44,665 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:14:45,607 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:14:52,901 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:14:53,208 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:14:54,757 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:14:55,022 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:14:55,439 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:14:55,814 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:14:55,995 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:15:03,516 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:15:05,794 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:06,287 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:06,335 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:06,366 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:06,399 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:06,444 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:06,604 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:06,643 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:09,683 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:09,723 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:10,597 Retrieved Incident with ID 317b9b67-59a4-4ad1-8380-0932f758229e.
+INFO 2025-03-23 12:15:10,605 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:15,492 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:15,543 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:16,469 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:16,665 Retrieved Incident with ID 317b9b67-59a4-4ad1-8380-0932f758229e.
+ERROR 2025-03-23 12:15:16,721 No inspection forms found for incident_id: 317b9b67-59a4-4ad1-8380-0932f758229e
+INFO 2025-03-23 12:15:17,619 Retrieved list of InspectionForm
+ERROR 2025-03-23 12:15:20,534 No inspection forms found for incident_id: 317b9b67-59a4-4ad1-8380-0932f758229e
+INFO 2025-03-23 12:15:20,535 Retrieved Incident with ID 317b9b67-59a4-4ad1-8380-0932f758229e.
+INFO 2025-03-23 12:15:32,639 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:32,695 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:33,671 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:33,677 Retrieved Incident with ID 268ca004-1427-4064-b2f7-0e88191f5444.
+INFO 2025-03-23 12:15:35,443 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:35,500 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:36,455 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:36,559 Retrieved Incident with ID a781e1ee-50c3-44fc-aefa-335d4fe796af.
+INFO 2025-03-23 12:15:38,589 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:38,657 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:39,596 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:39,680 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:39,738 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:15:40,691 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:18:00,533 Retrieved Incident with ID a781e1ee-50c3-44fc-aefa-335d4fe796af.
+INFO 2025-03-23 12:18:18,848 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:18:18,897 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:18:19,880 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:18:23,704 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:18:45,060 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:18:49,218 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:18:49,271 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:18:50,234 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:23:43,010 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:23:43,185 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:23:43,338 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:23:44,057 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:23:44,202 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:23:44,375 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:24:01,101 Retrieved list of InspectionForm
+INFO 2025-03-23 12:26:22,400 Successfully created Incident instance(s)
+INFO 2025-03-23 12:26:22,562 Successfully created Incident instance(s)
+INFO 2025-03-23 12:26:23,213 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:26:23,356 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:26:23,516 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:26:23,670 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:26:23,817 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:26:23,963 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:26:24,119 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:26:24,747 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:26:24,919 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:26:25,097 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:26:25,255 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:26:25,403 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:26:25,578 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:26:25,717 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:26:38,003 Retrieved list of InspectionForm
+INFO 2025-03-23 12:29:49,441 Successfully created Incident instance(s)
+INFO 2025-03-23 12:29:49,604 Successfully created Incident instance(s)
+INFO 2025-03-23 12:29:50,753 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:29:50,894 Retrieved list of InspectionForm
+INFO 2025-03-23 12:29:50,964 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:29:51,243 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:29:51,410 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:29:51,586 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:29:51,776 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:29:52,513 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:29:52,671 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:29:52,829 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:29:53,027 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:29:53,211 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:29:53,408 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:29:53,581 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:29:59,028 Retrieved list of InspectionForm
+INFO 2025-03-23 12:33:31,959 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:31,990 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:33,069 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:33,223 Retrieved Incident with ID 3342768f-dcf3-466d-b0c9-5c16f6c08c30.
+INFO 2025-03-23 12:33:34,678 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:34,718 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:35,680 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:37,295 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:37,331 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:38,297 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:39,758 Retrieved Incident with ID 3342768f-dcf3-466d-b0c9-5c16f6c08c30.
+INFO 2025-03-23 12:33:43,688 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:43,727 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:44,523 Retrieved Incident with ID 76e0d6ae-219c-4b72-9167-4f21e21bcad4.
+ERROR 2025-03-23 12:33:44,526 No evidence found for accident_uuid: 76e0d6ae-219c-4b72-9167-4f21e21bcad4
+ERROR 2025-03-23 12:33:44,527 No inspection forms found for incident_id: 76e0d6ae-219c-4b72-9167-4f21e21bcad4
+INFO 2025-03-23 12:33:44,696 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:46,441 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:46,470 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:47,274 Retrieved Incident with ID 3233a359-4c6f-4083-9d84-115a15d01758.
+INFO 2025-03-23 12:33:47,446 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:50,723 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:50,756 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:51,727 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:51,828 Retrieved Incident with ID a5bada72-890a-459e-8a59-c706ffa09cc3.
+INFO 2025-03-23 12:33:54,973 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:55,013 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:55,978 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:56,186 Retrieved Incident with ID 317b9b67-59a4-4ad1-8380-0932f758229e.
+INFO 2025-03-23 12:33:59,765 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:33:59,802 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:34:00,779 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:34:09,010 Deleted 32 InspectionForm instances.
+INFO 2025-03-23 12:34:44,208 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:34:44,240 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:34:45,213 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:34:53,141 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:34:53,172 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:34:54,143 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:34:57,159 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:34:57,191 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:34:57,845 Deleted 31 Evidence instances.
+INFO 2025-03-23 12:34:58,174 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:34:59,194 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:34:59,226 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:35:00,187 Retrieved 7 Incident instances.
+INFO 2025-03-23 12:35:03,135 Deleted 7 Incident instances.
+INFO 2025-03-23 12:35:06,330 Retrieved 0 Incident instances.
+INFO 2025-03-23 12:35:06,402 Retrieved 0 Incident instances.
+INFO 2025-03-23 12:35:07,339 Retrieved 0 Incident instances.
+INFO 2025-03-23 12:35:07,440 Retrieved 0 Incident instances.
+ERROR 2025-03-23 12:35:13,725 No inspection forms found for incident_id: 268ca004-1427-4064-b2f7-0e88191f5444
+INFO 2025-03-23 12:35:19,640 Retrieved list of InspectionForm
+ERROR 2025-03-23 12:39:11,149 User login failed: No active account found with the given credentials
+INFO 2025-03-23 12:39:53,589 New user registered: alhassan@gmail.com (Al-hassan)
+INFO 2025-03-23 12:40:10,056 User logged in: (Al-hassan)
+INFO 2025-03-23 12:44:23,802 Successfully created Incident instance(s)
+INFO 2025-03-23 12:44:24,676 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:44:24,726 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:44:25,439 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:44:25,495 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:44:33,901 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:44:33,998 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:44:34,888 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:44:35,387 Retrieved Incident with ID c1b836a5-7434-4556-b5b3-86a5b20d7442.
+INFO 2025-03-23 12:44:38,862 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:44:38,957 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:44:39,864 Retrieved Incident with ID c1b836a5-7434-4556-b5b3-86a5b20d7442.
+INFO 2025-03-23 12:44:39,870 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:44:43,300 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:44:43,390 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:44:44,314 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:45:01,844 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:45:49,656 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:45:49,747 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:45:50,662 Retrieved 1 Incident instances.
+INFO 2025-03-23 12:46:36,108 Successfully created Incident instance(s)
+INFO 2025-03-23 12:46:36,909 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:46:36,970 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:46:37,038 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:46:37,094 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:46:37,156 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:46:37,216 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:46:37,862 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:46:37,920 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:46:37,991 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:46:38,079 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:46:38,148 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:46:38,217 Successfully created InspectionForm instance(s)
+INFO 2025-03-23 12:46:42,271 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:46:42,316 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:46:43,167 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:46:46,615 Retrieved Incident with ID 7d6abf8d-7464-47f7-b194-08c511f7ef06.
+INFO 2025-03-23 12:46:53,909 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:46:53,955 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:46:54,904 Retrieved 2 Incident instances.
+INFO 2025-03-23 12:46:55,119 Retrieved Incident with ID 7d6abf8d-7464-47f7-b194-08c511f7ef06.
+INFO 2025-03-23 12:46:57,726 Retrieved 2 Incident instances.
+ERROR 2025-03-23 12:51:44,947 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 12:51:52,119 User login failed: No active account found with the given credentials
+INFO 2025-03-23 12:51:53,834 Successfully created Incident instance(s)
+INFO 2025-03-23 12:51:54,528 Successfully created Evidence instance(s)
+INFO 2025-03-23 12:51:55,123 Successfully created InspectionForm instance(s)
+ERROR 2025-03-23 12:51:58,176 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 12:51:59,703 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 12:52:12,804 User login failed: No active account found with the given credentials
+INFO 2025-03-23 12:52:25,744 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:52:25,807 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:52:26,744 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:52:27,444 Retrieved Incident with ID 5ed210c7-89d4-4e85-b09d-9da3620996db.
+INFO 2025-03-23 12:52:31,363 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:52:31,421 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:52:32,371 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:52:45,598 User logged in: (Al-hassan)
+INFO 2025-03-23 12:52:54,096 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:54:22,001 Retrieved 3 Incident instances.
+INFO 2025-03-23 12:59:15,464 User logged in: (bassim@ur)
+ERROR 2025-03-23 12:59:58,263 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 13:00:10,128 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 13:00:25,721 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 13:01:33,611 User login failed: No active account found with the given credentials
+INFO 2025-03-23 13:02:45,670 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:02:45,742 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:02:46,682 Retrieved 3 Incident instances.
+ERROR 2025-03-23 13:05:04,043 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 13:05:21,323 User login failed: No active account found with the given credentials
+INFO 2025-03-23 13:06:14,382 Retrieved Incident with ID 5ed210c7-89d4-4e85-b09d-9da3620996db.
+INFO 2025-03-23 13:06:19,042 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:06:19,075 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:06:20,059 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:14:46,122 Retrieved Incident with ID c1b836a5-7434-4556-b5b3-86a5b20d7442.
+INFO 2025-03-23 13:14:50,295 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:14:50,323 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:14:51,311 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:14:57,813 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:35:04,574 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:35:04,637 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:35:05,584 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:35:06,405 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:35:06,469 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:35:07,493 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:35:07,916 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:35:07,965 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:35:08,930 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:35:09,818 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:35:09,882 Retrieved 3 Incident instances.
+INFO 2025-03-23 13:35:10,822 Retrieved 3 Incident instances.
+INFO 2025-03-24 08:18:54,344 User logged in: (Al-hassan)
+INFO 2025-03-24 08:19:01,138 Retrieved 3 Incident instances.
+INFO 2025-03-24 08:19:01,180 Retrieved 3 Incident instances.
+INFO 2025-03-24 08:19:02,101 Retrieved 3 Incident instances.
+INFO 2025-03-24 08:19:07,526 Retrieved 3 Incident instances.
+INFO 2025-03-24 08:19:07,581 Retrieved 3 Incident instances.
+INFO 2025-03-24 08:19:08,418 Retrieved 3 Incident instances.
+INFO 2025-03-24 08:21:36,548 Successfully created Incident instance(s)
+INFO 2025-03-24 08:21:42,066 Retrieved 4 Incident instances.
+INFO 2025-03-24 08:21:42,154 Retrieved 4 Incident instances.
+INFO 2025-03-24 08:21:43,065 Retrieved 4 Incident instances.
+INFO 2025-03-24 08:23:06,602 Retrieved 4 Incident instances.
+INFO 2025-03-24 08:23:06,644 Retrieved 4 Incident instances.
+INFO 2025-03-24 08:23:07,622 Retrieved 4 Incident instances.
+INFO 2025-03-24 08:23:57,855 Retrieved 4 Incident instances.
+INFO 2025-03-24 08:23:57,900 Retrieved 4 Incident instances.
+INFO 2025-03-24 08:23:58,868 Retrieved 4 Incident instances.
+INFO 2025-03-24 08:23:59,254 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+ERROR 2025-03-24 08:23:59,409 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+INFO 2025-03-24 08:24:20,740 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+ERROR 2025-03-24 08:24:20,745 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:24:49,875 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+INFO 2025-03-24 08:24:49,876 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+INFO 2025-03-24 08:24:59,866 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+ERROR 2025-03-24 08:24:59,870 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+INFO 2025-03-24 08:25:10,957 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+ERROR 2025-03-24 08:25:10,961 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+INFO 2025-03-24 08:25:22,888 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+ERROR 2025-03-24 08:25:22,889 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+INFO 2025-03-24 08:25:54,520 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+ERROR 2025-03-24 08:25:54,521 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+INFO 2025-03-24 08:26:35,835 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+ERROR 2025-03-24 08:26:35,839 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+INFO 2025-03-24 08:26:37,851 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+ERROR 2025-03-24 08:26:37,851 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:26:39,996 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+INFO 2025-03-24 08:26:39,996 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+ERROR 2025-03-24 08:27:12,831 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+INFO 2025-03-24 08:27:12,831 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+INFO 2025-03-24 08:27:13,896 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+ERROR 2025-03-24 08:27:13,897 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+INFO 2025-03-24 08:28:01,569 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+ERROR 2025-03-24 08:28:01,572 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+INFO 2025-03-24 08:29:16,484 Retrieved 4 Incident instances.
+INFO 2025-03-24 08:29:30,453 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+ERROR 2025-03-24 08:29:30,457 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+INFO 2025-03-24 08:30:13,841 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+ERROR 2025-03-24 08:30:13,842 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:31:21,202 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+INFO 2025-03-24 08:31:21,206 Retrieved Incident with ID 09178a82-c1d5-4b57-9b82-1dda9964a1ab.
+INFO 2025-03-24 08:33:24,249 Successfully created Incident instance(s)
+INFO 2025-03-24 08:33:25,343 Successfully created Evidence instance(s)
+INFO 2025-03-24 08:33:25,861 Successfully created InspectionForm instance(s)
+INFO 2025-03-24 08:33:29,418 Retrieved 5 Incident instances.
+INFO 2025-03-24 08:33:29,597 Retrieved 5 Incident instances.
+INFO 2025-03-24 08:33:30,446 Retrieved 5 Incident instances.
+INFO 2025-03-24 08:33:31,397 Retrieved Incident with ID df3c120f-12d8-472e-b9ee-e2ccae29a13f.
+INFO 2025-03-24 08:35:09,342 Retrieved 5 Incident instances.
+ERROR 2025-03-24 09:03:16,466 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:16,623 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:17,098 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:17,389 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:17,403 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:17,723 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:17,982 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:18,121 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:27,503 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:45,586 User login failed: No active account found with the given credentials
+INFO 2025-03-24 09:13:21,503 User list accessed
+INFO 2025-03-24 09:15:58,095 User Ayay (ID: 3) deleted successfully
+INFO 2025-03-24 09:16:03,400 User list accessed
+INFO 2025-03-24 09:21:43,618 User list accessed
+WARNING 2025-03-24 09:26:43,747 User  tried to update another user's details
+INFO 2025-03-24 09:27:52,900 User Al-hassan (ID: 4) updated successfully
+INFO 2025-03-24 09:30:19,839 New user registered: ayat@gmail.com (Ayat)
+INFO 2025-03-24 09:30:37,959 User Ayat (ID: 5) updated successfully
+INFO 2025-03-24 09:30:49,010 User Ayat (ID: 5) deleted successfully
+INFO 2025-03-24 09:31:00,876 New user registered: ayatmuzher@gmail.com (Ayat)
+INFO 2025-03-24 09:31:24,862 User Ayat (ID: 6) updated successfully
+INFO 2025-03-24 09:34:55,221 User Ayat (ID: 6) updated successfully, tokens regenerated.
+INFO 2025-03-24 09:35:14,547 User Ayat (ID: 6) deleted successfully
+INFO 2025-03-24 09:35:19,302 New user registered: ayatmuzher@gmail.com (Ayat)
+ERROR 2025-03-24 09:36:24,764 Update failed: User with ID 6 not found
+INFO 2025-03-24 09:36:29,403 User Ayat (ID: 7) updated successfully, tokens regenerated.
+ERROR 2025-03-24 09:36:29,403 Unexpected error during user update: name 'new_' is not defined
+INFO 2025-03-24 09:36:39,774 User list accessed
+INFO 2025-03-24 09:37:00,676 User Ayat9 (ID: 7) updated successfully, tokens regenerated.
+ERROR 2025-03-24 09:37:00,677 Unexpected error during user update: name 'new_' is not defined
+INFO 2025-03-24 09:37:22,597 User Ayat9 (ID: 7) updated successfully, tokens regenerated.

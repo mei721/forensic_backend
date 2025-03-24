@@ -13,36 +13,104 @@ import logging
 logger = logging.getLogger('accounts')  # logger defined in settings
 
 
-class RegisterView(generics.CreateAPIView):
-    permission_classes = [AllowAny]
-    serializer_class =  RegisterSerializer
+class UserManagementView(APIView):
+    permission_classes = [AllowAny]  # You can adjust this to allow only authenticated users based on your needs.
 
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        if not serializer.is_valid():
+    def post(self, request, *args, **kwargs):
+        """Create a new user"""
+        try:
+            serializer = RegisterSerializer(data=request.data)
+            if serializer.is_valid():
+                user, tokens = serializer.save()  # Create user and generate tokens
+
+                logger.info(f"New user registered: {user.email} ({user.username})")
+
+                return Response({
+                    "data": {
+                        "id": user.id,
+                        "email": user.email,
+                        "username": user.username,
+                        "first_name": user.first_name,
+                        "last_name": user.last_name,
+                        "phone_number": user.phone_number,
+                        "role": user.role,
+                        "refresh_token": tokens["refresh"],
+                        "access_token": tokens["access"],
+                    }
+                }, status=status.HTTP_201_CREATED)
+
             logger.error(f"User registration failed: {serializer.errors}")
             return Response({"error": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
 
-        user, tokens = serializer.save()
+        except Exception as e:
+            logger.error(f"Unexpected error during user creation: {str(e)}")
+            return Response({"error": "An unexpected error occurred"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-        logger.info(f"New user registered: {user.email} ({user.username})")
+    def put(self, request, pk, *args, **kwargs):
+        """Update an existing user and regenerate tokens if updated"""
+        try:
+            user = CustomUser.objects.filter(id=pk).first()
 
-        return Response({
-            "data": {
-                "id": user.id,
-                "email": user.email,
-                "username": user.username,
-                "first_name": user.first_name,
-                "last_name": user.last_name,
-                "phone_number": user.phone_number,
-                "role":user.role,
-                "refresh_token": tokens["refresh"],
-                "access_token": tokens["access"],
-            }
-        }, status=status.HTTP_201_CREATED)
+            if not user:
+                logger.error(f"Update failed: User with ID {pk} not found")
+                return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
 
-    
+            # Serialize the incoming data (use the same serializer that was used to create the user)
+            serializer = UserSerializer(user, data=request.data, partial=True)
 
+            if serializer.is_valid():
+                # Save the updated user details
+                serializer.save()
+
+                # Regenerate the tokens
+                refresh_token = RefreshToken.for_user(user)
+                new_access_token = str(refresh_token.access_token)
+                new_refresh_token = str(refresh_token)
+
+                logger.info(f"User {user.username} (ID: {pk}) updated successfully, tokens regenerated.")
+
+                return Response({
+                    "message": "User updated successfully",
+                    "data": {
+                        "id": user.id,
+                        "email": user.email,
+                        "username": user.username,
+                        "first_name": user.first_name,
+                        "last_name": user.last_name,
+                        "phone_number": user.phone_number,
+                        "role": user.role,
+                        "refresh_token":new_refresh_token,
+                        "access_token": new_access_token,
+                    }
+                }, status=status.HTTP_200_OK)
+
+            return Response({"error": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+
+        except Exception as e:
+            logger.error(f"Unexpected error during user update: {str(e)}")
+            return Response({"error": "An unexpected error occurred"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    def delete(self, request, pk, *args, **kwargs):
+        try:
+            user = CustomUser.objects.filter(id=pk).first()
+
+            if not user:
+                logger.error(f"Delete failed: User with ID {pk} not found")
+                return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+
+            # blacklist all refresh tokens for the user
+            token = RefreshToken.objects.filter(user=user)
+            token.blacklist()  # Blacklist the token
+
+            # Delete the user
+            user.delete()
+            logger.info(f"User {user.username} (ID: {pk}) deleted successfully")
+
+            return Response({"message": "User deleted successfully"}, status=status.HTTP_200_OK)
+
+        except Exception as e:
+            logger.error(f"Unexpected error during user deletion: {str(e)}")
+            return Response({"error": "An unexpected error occurred"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class MyObtainTokenPairView(TokenObtainPairView):
     permission_classes = [AllowAny]
@@ -79,7 +147,6 @@ class MyObtainTokenPairView(TokenObtainPairView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         return serializer.user
-    
 
 class LogoutView(APIView):
     permission_classes = (IsAuthenticated,)
@@ -93,12 +160,18 @@ class LogoutView(APIView):
                 return Response({"error": "Refresh token is required"}, status=status.HTTP_400_BAD_REQUEST)
 
             try:
+                # Blacklist the refresh token
                 token = RefreshToken(refresh_token)
                 token.blacklist()
-                logger.info(f"User logged out successfully: {request.user.username}")
+
+                # Deactivate the user once the token is blacklisted
+                request.user.is_active = False
+                request.user.save()
+
+                logger.info(f"User logged out successfully and deactivated: {request.user.username}")
                 return Response({"message": "Logout successful"}, status=status.HTTP_205_RESET_CONTENT)
 
-            except TokenError:  # Handles invalid or already used tokens
+            except TokenError:
                 logger.error("Logout failed: Invalid or expired refresh token")
                 return Response({"error": "Invalid or expired refresh token"}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -122,3 +195,4 @@ class UserListView(generics.ListAPIView):
         except Exception as e:
             logger.error(f"Error while fetching user list: {str(e)}")
             return Response({"error": "Could not retrieve users."}, status=500)
+

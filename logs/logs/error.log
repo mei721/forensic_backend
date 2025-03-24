@@ -233,3 +233,49 @@ ERROR 2025-03-23 11:50:17,325 Error retrieving inspection forms for incident_id 
 ERROR 2025-03-23 11:50:19,233 Error retrieving inspection forms for incident_id 84e504b2-7e2e-49cc-9f79-c616a7ef7528: Cannot resolve keyword 'from_uuid' into field. Choices are: created_at, form_uuid, id, isChemistryLab, isCriminalElectronic, isCriminalPrint, isDNALab, isForensicLab, isWeaponsLab, status, updated_at, userId, userId_id, uuid
 ERROR 2025-03-23 11:58:36,758 No evidence found for accident_uuid: 9296035d-bb3f-42b8-b578-2ee20c877289
 ERROR 2025-03-23 11:58:36,761 Failed to retrieve Incident: No Incident matches the given query.
+ERROR 2025-03-23 12:15:16,721 No inspection forms found for incident_id: 317b9b67-59a4-4ad1-8380-0932f758229e
+ERROR 2025-03-23 12:15:20,534 No inspection forms found for incident_id: 317b9b67-59a4-4ad1-8380-0932f758229e
+ERROR 2025-03-23 12:33:44,526 No evidence found for accident_uuid: 76e0d6ae-219c-4b72-9167-4f21e21bcad4
+ERROR 2025-03-23 12:33:44,527 No inspection forms found for incident_id: 76e0d6ae-219c-4b72-9167-4f21e21bcad4
+ERROR 2025-03-23 12:35:13,725 No inspection forms found for incident_id: 268ca004-1427-4064-b2f7-0e88191f5444
+ERROR 2025-03-23 12:39:11,149 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 12:51:44,947 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 12:51:52,119 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 12:51:58,176 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 12:51:59,703 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 12:52:12,804 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 12:59:58,263 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 13:00:10,128 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 13:00:25,721 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 13:01:33,611 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 13:05:04,043 User login failed: No active account found with the given credentials
+ERROR 2025-03-23 13:05:21,323 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 08:23:59,409 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:24:20,745 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:24:49,875 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:24:59,870 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:25:10,961 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:25:22,889 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:25:54,521 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:26:35,839 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:26:37,851 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:26:39,996 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:27:12,831 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:27:13,897 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:28:01,572 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:29:30,457 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:30:13,842 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 08:31:21,202 No evidence found for accident_uuid: 09178a82-c1d5-4b57-9b82-1dda9964a1ab
+ERROR 2025-03-24 09:03:16,466 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:16,623 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:17,098 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:17,389 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:17,403 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:17,723 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:17,982 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:18,121 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:27,503 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:03:45,586 User login failed: No active account found with the given credentials
+ERROR 2025-03-24 09:36:24,764 Update failed: User with ID 6 not found
+ERROR 2025-03-24 09:36:29,403 Unexpected error during user update: name 'new_' is not defined
+ERROR 2025-03-24 09:37:00,677 Unexpected error during user update: name 'new_' is not defined

@@ -10,7 +10,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CustomUser
-        fields = ['email', 'username', 'first_name', 'last_name', 'phone_number', 'password', 'role']
+        fields = ['email', 'username', 'first_name', 'last_name', 'phone_number', 'password', 'role' , 'is_active']
         extra_kwargs = {
             'password': {'write_only': True},
         }
@@ -30,6 +30,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             first_name=validated_data['first_name'],
             last_name=validated_data['last_name'],
             phone_number=validated_data.get('phone_number'),
+            is_active = validated_data.get('is_active', True),
             password=validated_data['password'],
             role=role
         )
@@ -51,6 +52,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token['first_name'] = user.first_name
         token['last_name'] = user.last_name
         token['phone_number'] = user.phone_number
+        
         return token
 
         # Set the password
@@ -76,3 +78,5 @@ class UserSerializer(serializers.ModelSerializer):
         request = context.get('request')
         # if request and request.user.role != 'admin':
         #     self.fields['role'].read_only = True
+
+
