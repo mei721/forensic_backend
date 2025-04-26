@@ -279,3 +279,133 @@ ERROR 2025-03-24 09:03:45,586 User login failed: No active account found with th
 ERROR 2025-03-24 09:36:24,764 Update failed: User with ID 6 not found
 ERROR 2025-03-24 09:36:29,403 Unexpected error during user update: name 'new_' is not defined
 ERROR 2025-03-24 09:37:00,677 Unexpected error during user update: name 'new_' is not defined
+ERROR 2025-03-26 09:54:24,653 Logout failed: Invalid or expired refresh token
+ERROR 2025-03-26 09:54:43,249 Logout failed: Invalid or expired refresh token
+ERROR 2025-04-22 12:39:19,558 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:19,673 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:19,792 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:19,911 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:20,036 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:20,143 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:20,258 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:20,367 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:20,577 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:20,714 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:20,832 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:20,963 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:21,081 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:21,321 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:21,445 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:21,564 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:21,671 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:21,788 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:21,898 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:22,022 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:22,124 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:22,237 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:22,344 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:22,452 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:22,697 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:22,808 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:22,917 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:23,031 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:23,144 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:23,362 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:23,472 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:23,582 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:23,709 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:23,824 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:23,946 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:24,051 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:24,151 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:24,281 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:24,375 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:24,493 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:24,719 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:24,825 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:24,955 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:25,066 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:25,179 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:25,286 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:25,396 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:25,515 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:25,637 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:25,744 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:26,000 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:26,806 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:26,923 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:27,023 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:27,138 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:27,359 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:27,494 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:27,613 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:27,734 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:27,858 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:27,968 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:28,071 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:28,179 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:28,303 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:28,534 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:28,760 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:28,974 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:29,075 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:29,180 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:29,305 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:29,536 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:29,652 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:29,753 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:29,864 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:29,973 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:30,078 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:30,203 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:30,319 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:30,443 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:30,545 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:30,663 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:30,784 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:30,888 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:30,994 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:31,101 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:31,215 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:31,330 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:31,429 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:31,546 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:31,828 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:31,932 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:32,042 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:32,152 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:32,260 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:32,378 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:32,498 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:32,621 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:32,740 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:33,041 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-22 12:39:33,154 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "9" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:25:42,487 Unexpected error during user deletion: type object 'RefreshToken' has no attribute 'objects'
+ERROR 2025-04-23 13:25:53,929 User registration failed: {'email': [ErrorDetail(string='custom user with this email already exists.', code='unique')]}
+ERROR 2025-04-23 13:26:22,413 User login failed: No active account found with the given credentials
+ERROR 2025-04-23 13:26:45,167 User login failed: No active account found with the given credentials
+ERROR 2025-04-23 13:27:03,333 User login failed: No active account found with the given credentials
+ERROR 2025-04-23 13:27:55,968 User login failed: No active account found with the given credentials
+ERROR 2025-04-23 13:27:58,996 User login failed: No active account found with the given credentials
+ERROR 2025-04-23 13:28:15,502 User registration failed: {'email': [ErrorDetail(string='custom user with this email already exists.', code='unique')]}
+ERROR 2025-04-23 13:28:20,843 User registration failed: {'email': [ErrorDetail(string='Enter a valid email address.', code='invalid')]}
+ERROR 2025-04-23 13:28:42,949 User login failed: No active account found with the given credentials
+ERROR 2025-04-23 13:29:17,051 User login failed: No active account found with the given credentials
+ERROR 2025-04-23 13:40:45,000 User registration failed: {'username': [ErrorDetail(string='custom user with this username already exists.', code='unique')]}
+ERROR 2025-04-23 13:50:01,509 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:01,579 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:01,626 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:01,675 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:01,721 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:01,772 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:01,931 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:01,997 Invalid data provided for Evidence: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:02,674 Invalid data provided for InspectionForm: {'uuid': [ErrorDetail(string='inspection form with this uuid already exists.', code='unique')]}
+ERROR 2025-04-23 13:50:02,727 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:02,876 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:02,937 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:02,983 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:03,049 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:03,225 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-04-23 13:50:03,294 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}

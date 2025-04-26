@@ -14,7 +14,7 @@ logger = logging.getLogger('accounts')  # logger defined in settings
 
 
 class UserManagementView(APIView):
-    permission_classes = [AllowAny]  # You can adjust this to allow only authenticated users based on your needs.
+    permission_classes = [AllowAny]  
 
     def post(self, request, *args, **kwargs):
         """Create a new user"""
@@ -182,7 +182,7 @@ class LogoutView(APIView):
 
 class UserListView(generics.ListAPIView):
     serializer_class = UserSerializer
-    permission_classes = [AllowAny]  # Allow anyone to access the user list
+    permission_classes = [IsAuthenticated]
     pagination_class = CustomPaginationWithResult
 
     def get_queryset(self):
