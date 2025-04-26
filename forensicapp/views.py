@@ -264,6 +264,50 @@ class IncindentView(BaseAPIView):
                 {"error": "An error occurred while retrieving data.", "details": str(e), "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
+        
+    def put(self, request, uuid):
+            try:
+                instance = self.model.objects.get(uuid=uuid)
+            except self.model.DoesNotExist:
+                logger.error(f"{self.model.__name__} with UUID {uuid} not found.")
+                return Response(
+                    {
+                        "error": f"{self.model.__name__} with UUID {uuid} not found.",
+                        "status_code": status.HTTP_404_NOT_FOUND
+                    },
+                    status=status.HTTP_404_NOT_FOUND
+                )
+
+            try:
+                serializer = self.serializer_class(instance, data=request.data, partial=True)  # Allow partial updates
+                if serializer.is_valid():
+                    serializer.save()
+                    logger.info(f"Successfully updated {self.model.__name__} with UUID {uuid}.")
+                    return Response({"data": serializer.data})
+                else:
+                    logger.error(f"Validation failed for updating {self.model.__name__} with UUID {uuid}: {serializer.errors}")
+                    return Response(
+                        {
+                            "error": "Invalid data provided.",
+                            "validation_errors": serializer.errors,
+                            "status_code": status.HTTP_400_BAD_REQUEST
+                        },
+                        status=status.HTTP_400_BAD_REQUEST
+                    )
+            except Exception as e:
+                logger.error(f"Failed to update {self.model.__name__} with UUID {uuid}: {str(e)}")
+                return Response(
+                    {
+                        "error": f"Failed to update {self.model.__name__}.",
+                        "details": str(e),
+                        "status_code": status.HTTP_400_BAD_REQUEST
+                    },
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+
+
+
+
 
 
 class EvidenceView(BaseAPIView):
