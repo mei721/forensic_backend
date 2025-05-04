@@ -1333,3 +1333,4 @@ LINE 1: ..., "email", "username", "first_name", "last_name", "rank", "p...
 
 INFO 2025-05-04 11:33:04,515 New user registered: zahraa@gmail.com (hassan@u)
 INFO 2025-05-04 11:33:19,278 User hassan@u (ID: 4) updated successfully, tokens regenerated.
+INFO 2025-05-04 11:43:26,110 User hassan@u (ID: 4) updated successfully, tokens regenerated.
