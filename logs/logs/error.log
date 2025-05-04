@@ -409,3 +409,8 @@ ERROR 2025-04-23 13:50:02,983 Invalid data provided for InspectionForm: {'userId
 ERROR 2025-04-23 13:50:03,049 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
 ERROR 2025-04-23 13:50:03,225 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
 ERROR 2025-04-23 13:50:03,294 Invalid data provided for InspectionForm: {'userId': [ErrorDetail(string='Invalid pk "0" - object does not exist.', code='does_not_exist')]}
+ERROR 2025-05-04 11:31:12,106 User registration failed: {'email': [ErrorDetail(string='custom user with this email already exists.', code='unique')], 'username': [ErrorDetail(string='custom user with this username already exists.', code='unique')]}
+ERROR 2025-05-04 11:32:03,970 Unexpected error during user creation: column "rank" of relation "accounts_customuser" does not exist
+LINE 1: ..., "email", "username", "first_name", "last_name", "rank", "p...
+                                                             ^
+

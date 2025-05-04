@@ -6,6 +6,7 @@ from .views import UserManagementView , LogoutView , MyObtainTokenPairView , Use
 urlpatterns = [
     path('login/', MyObtainTokenPairView.as_view(), name='login'),
     path('register/', UserManagementView.as_view(), name='register'),
+
     path('logout/', LogoutView.as_view(), name='auth_logout'),
     path('users/', UserListView.as_view(), name='user-list'),
     path('register/<int:pk>/', UserManagementView.as_view(), name='user-delete'),
