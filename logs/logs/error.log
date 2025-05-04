@@ -414,3 +414,4 @@ ERROR 2025-05-04 11:32:03,970 Unexpected error during user creation: column "ran
 LINE 1: ..., "email", "username", "first_name", "last_name", "rank", "p...
                                                              ^
 
+ERROR 2025-05-04 12:52:11,692 User login failed: No active account found with the given credentials

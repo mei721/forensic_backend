@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework.authtoken.views import obtain_auth_token
-from .views import UserManagementView , LogoutView , MyObtainTokenPairView , UserListView 
+from .views import UserManagementView , LogoutView , MyObtainTokenPairView , UserListView , ResetPasswordView
 
 
 urlpatterns = [
@@ -10,6 +10,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='auth_logout'),
     path('users/', UserListView.as_view(), name='user-list'),
     path('register/<int:pk>/', UserManagementView.as_view(), name='user-delete'),
+    path('reset-password/', ResetPasswordView.as_view(), name='reset-password'),
 
 
 ]

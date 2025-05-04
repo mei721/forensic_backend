@@ -1334,3 +1334,13 @@ LINE 1: ..., "email", "username", "first_name", "last_name", "rank", "p...
 INFO 2025-05-04 11:33:04,515 New user registered: zahraa@gmail.com (hassan@u)
 INFO 2025-05-04 11:33:19,278 User hassan@u (ID: 4) updated successfully, tokens regenerated.
 INFO 2025-05-04 11:43:26,110 User hassan@u (ID: 4) updated successfully, tokens regenerated.
+WARNING 2025-05-04 12:48:41,606 [] ID mismatch during password change attempt
+WARNING 2025-05-04 12:49:17,226 [] ID mismatch during password change attempt
+ERROR 2025-05-04 12:52:11,692 User login failed: No active account found with the given credentials
+INFO 2025-05-04 12:52:52,154 New user registered: zahraa@gmail.com (hassan@u)
+INFO 2025-05-04 12:53:03,329 User logged in: (hassan@u)
+INFO 2025-05-04 12:54:52,871 User logged in: (hassan@u)
+WARNING 2025-05-04 12:54:58,753 [hassan@u] ID mismatch during password change attempt
+WARNING 2025-05-04 12:58:07,774 [hassan@u] ID mismatch during password change attempt
+INFO 2025-05-04 12:59:12,741 [hassan@u] Password changed successfully
+INFO 2025-05-04 13:00:16,769 User logged in: (hassan@u)

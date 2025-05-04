@@ -98,7 +98,7 @@ DATABASES = {
 }
 
 DATABASES['default'] = dj_database_url.parse(
-    'postgresql://admin_t699_user:FRT1ToPuOfMhYJn98R0iw27KxROlw9EP@dpg-d068oh1r0fns73fc9alg-a.oregon-postgres.render.com/admin_t699',
+    'postgresql://forrensic_sql_user:D0NWnDZV7XJvLH6UCskT0LfUGFokSLou@dpg-d0binq95pdvs73cnbqhg-a.oregon-postgres.render.com/forrensic_sql',
     conn_max_age=600,
     conn_health_checks=True,
 )
