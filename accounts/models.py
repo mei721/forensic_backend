@@ -13,23 +13,18 @@ class CustomUserManager(BaseUserManager):
         if not extra_fields.get('is_superuser', False):
             if not email:
                 raise ValueError("The Email field must be set")
-            if not first_name:
-                raise ValueError("First name is required")
-            if not last_name:
-                raise ValueError("Last name is required")
 
         # Default fallbacks for superusers
         email = email or f"{username}@admin.local"
-        first_name = first_name or "Super"
-        last_name = last_name or "User"
 
         email = self.normalize_email(email)
 
         user = self.model(
             email=email,
             username=username,
-            first_name=first_name,
-            last_name=last_name,
+
+
+            
             **extra_fields
         )
         user.set_password(password)
@@ -58,8 +53,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(max_length=255)
     username = models.CharField(max_length=150, unique=True)
-    first_name = models.CharField(max_length=50 , default='')
-    last_name = models.CharField(max_length=50 , default='')
+    full_name = models.CharField(max_length=50 , default='')
     rank = models.CharField(max_length=50, blank=True, null=True)
     phone_number = models.CharField(max_length=15, blank=True, null=True)
     is_active = models.BooleanField(default=True)

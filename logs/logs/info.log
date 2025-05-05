@@ -1344,3 +1344,10 @@ WARNING 2025-05-04 12:54:58,753 [hassan@u] ID mismatch during password change at
 WARNING 2025-05-04 12:58:07,774 [hassan@u] ID mismatch during password change attempt
 INFO 2025-05-04 12:59:12,741 [hassan@u] Password changed successfully
 INFO 2025-05-04 13:00:16,769 User logged in: (hassan@u)
+ERROR 2025-05-05 10:18:20,685 User registration failed: {'username': [ErrorDetail(string='custom user with this username already exists.', code='unique')]}
+ERROR 2025-05-05 10:18:36,415 Unexpected error during user creation: First name is required
+INFO 2025-05-05 10:20:00,414 New user registered: zahraa@gmail.com (zhraa.essa)
+INFO 2025-05-05 10:20:23,882 User logged in: (zhraa.essa)
+INFO 2025-05-05 10:20:26,813 User logged in: (zhraa.essa)
+INFO 2025-05-05 10:20:49,879 [zhraa.essa] Password changed successfully
+INFO 2025-05-05 10:21:10,534 User zhraa.essa (ID: 3) updated successfully, tokens regenerated.

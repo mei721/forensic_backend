@@ -10,7 +10,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CustomUser
-        fields = ['email', 'username', 'first_name', 'last_name', 'phone_number', 'password', 'role' , 'is_active']
+        fields = ['email', 'username', 'full_name', 'phone_number', 'password', 'role' , 'is_active']
         extra_kwargs = {
             'password': {'write_only': True},
         }
@@ -27,8 +27,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         user = CustomUser.objects.create_user(
             email=validated_data['email'],
             username=validated_data['username'],
-            first_name=validated_data['first_name'],
-            last_name=validated_data['last_name'],
+            full_name=validated_data['full_name'],
             phone_number=validated_data.get('phone_number'),
             is_active = validated_data.get('is_active', True),
             password=validated_data['password'],
@@ -49,8 +48,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def get_token(cls, user):
         token = super().get_token(user)
         token['username'] = user.username
-        token['first_name'] = user.first_name
-        token['last_name'] = user.last_name
+        token['full_name'] = user.full_name
         token['phone_number'] = user.phone_number
         
         return token
@@ -70,7 +68,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ['id', 'email', 'username', 'first_name', 'last_name', 'phone_number', 'role']
+        fields = ['id', 'email', 'username', 'full_name', 'phone_number', 'role']
 
     def __init__(self, *args, **kwargs):
         super(UserSerializer, self).__init__(*args, **kwargs)

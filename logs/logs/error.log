@@ -415,3 +415,5 @@ LINE 1: ..., "email", "username", "first_name", "last_name", "rank", "p...
                                                              ^
 
 ERROR 2025-05-04 12:52:11,692 User login failed: No active account found with the given credentials
+ERROR 2025-05-05 10:18:20,685 User registration failed: {'username': [ErrorDetail(string='custom user with this username already exists.', code='unique')]}
+ERROR 2025-05-05 10:18:36,415 Unexpected error during user creation: First name is required
